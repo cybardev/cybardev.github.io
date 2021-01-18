@@ -34,7 +34,7 @@ Next, copy the contents of the [`exampleSite/config.toml`](https://github.com/ja
 The most important change you will need to make to the `config.toml` is removing [this line](https://github.com/jakewies/hugo-theme-codex/blob/master/exampleSite/config.toml#L2):
 
 ```
-themesDir = "../../" 
+themesDir = "../../"
 ```
 
 It only exists in the example site so that the demo can function properly.
@@ -42,7 +42,7 @@ It only exists in the example site so that the demo can function properly.
 Finally, run:
 
 ```
-hugo server -D 
+hugo server -D
 ```
 
 **Note: If you are seeing a blank page it is probably because you have nothing in your `content/` directory. Read on to fix that.**
@@ -87,12 +87,12 @@ You can also create additional social icons by:
    [params]
       # ...
       reddit = "<url to your reddit>"
-   
+
       iconOrder = ["Reddit"]
    ```
 
 Make sure that the icon title must match the icon's file name. If the title contains more than one word, say "My Awesome Site",
-you can use dash "-" for the icon name: `my-awesome-site.svg`. 
+you can use dash "-" for the icon name: `my-awesome-site.svg`.
 
 ### Creating a blog post
 
@@ -102,7 +102,7 @@ You can create a new blog post page by going to the root of your project and typ
 hugo new blog/:blog-post.md
 ```
 
-Where `:blog-post.md` is the name of the file of your new post. 
+Where `:blog-post.md` is the name of the file of your new post.
 
 This will execute the theme's `blog` archetype to create a new markdown file in `contents/blog/:blog-post.md` with the following frontmatter:
 
@@ -158,7 +158,7 @@ In your site's `config.toml`, add a new menu definition for say, "photos":
     url = "/photos"
 ```
 
-Then, put your posts under "content/photos". 
+Then, put your posts under "content/photos".
 
 ### Custom styling
 
