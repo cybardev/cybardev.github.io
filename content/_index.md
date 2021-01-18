@@ -1,5 +1,5 @@
 ---
-heading: "Hi, I'm Codex"
-subheading: "A minimal blog theme for hugo."
-handle: "hugo-theme-codex"
+heading: "Cy | Space"
+subheading: "A place for my thoughts and ideas."
+handle: "cybarspace"
 ---
