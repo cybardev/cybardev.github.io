@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
+title: ""
 date: {{ .Date }}
 author: sksaad
 slug: ""
