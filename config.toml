@@ -3,7 +3,7 @@ themesDir = "./themes/"
 theme = "hugo-theme-codex"
 
 # Override these settings with your own
-title = "Cy | Space"
+title = "Cybarspace"
 languageCode = "en-us"
 baseURL = "https://cybarspace.github.io"
 copyright = "Sheikh Saad © 2021"
