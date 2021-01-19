@@ -6,7 +6,7 @@ theme = "hugo-theme-codex"
 title = "Cy | Space"
 languageCode = "en-us"
 baseURL = "https://cybarspace.github.io"
-copyright = "© {2021}"
+copyright = "Sheikh Saad © 2021"
 
 # Add your Disqus shortname here.
 # disqusShortname = ""

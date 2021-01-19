@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cy | Space</title>
-    <link>https://cybarspace.github.io/</link>
-    <description>Recent content on Cy | Space</description>
+    <title>thoughts on Cy | Space</title>
+    <link>https://cybarspace.github.io/tags/thoughts/</link>
+    <description>Recent content in thoughts on Cy | Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Sheikh Saad © 2021</copyright>
-    <lastBuildDate>Tue, 19 Jan 2021 14:38:01 +0600</lastBuildDate><atom:link href="https://cybarspace.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jan 2021 14:38:01 +0600</lastBuildDate><atom:link href="https://cybarspace.github.io/tags/thoughts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to my blog</title>
       <link>https://cybarspace.github.io/blog/first-post/</link>
