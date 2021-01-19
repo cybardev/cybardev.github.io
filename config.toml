@@ -24,16 +24,16 @@ googleAnalytics = "UA-163428122-1"
   twitter = "https://twitter.com/DrCyco"
   github = "https://github.com/cybarspace"
   email = "mailto:sksaad@tutanota.com"
-  facebook = "https://facebook.com/sksaad47"
+  #facebook = "https://facebook.com/sksaad47"
   # gitlab = "https://gitlab.com/<your handle>"
-  instagram = "https://instagram.com/cybarnaut"
+  #instagram = "https://instagram.com/cybarnaut"
   linkedin = "https://www.linkedin.com/in/sk-saad"
-  youtube = "https://www.youtube.com/channel/UCA6pL90nzUonUJLyefRUO4w"
+  #youtube = "https://www.youtube.com/channel/UCA6pL90nzUonUJLyefRUO4w"
 
   # Titles for your icons (shown as tooltips), and also their display order.
   # Currently, these icons are supported:
   #   "Twitter", "GitHub", "Email", "Facebook", "GitLab", "Instagram", "LinkedIn", "YouTube"
-  iconOrder = ["Twitter", "GitHub", "Email", "Facebook", "Instagram", "LinkedIn", "YouTube"]
+  iconOrder = ["GitHub", "Twitter", "LinkedIn", "Email"]
 
   # Metadata for Twitter cards, defaults to params.twitter
   # twitterSite = "@<your handle>"
