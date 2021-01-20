@@ -9,7 +9,7 @@ baseURL = "https://cybarspace.github.io"
 copyright = "Sheikh Saad © 2021"
 
 # Add your Disqus shortname here.
-# disqusShortname = ""
+disqusShortname = "cybarspace"
 
 # Add your Google Analytics identifier: UA-XXXXXXXX-X
 googleAnalytics = "UA-163428122-1"
