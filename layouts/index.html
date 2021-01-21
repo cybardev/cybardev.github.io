@@ -2,6 +2,8 @@
     {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/about.scss" "dest" "css/about.css") }}
 {{ end }}
 
+{{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics.html" . }}{{ end }}
+
 {{ define "main" }}
 
 <div class="splash-container">
