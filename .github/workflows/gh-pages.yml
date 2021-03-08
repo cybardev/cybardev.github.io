@@ -21,10 +21,10 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --gc --minify --cleanDestinationDir
+        run: hugo -d docs --gc --minify --cleanDestinationDir
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PERSONAL_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./docs
