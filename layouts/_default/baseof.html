@@ -4,8 +4,8 @@
 <head>
   {{- if not .Site.IsServer -}}
       {{ template "_internal/google_analytics.html" . }}
+      {{ template "_internal/opengraph.html" . }}
   {{- end -}}
-  {{ template "_internal/opengraph.html" . }}
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 
   <meta charset="UTF-8">
