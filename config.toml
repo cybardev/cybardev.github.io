@@ -17,9 +17,9 @@ googleAnalytics = "UA-187828184-2"
 # Optional params
 [params]
   # Open Graph
-  description = "A home for my thoughts"
-  images = ["images/cy-blog-logo.png"]
-  title = "Cybarspace"
+  description = "Here, I talk about code, life and random thoughts"
+  images = ["https://i.imgur.com/JMjEggK.png"]
+  title = "Cybarspace | A home for my thoughts"
 
   # Follow the Hugo date/time format reference here:
   # https://gohugo.io/functions/format/#gos-layout-string
@@ -53,7 +53,7 @@ googleAnalytics = "UA-187828184-2"
 # vendor script in layouts/blog/single.html.
 [markup]
   [markup.highlight]
-    codeFences = false
+    codeFences = true
 
   # Set to false to disallow raw HTML in markdown files
   [markup.goldmark.renderer]
