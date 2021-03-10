@@ -17,7 +17,7 @@ googleAnalytics = "UA-187828184-2"
 # Optional params
 [params]
   # Open Graph
-  description = "Here, I discuss about code, my life and things that pique my interest"
+  description = "Here, I discuss about code, my life and things that pique my interest..."
   images = ["./images/cy-blog-logo.png"]
 
   # Follow the Hugo date/time format reference here:
