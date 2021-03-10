@@ -16,6 +16,11 @@ googleAnalytics = "UA-187828184-2"
 
 # Optional params
 [params]
+  # Open Graph
+  description = "A home for my thoughts..."
+  images = ["images/cy-blog-logo.png"]
+  title = "Cy | Space"
+
   # Follow the Hugo date/time format reference here:
   # https://gohugo.io/functions/format/#gos-layout-string
   dateFormat = "Jan 2 2006"
