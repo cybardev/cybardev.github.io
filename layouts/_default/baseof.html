@@ -19,7 +19,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />
   <meta property="og:description" content="{{ if .IsHome}}{{ .Site.Params.Description }}{{ else }}{{.Page.Params.Description}}{{ end }}" />
-  <meta property="og:image" content="/images/cy-blog-logo.png" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/cybarspace/cybarspace.github.io/main/images/cy-blog-logo.png" />
 
   <!-- Twitter -->
   {{ if isset .Site.Params "twitter" }}
