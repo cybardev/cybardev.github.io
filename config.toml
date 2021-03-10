@@ -3,7 +3,7 @@ themesDir = "./themes/"
 theme = "hugo-theme-codex"
 
 # Override these settings with your own
-title = "Cybarspace"
+title = "Cybarspace | A home for my thoughts"
 languageCode = "en-us"
 baseURL = "https://cybarspace.github.io"
 copyright = "Sheikh Saad © 2021"
@@ -17,9 +17,8 @@ googleAnalytics = "UA-187828184-2"
 # Optional params
 [params]
   # Open Graph
-  description = "Here, I talk about code, life and random thoughts"
+  description = "Here, I discuss about code, my life and random thoughts"
   images = ["https://i.imgur.com/JMjEggK.png"]
-  title = "Cybarspace | A home for my thoughts"
 
   # Follow the Hugo date/time format reference here:
   # https://gohugo.io/functions/format/#gos-layout-string
