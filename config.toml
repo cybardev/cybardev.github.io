@@ -52,7 +52,7 @@ googleAnalytics = "UA-187828184-2"
 # vendor script in layouts/blog/single.html.
 [markup]
   [markup.highlight]
-    codeFences = true
+    codeFences = false
 
   # Set to false to disallow raw HTML in markdown files
   [markup.goldmark.renderer]
