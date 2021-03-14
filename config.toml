@@ -4,7 +4,7 @@ theme = "hugo-theme-codex"
 
 # Override these settings with your own
 title = "Cybarspace | A home for my thoughts"
-languageCode = "en-us"
+languageCode = "en-US"
 baseURL = "https://cybarspace.github.io"
 copyright = "Sheikh Saad © 2021"
 
@@ -27,7 +27,7 @@ googleAnalytics = "UA-187828184-2"
   # Links to your social accounts, comment/uncomment as needed. Icons will be displayed for those specified.
   twitter = "https://twitter.com/DrCyco"
   github = "https://github.com/cybarspace"
-  email = "mailto:sksaad48@gmail.com"
+  email = "mailto:cybardev@pm.me"
   #facebook = "https://facebook.com/sksaad47"
   # gitlab = "https://gitlab.com/<your handle>"
   #instagram = "https://instagram.com/cybarnaut"
