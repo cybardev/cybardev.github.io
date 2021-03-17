@@ -1,6 +1,6 @@
 # Theme config
 themesDir = "./themes/"
-theme = "hugo-theme-stack"
+theme = "hugo-theme-codex"
 
 # Override these settings with your own
 title = "Cybarspace | A home for my thoughts"
