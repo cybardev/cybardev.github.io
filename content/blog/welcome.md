@@ -2,11 +2,11 @@
 title: "Welcome to my blog"
 date: 2021-01-19T14:38:01+06:00
 author: sksaad
-slug: "first-post"
+slug: "welcome"
 description: "An intro to the website"
 keywords: ["blog"]
 draft: false
-tags: ["thoughts"]
+tags: ["Thoughts"]
 math: false
 toc: false
 ---
