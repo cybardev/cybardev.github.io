@@ -5,7 +5,7 @@ theme = "hugo-theme-codex"
 # Override these settings with your own
 title = "Cybarspace | A home for my thoughts"
 languageCode = "en-us"
-baseURL = "https://cybarspace.dev"
+baseURL = "https://www.cybarspace.dev"
 copyright = "Sheikh Saad © 2021"
 
 # Add your Disqus shortname here.
