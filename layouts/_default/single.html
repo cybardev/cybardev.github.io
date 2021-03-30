@@ -22,7 +22,8 @@
           {{ partial "tags.html" .}} {{ partial "post-pagination.html" .}}
           {{ template "_internal/disqus.html" . }}
           <footer class="post__footer">
-            {{ partial "social-icons.html" .}}
+            <!--{{ partial "social-icons.html" .}}-->
+            {{ partial "share-buttons.html" . }}
             <p>{{ replace .Site.Copyright "{year}" now.Year }}</p>
           </footer>
           </div>
