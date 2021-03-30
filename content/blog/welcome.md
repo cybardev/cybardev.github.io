@@ -5,7 +5,7 @@ author: sksaad
 slug: "welcome"
 description: "An intro to the website"
 keywords: ["blog"]
-draft: false
+draft: true
 tags: ["Thoughts"]
 math: false
 toc: false
