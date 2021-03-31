@@ -1,0 +1,1 @@
+User-agent: archetypes assets config.toml content data docs images layouts LICENSE.md README.md resources static themes Disallow:
