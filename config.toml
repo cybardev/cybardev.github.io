@@ -25,13 +25,13 @@ googleAnalytics = "UA-187828184-2"
   dateFormat = "Jan 2 2006"
 
   # Links to your social accounts, comment/uncomment as needed. Icons will be displayed for those specified.
-  twitter = "https://twitter.com/DrCyco"
-  github = "https://github.com/cybarspace"
+  twitter = "https://twitter.com/cybardev"
+  github = "https://github.com/cybardev"
   email = "mailto:cybardev@pm.me"
-  #facebook = "https://facebook.com/sksaad47"
+  #facebook = "https://facebook.com/cybardev"
   # gitlab = "https://gitlab.com/<your handle>"
-  #instagram = "https://instagram.com/cybarnaut"
-  linkedin = "https://www.linkedin.com/in/sk-saad"
+  #instagram = "https://instagram.com/cybardev"
+  linkedin = "https://www.linkedin.com/in/cybardev"
   #youtube = "https://www.youtube.com/channel/UCA6pL90nzUonUJLyefRUO4w"
 
   # Titles for your icons (shown as tooltips), and also their display order.
