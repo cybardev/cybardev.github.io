@@ -9,6 +9,7 @@ draft: false
 tags: ["Thoughts"]
 math: false
 toc: true
+comments: false
 ---
 
 ## My Story

@@ -9,6 +9,7 @@ draft: false
 tags: ["Code", "Java"]
 math: false
 toc: true
+comments: true
 ---
 
 ## What are arrays?

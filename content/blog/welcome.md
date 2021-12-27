@@ -9,6 +9,7 @@ draft: true
 tags: ["Thoughts"]
 math: false
 toc: false
+comments: true
 ---
 
 ## What's this about?

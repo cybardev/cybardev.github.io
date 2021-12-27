@@ -9,6 +9,7 @@ draft: true
 tags: ["Thoughts", "Technology", "Code", "Computers"]
 math: false
 toc: false
+comments: true
 ---
 
 ## First meeting

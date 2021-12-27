@@ -9,6 +9,7 @@ draft: false
 tags: ["Code", "Java"]
 math: false
 toc: true
+comments: true
 ---
 
 *PS: This post is structured similarly to my [post about arrays](../java-arrays/index.html). I will also refer to array concepts, so you may want to read that first if you're new to Java collections.*
