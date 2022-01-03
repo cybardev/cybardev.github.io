@@ -2,9 +2,23 @@
     {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/about.scss" "dest" "css/about.css") }}
 {{ end }}
 
+<script src="three.r119.min.js"></script>
+<script src="vanta.clouds.min.js"></script>
+<script>
+VANTA.CLOUDS({
+  el: "#cybarspace",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  speed: 0.20
+})
+</script>
+
 {{ define "main" }}
 
-<div class="splash-container">
+<div class="splash-container" id="cybarspace">
   <div class="splash">
 
     <h1>{{ .Params.heading1 }}<span style="color: crimson"> | </span>{{ .Params.heading2 }}</h1>
