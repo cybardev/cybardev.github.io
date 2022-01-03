@@ -18,7 +18,7 @@ googleAnalytics = "UA-187828184-2"
 [params]
   # Open Graph
   description = "Here, I discuss code, my life and things that pique my interest"
-  images = ["https://user-images.githubusercontent.com/50134239/110678729-d5973700-8200-11eb-9b92-da88f58f37af.png"]
+  images = ["https://github.com/cybardev/cybardev.github.io/blob/main/images/cybardev-web-preview.png?raw=true"]
 
   # Follow the Hugo date/time format reference here:
   # https://gohugo.io/functions/format/#gos-layout-string
