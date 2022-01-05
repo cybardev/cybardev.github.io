@@ -1,6 +1,6 @@
 # Cy | Space
 
-![cybarspace](https://user-images.githubusercontent.com/50134239/110678729-d5973700-8200-11eb-9b92-da88f58f37af.png)
+![cybarspace](https://raw.githubusercontent.com/cybardev/cybardev.github.io/main/images/cybardev-web-preview.png)
 
 ### Profile and personal blog site
 
