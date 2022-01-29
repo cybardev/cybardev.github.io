@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "Cybarspace",
   "short_name": "Cybarspace",
-  "start_url": "https://www.cybar.dev/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#fff",
