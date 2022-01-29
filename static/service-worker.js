@@ -1,3 +1,13 @@
+// import workbox from CDN
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js');
+
+// import workbox modules
+workbox.loadModule('workbox-routing');
+workbox.loadModule('workbox-strategies');
+workbox.loadModule('workbox-cacheable-response');
+workbox.loadModule('workbox-expiration');
+
+// import workbox components
 import { registerRoute } from 'workbox-routing';
 import {
   NetworkFirst,
