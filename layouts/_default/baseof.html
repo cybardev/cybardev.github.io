@@ -62,7 +62,7 @@
   {{ block "footer" . }} {{ end }}
 
   {{ $script := resources.Get "js/index.js" | minify | fingerprint }}
-  { if .IsHome }}{{ partial "sw.html" .}}{{ end }}
+  {{ if .IsHome }}{{ partial "sw.html" .}}{{ end }}
   <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity | safeHTMLAttr }}" crossorigin="anonymous"></script>
   {{ block "scripts" . }} {{ end }}
 </body>
