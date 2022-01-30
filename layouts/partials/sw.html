@@ -7,11 +7,11 @@ if ('serviceWorker' in navigator) {
             function(registration) {
                 console.log('service worker registration succeeded:', registration);
             },
-            function(error){
+            function(error) {
                 console.log('service worker registration failed:', error);
             }
         );
-    }
+    });
 } else {
     console.log('service workers are not supported.');
 }
