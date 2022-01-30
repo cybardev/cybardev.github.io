@@ -3,7 +3,7 @@
   "id": "/index.html",
   "name": "Cybarspace",
   "short_name": "Cybarspace",
-  "start_url": "./index.html",
+  "start_url": "/",
   "orientation": "portrait",
   "display": "standalone",
   "background_color": "#fff",
