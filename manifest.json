@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "id": "/index.html",
+  "id": "/",
   "name": "Cybarspace",
   "short_name": "Cybarspace",
   "start_url": "/",
