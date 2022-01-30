@@ -1,8 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "id": "/index.html",
   "name": "Cybarspace",
   "short_name": "Cybarspace",
   "start_url": "./index.html",
+  "orientation": "portrait",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#fff",
