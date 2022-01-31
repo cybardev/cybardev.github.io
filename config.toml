@@ -60,20 +60,15 @@ disqusShortname = "cybarspace"
 
 # Controls the navigation
 [[menu.main]]
-  identifier = "about"
-  name = "about"
-  title = "About"
+  identifier = "home"
+  name = "home"
+  title = "Home"
   url = "/"
+  weight = 1
 
 [[menu.main]]
   identifier = "blog"
   name = "blog"
   title = "Blog"
   url = "/blog"
-
-#[[menu.main]]
-#  identifier = "portfolio"
-#  name = "portfolio"
-#  title = "Portfolio"
-#  url = "https://sheikh.cybar.dev"
-
+  weight = 2
