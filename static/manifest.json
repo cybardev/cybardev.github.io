@@ -7,7 +7,7 @@
     "scope": ".",
     "orientation": "portrait",
     "display": "standalone",
-    "background_color": "rgba(0, 0, 0, 0)",
+    "background_color": "#fff",
     "theme_color": "#fff",
     "description": "A home for my thoughts.",
     "icons": [
