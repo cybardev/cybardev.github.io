@@ -1,67 +1,88 @@
-// import workbox from CDN
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js');
+// @ts-nocheck
+const cacheName = "cybarspace";
 
-// import workbox modules
-workbox.loadModule('workbox-routing');
-workbox.loadModule('workbox-strategies');
-workbox.loadModule('workbox-cacheable-response');
-workbox.loadModule('workbox-expiration');
+self.addEventListener("install", (event) => {
+    // Kick out the old service worker
+    self.skipWaiting();
 
-// Cache page navigations (html) with a Network First strategy
-workbox.routing.registerRoute(
-  // Check to see if the request is a navigation to a new page
-  ({ request }) => request.mode === 'navigate',
-  // Use a Network First caching strategy
-  new workbox.strategies.NetworkFirst({
-    // Put all cached files in a cache named 'pages'
-    cacheName: 'pages',
-    plugins: [
-      // Ensure that only requests that result in a 200 status are cached
-      new workbox.cacheable-response.CacheableResponsePlugin({
-        statuses: [200],
-      }),
-    ],
-  }),
-);
+    event.waitUntil(
+        caches.open(cacheName).then((cache) => {
+            return cache.addAll([
+                "/",
+                "/images/touch/apple-icon-180.png",
+                "/images/touch/apple-splash-1125-2436.jpg",
+                "/images/touch/apple-splash-1136-640.jpg",
+                "/images/touch/apple-splash-1170-2532.jpg",
+                "/images/touch/apple-splash-1242-2208.jpg",
+                "/images/touch/apple-splash-1242-2688.jpg",
+                "/images/touch/apple-splash-1284-2778.jpg",
+                "/images/touch/apple-splash-1334-750.jpg",
+                "/images/touch/apple-splash-1536-2048.jpg",
+                "/images/touch/apple-splash-1620-2160.jpg",
+                "/images/touch/apple-splash-1668-2224.jpg",
+                "/images/touch/apple-splash-1668-2388.jpg",
+                "/images/touch/apple-splash-1792-828.jpg",
+                "/images/touch/apple-splash-2048-1536.jpg",
+                "/images/touch/apple-splash-2048-2732.jpg",
+                "/images/touch/apple-splash-2160-1620.jpg",
+                "/images/touch/apple-splash-2208-1242.jpg",
+                "/images/touch/apple-splash-2224-1668.jpg",
+                "/images/touch/apple-splash-2388-1668.jpg",
+                "/images/touch/apple-splash-2436-1125.jpg",
+                "/images/touch/apple-splash-2532-1170.jpg",
+                "/images/touch/apple-splash-2688-1242.jpg",
+                "/images/touch/apple-splash-2732-2048.jpg",
+                "/images/touch/apple-splash-2778-1284.jpg",
+                "/images/touch/apple-splash-640-1136.jpg",
+                "/images/touch/apple-splash-750-1334.jpg",
+                "/images/touch/apple-splash-828-1792.jpg",
+                "/images/touch/cy-icon.png",
+                "/images/touch/manifest-icon-192.maskable.png",
+                "/images/touch/manifest-icon-512.maskable.png",
+                "/favicon.ico",
+                "/index.html",
+                "/index.xml",
+                "/manifest.json",
+                "/sitemap.xml",
+                "/robots.txt",
+                "/CNAME",
+                "/404.html",
+            ]);
+        })
+    );
+});
 
-// Cache CSS, JS, and Web Worker requests with a Stale While Revalidate strategy
-workbox.routing.registerRoute(
-  // Check to see if the request's destination is style for stylesheets, script for JavaScript, or worker for web worker
-  ({ request }) =>
-    request.destination === 'style' ||
-    request.destination === 'script' ||
-    request.destination === 'worker',
-  // Use a Stale While Revalidate caching strategy
-  new workbox.strategies.StaleWhileRevalidate({
-    // Put all cached files in a cache named 'assets'
-    cacheName: 'assets',
-    plugins: [
-      // Ensure that only requests that result in a 200 status are cached
-      new workbox.cacheable-response.CacheableResponsePlugin({
-        statuses: [200],
-      }),
-    ],
-  }),
-);
+self.addEventListener("activate", (event) => {
+    // Delete any non-current cache
+    event.waitUntil(
+        caches.keys().then((keys) => {
+            Promise.all(
+                keys.map((key) => {
+                    if (![cacheName].includes(key)) {
+                        return caches.delete(key);
+                    }
+                })
+            );
+        })
+    );
+});
 
-// Cache images with a Cache First strategy
-workbox.routing.registerRoute(
-  // Check to see if the request's destination is style for an image
-  ({ request }) => request.destination === 'image',
-  // Use a Cache First caching strategy
-  new workbox.strategies.CacheFirst({
-    // Put all cached files in a cache named 'images'
-    cacheName: 'images',
-    plugins: [
-      // Ensure that only requests that result in a 200 status are cached
-      new workbox.cacheable-response.CacheableResponsePlugin({
-        statuses: [200],
-      }),
-      // Don't cache more than 50 items, and expire them after 30 days
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 50,
-        maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
-      }),
-    ],
-  }),
-);
+// Offline-first, cache-first strategy
+// Kick off two asynchronous requests, one to the cache and one to the network
+// If there's a cached version available, use it, but fetch an update for next time.
+// Gets data on screen as quickly as possible, then updates once the network has returned the latest data.
+self.addEventListener("fetch", (event) => {
+    event.respondWith(
+        caches.open(cacheName).then((cache) => {
+            return cache.match(event.request).then((response) => {
+                return (
+                    response ||
+                    fetch(event.request).then((networkResponse) => {
+                        cache.put(event.request, networkResponse.clone());
+                        return networkResponse;
+                    })
+                );
+            });
+        })
+    );
+});
