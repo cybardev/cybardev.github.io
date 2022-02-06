@@ -62,7 +62,9 @@
         <link rel="%s" type="%s+%s" href="%s" title="%s" />
         ` .Rel .MediaType.Type .MediaType.FirstSuffix.Suffix .Permalink
         $.Site.Title | safeHTML }} {{ end }} {{ block "links" . }} {{ end }} {{
-        partial "seo-schema.html" .}}
+        partial "seo-schema.html" .}} {{ if .IsHome }}
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        {{ end }}
     </head>
 
     <body>
