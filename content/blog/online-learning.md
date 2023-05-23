@@ -6,7 +6,7 @@ slug: "online-learning"
 description: "What I learned from doing online classes for two semesters at a foreign University"
 keywords: ["university", "onlline-class", "canada", "education", "experience", "tourism"]
 draft: false
-tags: ["Thoughts"]
+tags: ["Life", "Thoughts"]
 math: false
 toc: true
 comments: false
