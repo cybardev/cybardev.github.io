@@ -1,7 +1,6 @@
 ---
 title: "Half-Life"
 date: 2023-05-23T00:00:00-03:00
-2023-05-23T01:52:00-03:00
 author: sksaad
 slug: "half-life"
 description: "A poetry dedicated to a dead cat - one that never existed."
