@@ -5,7 +5,7 @@ theme = "hugo-theme-codex"
 # Override these settings with your own
 title = "Cybarspace | A home for my thoughts"
 languageCode = "en-us"
-baseURL = "https://cybar.dev"
+baseURL = "https://blog.cybar.dev"
 copyright = "Sheikh Saad © 2021"
 
 # Add your Disqus shortname here.
@@ -30,7 +30,7 @@ disqusShortname = "cybarspace"
   email = "mailto:sheikh@cybar.dev"
   #facebook = "https://facebook.com/cybardev"
   # gitlab = "https://gitlab.com/<your handle>"
-  #instagram = "https://instagram.com/cybardev"
+  instagram = "https://instagram.com/cybardev"
   linkedin = "https://www.linkedin.com/in/cybardev"
   #youtube = "https://www.youtube.com/channel/UCA6pL90nzUonUJLyefRUO4w"
 
