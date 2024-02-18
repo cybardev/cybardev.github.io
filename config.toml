@@ -37,7 +37,7 @@ disqusShortname = "cybarspace"
   # Titles for your icons (shown as tooltips), and also their display order.
   # Currently, these icons are supported:
   #   "Twitter", "GitHub", "Email", "Facebook", "GitLab", "Instagram", "LinkedIn", "YouTube"
-  iconOrder = ["Email", "LinkedIn", "GitHub", "Twitter"]
+  iconOrder = ["Email", "LinkedIn", "GitHub", "Twitter", "Instagram"]
 
   # Metadata for Twitter cards, defaults to params.twitter
   # twitterSite = "@<your handle>"
