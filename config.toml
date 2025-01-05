@@ -25,19 +25,19 @@ disqusShortname = "cybarspace"
   dateFormat = "Jan 2 2006"
 
   # Links to your social accounts, comment/uncomment as needed. Icons will be displayed for those specified.
-  twitter = "https://twitter.com/cybardev"
+  # twitter = "https://twitter.com/cybardev"
   github = "https://github.com/cybardev"
   email = "mailto:sheikh@cybar.dev"
-  #facebook = "https://facebook.com/cybardev"
+  # facebook = "https://facebook.com/cybardev"
   # gitlab = "https://gitlab.com/<your handle>"
   instagram = "https://instagram.com/cybardev"
   linkedin = "https://www.linkedin.com/in/cybardev"
-  #youtube = "https://www.youtube.com/channel/UCA6pL90nzUonUJLyefRUO4w"
+  # youtube = "https://www.youtube.com/channel/UCA6pL90nzUonUJLyefRUO4w"
 
   # Titles for your icons (shown as tooltips), and also their display order.
   # Currently, these icons are supported:
   #   "Twitter", "GitHub", "Email", "Facebook", "GitLab", "Instagram", "LinkedIn", "YouTube"
-  iconOrder = ["Email", "LinkedIn", "GitHub", "Twitter", "Instagram"]
+  iconOrder = ["Email", "LinkedIn", "GitHub", "Instagram"]
 
   # Metadata for Twitter cards, defaults to params.twitter
   # twitterSite = "@<your handle>"
