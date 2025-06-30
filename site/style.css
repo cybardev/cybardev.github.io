@@ -19,10 +19,33 @@
     --accent: #0d47a1;
     --accent-hover: #1266e2;
     --accent-text: var(--bg);
-    --code: #d81b60;
+    --code: crimson;
     --preformatted: #444;
     --marked: #ffdd33;
     --disabled: #efefef;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --bg: #212121;
+        --accent-bg: #2b2b2b;
+        --text: #dcdcdc;
+        --text-light: #ababab;
+        --accent: #5277c3;
+        --accent-hover: #7ebae4;
+        --accent-text: var(--bg);
+        --code: #ed365b;
+        --preformatted: #ccc;
+        --disabled: #111;
+    }
+
+    /* Add a bit of transparency so light media isn't so glaring in dark mode */
+    img,
+    video {
+        opacity: 0.96;
+    }
 }
 
 /* Base layout: make body fill the screen and use flex column */
@@ -67,7 +90,7 @@ h2 {
 }
 
 .nametag {
-    color: dimgrey;
+    color: var(--text-light);
 }
 
 .pointless {
@@ -82,7 +105,7 @@ h2 {
 
 .pointless>li>a,
 #copyright>a {
-    color: #444;
+    color: var(--preformatted);
 }
 
 .pointless>li>a:hover {
@@ -95,7 +118,7 @@ h2 {
 
 .pointless.links>li>a:hover,
 #copyright>a:hover {
-    color: crimson;
+    color: var(--code);
 }
 
 .webring>li {
@@ -114,7 +137,7 @@ h2 {
 }
 
 #bar {
-    color: crimson;
+    color: var(--code);
 }
 
 @media (min-width: 480px) {
