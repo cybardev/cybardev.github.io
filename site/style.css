@@ -109,15 +109,18 @@ h2 {
 }
 
 .pointless>li>a:hover {
+    text-shadow: 0 0 16px var(--accent-hover);
     color: var(--accent-hover);
 }
 
 .pointless.socials>li>a:hover {
+    text-shadow: 0 0 16px var(--accent-hover);
     color: lightseagreen;
 }
 
 .pointless.links>li>a:hover,
 #copyright>a:hover {
+    text-shadow: 0 0 16px var(--code);
     color: var(--code);
 }
 
