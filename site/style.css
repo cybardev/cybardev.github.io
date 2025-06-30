@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url("https://cdn.simplecss.org/simple.min.css");
+
+:root {
+    font-family: "Ubuntu Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+
+    /* Default (light) theme */
+    --bg: #fff;
+    --accent-bg: #f5f7ff;
+    --text: #212121;
+    --text-light: #585858;
+    --border: gainsboro;
+    --accent: #0d47a1;
+    --accent-hover: #1266e2;
+    --accent-text: var(--bg);
+    --code: #d81b60;
+    --preformatted: #444;
+    --marked: #ffdd33;
+    --disabled: #efefef;
+}
+
+/* Base layout: make body fill the screen and use flex column */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+footer {
+    height: auto;
+    padding: 1rem;
+}
+
+main>section {
+    width: 100%;
+    text-align: left;
+    border-bottom: none;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+.nametag {
+    color: dimgrey;
+}
+
+.pointless {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pointless>li {
+    display: inline;
+    margin-right: 2em;
+}
+
+.pointless>li>a,
+#copyright>a {
+    color: #444;
+}
+
+.pointless>li>a:hover {
+    color: var(--accent-hover);
+}
+
+.pointless.socials>li>a:hover {
+    color: lightseagreen;
+}
+
+.pointless.links>li>a:hover,
+#copyright>a:hover {
+    color: crimson;
+}
+
+.webring .logo {
+    vertical-align: middle;
+    height: 1.5em;
+    width: auto;
+}
+
+#bar {
+    color: crimson;
+}
+
+@media (min-width: 480px) {
+    main {
+        justify-content: center;
+    }
+
+    main>section {
+        max-width: 45ch;
+    }
+}
+
+@media (min-width: 624px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .pointless.socials>li>a {
+        font-size: 1.25em;
+    }
+}
