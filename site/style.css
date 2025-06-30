@@ -23,23 +23,23 @@
     --preformatted: #444;
     --marked: #ffdd33;
     --disabled: #efefef;
+    --social-glow: lightseagreen;
 }
 
 /* Dark theme */
-@media (prefers-color-scheme: dark) {
-    :root {
-        color-scheme: dark;
-        --bg: #212121;
-        --accent-bg: #2b2b2b;
-        --text: #dcdcdc;
-        --text-light: #ababab;
-        --accent: #5277c3;
-        --accent-hover: #7ebae4;
-        --accent-text: var(--bg);
-        --code: #ed365b;
-        --preformatted: #ccc;
-        --disabled: #111;
-    }
+body.dark-mode {
+    color-scheme: dark;
+    --bg: #212121;
+    --accent-bg: #2b2b2b;
+    --text: #dcdcdc;
+    --text-light: #ababab;
+    --border: #5d5d5d;
+    --accent: #5277c3;
+    --accent-hover: #7ebae4;
+    --accent-text: var(--bg);
+    --code: #ed365b;
+    --preformatted: #ccc;
+    --disabled: #111;
 
     /* Add a bit of transparency so light media isn't so glaring in dark mode */
     img,
@@ -48,7 +48,6 @@
     }
 }
 
-/* Base layout: make body fill the screen and use flex column */
 body {
     margin: 0;
     min-height: 100vh;
@@ -115,7 +114,7 @@ h2 {
 
 .pointless.socials>li>a:hover {
     text-shadow: 0 0 16px var(--accent-hover);
-    color: lightseagreen;
+    color: var(--social-glow);
 }
 
 .pointless.links>li>a:hover,
