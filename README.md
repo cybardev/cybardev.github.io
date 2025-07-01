@@ -1,11 +1,11 @@
 # Cy | Space
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ac0840ac-808e-44f2-8d78-39400c43760e/deploy-status)](https://cybar.dev)
+![GitHub Actions Status](https://github.com/cybardev/cybardev.github.io/actions/workflows/deploy-site.yml/badge.svg "GitHub Pages deployment status")
 
-![cybarspace](https://raw.githubusercontent.com/cybardev/cybardev.github.io/main/images/cybardev-web-preview.png)
+![Web Preview](./site/preview.png "OpenGraph preview image")
 
-### Profile and personal blog site
+## Profile and personal blog site
 
-Uses the [Codex](https://themes.gohugo.io/hugo-theme-codex/) Hugo theme.
+Built using [SimpleCSS](https://simplecss.org/).
 
-License: MIT (website), GPLv3 (post content)
+License: [GPLv3](./LICENSE.md) (website), **Copyright** (blogs)
