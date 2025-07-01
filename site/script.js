@@ -39,5 +39,6 @@ window.onload = () => {
     }
     $("#theme-icon").classList.toggle("bi-moon-stars-fill");
     $("#theme-icon").classList.toggle("bi-sun-fill");
+    e.target.blur(); // prevent "sticky" focus on mobile
   });
 };

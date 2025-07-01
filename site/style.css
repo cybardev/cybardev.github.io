@@ -103,14 +103,18 @@ h2 {
 }
 
 .pointless > li > a,
-#copyright > a {
+#copyright > a,
+#theme-switch {
   color: var(--preformatted);
+  transition:
+    text-shadow 0.2s,
+    color 0.2s;
 }
 
 .pointless > li > a {
   &:hover,
-  &:focus,
-  &:active {
+  &:active,
+  &:focus-visible {
     text-shadow: 0 0 16px var(--accent-hover);
     color: var(--accent-hover);
   }
@@ -118,8 +122,8 @@ h2 {
 
 .pointless.socials > li > a {
   &:hover,
-  &:focus,
-  &:active {
+  &:active,
+  &:focus-visible {
     text-shadow: 0 0 16px var(--accent-hover);
     color: var(--social-glow);
   }
@@ -129,8 +133,8 @@ h2 {
 #copyright > a,
 #theme-switch {
   &:hover,
-  &:focus,
-  &:active {
+  &:active,
+  &:focus-visible {
     text-shadow: 0 0 16px var(--code);
     color: var(--code);
   }
