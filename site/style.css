@@ -107,21 +107,33 @@ h2 {
   color: var(--preformatted);
 }
 
-.pointless > li > a:hover {
-  text-shadow: 0 0 16px var(--accent-hover);
-  color: var(--accent-hover);
+.pointless > li > a {
+  &:hover,
+  &:focus,
+  &:active {
+    text-shadow: 0 0 16px var(--accent-hover);
+    color: var(--accent-hover);
+  }
 }
 
-.pointless.socials > li > a:hover {
-  text-shadow: 0 0 16px var(--accent-hover);
-  color: var(--social-glow);
+.pointless.socials > li > a {
+  &:hover,
+  &:focus,
+  &:active {
+    text-shadow: 0 0 16px var(--accent-hover);
+    color: var(--social-glow);
+  }
 }
 
-.pointless.links > li > a:hover,
-#copyright > a:hover,
-#theme-switch:hover {
-  text-shadow: 0 0 16px var(--code);
-  color: var(--code);
+.pointless.links > li > a,
+#copyright > a,
+#theme-switch {
+  &:hover,
+  &:focus,
+  &:active {
+    text-shadow: 0 0 16px var(--code);
+    color: var(--code);
+  }
 }
 
 .webring > li {
