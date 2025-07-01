@@ -1,175 +1,193 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @import url("https://cdn.simplecss.org/simple.min.css");
 
 :root {
-    font-family: "Ubuntu Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: normal;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+  font-family: "Ubuntu Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 
-    /* Default (light) theme */
-    --bg: #fff;
-    --accent-bg: #f5f7ff;
-    --text: #212121;
-    --text-light: #585858;
-    --border: gainsboro;
-    --accent: #0d47a1;
-    --accent-hover: #1266e2;
-    --accent-text: var(--bg);
-    --code: crimson;
-    --preformatted: #444;
-    --marked: #ffdd33;
-    --disabled: #efefef;
-    --social-glow: lightseagreen;
+  /* Default (light) theme */
+  --bg: #fff;
+  --accent-bg: #f5f7ff;
+  --text: #212121;
+  --text-light: #585858;
+  --border: gainsboro;
+  --accent: #7ebae4;
+  --accent-hover: #5277c3;
+  --accent-text: var(--bg);
+  --code: crimson;
+  --preformatted: #444;
+  --marked: #ffdd33;
+  --disabled: #efefef;
+  --social-glow: #20b286;
 }
 
 /* Dark theme */
 body.dark-mode {
-    color-scheme: dark;
-    --bg: #212121;
-    --accent-bg: #2b2b2b;
-    --text: #dcdcdc;
-    --text-light: #ababab;
-    --border: #5d5d5d;
-    --accent: #5277c3;
-    --accent-hover: #7ebae4;
-    --accent-text: var(--bg);
-    --code: #ed365b;
-    --preformatted: #ccc;
-    --disabled: #111;
+  color-scheme: dark;
+  --bg: #212121;
+  --accent-bg: #2b2b2b;
+  --text: #dcdcdc;
+  --text-light: #ababab;
+  --border: #5d5d5d;
+  --accent: #5277c3;
+  --accent-hover: #7ebae4;
+  --accent-text: var(--bg);
+  --code: #ed365b;
+  --preformatted: #ccc;
+  --disabled: #111;
 
-    /* Add a bit of transparency so light media isn't so glaring in dark mode */
-    img,
-    video {
-        opacity: 0.96;
-    }
+  /* Add a bit of transparency so light media isn't so glaring in dark mode */
+  img,
+  video {
+    opacity: 0.96;
+  }
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-body>footer {
-    height: auto;
-    padding-block: 0;
-    margin-block: 0;
+body > footer {
+  height: auto;
+  padding-block: 0;
+  margin-block: 0;
 }
 
-main>section {
-    width: 100%;
-    text-align: left;
-    border-bottom: none;
-    padding: 0;
-    margin: 0;
+main > section {
+  width: 100%;
+  text-align: left;
+  border-bottom: none;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
-    font-size: 3em;
-    margin-bottom: 0;
+  font-size: 3em;
+  margin-bottom: 0;
 }
 
 h2 {
-    font-size: 1.5em;
-    margin-bottom: 0;
+  font-size: 1.5em;
+  margin-bottom: 0;
 }
 
 .nametag {
-    color: var(--text-light);
+  color: var(--text-light);
 }
 
 .pointless {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
-.pointless>li {
-    display: inline;
-    margin-right: 1.5em;
+.pointless > li {
+  display: inline;
+  margin-right: 1.5em;
 }
 
-.pointless>li>a,
-#copyright>a {
-    color: var(--preformatted);
+.pointless > li > a,
+#copyright > a {
+  color: var(--preformatted);
 }
 
-.pointless>li>a:hover {
-    text-shadow: 0 0 16px var(--accent-hover);
-    color: var(--accent-hover);
+.pointless > li > a:hover {
+  text-shadow: 0 0 16px var(--accent-hover);
+  color: var(--accent-hover);
 }
 
-.pointless.socials>li>a:hover {
-    text-shadow: 0 0 16px var(--accent-hover);
-    color: var(--social-glow);
+.pointless.socials > li > a:hover {
+  text-shadow: 0 0 16px var(--accent-hover);
+  color: var(--social-glow);
 }
 
-.pointless.links>li>a:hover,
-#copyright>a:hover {
-    text-shadow: 0 0 16px var(--code);
-    color: var(--code);
+.pointless.links > li > a:hover,
+#copyright > a:hover,
+#theme-switch:hover {
+  text-shadow: 0 0 16px var(--code);
+  color: var(--code);
 }
 
-.webring>li {
-
-    &:nth-child(1),
-    &:nth-last-child(1) {
-        display: block;
-        margin-block: 0.5em;
-    }
+.webring > li {
+  &:nth-child(1),
+  &:nth-last-child(1) {
+    display: block;
+    margin-block: 0.5em;
+  }
 }
 
 .webring .logo {
-    vertical-align: middle;
-    height: 1.5em;
-    width: auto;
+  vertical-align: middle;
+  height: 1.5em;
+  width: auto;
 }
 
+@keyframes breathing {
+  from {
+    text-shadow: 0 0 0px var(--code);
+  }
+  to {
+    text-shadow: 0 0 16px var(--code);
+  }
+}
 #bar {
-    color: var(--code);
+  color: var(--code);
+  animation-name: breathing;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#theme-switch {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--preformatted);
 }
 
 @media (min-width: 480px) {
-    main {
-        justify-content: center;
-    }
+  main {
+    justify-content: center;
+  }
 
-    main>section {
-        max-width: 45ch;
-    }
+  main > section {
+    max-width: 45ch;
+  }
 
-    .webring>li {
-
-        &:nth-child(1),
-        &:nth-last-child(1) {
-            display: inline;
-        }
+  .webring > li {
+    &:nth-child(1),
+    &:nth-last-child(1) {
+      display: inline;
     }
+  }
 }
 
 @media (min-width: 624px) {
-    h1 {
-        font-size: 4em;
-    }
+  h1 {
+    font-size: 4em;
+  }
 
-    h2 {
-        font-size: 2em;
-    }
+  h2 {
+    font-size: 2em;
+  }
 
-    .pointless.socials>li>a {
-        font-size: 1.25em;
-    }
+  .pointless.socials > li > a {
+    font-size: 1.25em;
+  }
 }
