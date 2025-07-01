@@ -6,6 +6,6 @@
 
 ## Profile and personal blog site
 
-Built using [SimpleCSS](https://simplecss.org/).
+Built with [SimpleCSS](https://simplecss.org/).
 
 License: [GPLv3](./LICENSE.md) (website), **Copyright** (blogs)
