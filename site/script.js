@@ -20,25 +20,14 @@ function storageAvailable(type) {
 }
 
 window.onload = () => {
-  if (
-    storageAvailable("localStorage") &&
-    (localStorage.getItem("theme") || "light") === "dark"
-  ) {
-    document.body.classList.add("dark-mode");
-    $("#theme-icon").classList.toggle("bi-moon-stars-fill");
-    $("#theme-icon").classList.toggle("bi-sun-fill");
+  if (storageAvailable("localStorage")) {
+    $("#theme-switch").checked = localStorage.getItem("theme") === "dark";
   }
 
-  $("#theme-switch").addEventListener("click", (e) => {
-    document.body.classList.toggle("dark-mode");
+  $("#theme-switch").addEventListener("change", (e) => {
     if (storageAvailable("localStorage")) {
-      localStorage.setItem(
-        "theme",
-        document.body.classList.contains("dark-mode") ? "dark" : "light"
-      );
+      localStorage.setItem("theme", e.target.checked ? "dark" : "light");
     }
-    $("#theme-icon").classList.toggle("bi-moon-stars-fill");
-    $("#theme-icon").classList.toggle("bi-sun-fill");
     e.target.blur(); // prevent "sticky" focus on mobile
   });
 };

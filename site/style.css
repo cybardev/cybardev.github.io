@@ -1,6 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
-@import url("https://cdn.simplecss.org/simple.min.css");
+/* https://fonts.google.com/specimen/Ubuntu+Sans */
+@font-face {
+  font-family: "Ubuntu Sans";
+  src: url("UbuntuSans.ttf") format("truetype");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   font-family: "Ubuntu Sans", sans-serif;
@@ -22,11 +27,12 @@
   --preformatted: #444;
   --marked: #ffdd33;
   --disabled: #efefef;
-  --social-glow: #20b286;
+  --glow: #20b286;
+  --glow-duration: 0.2s;
 }
 
 /* Dark theme */
-body.dark-mode {
+body:has(#theme-switch:checked) {
   color-scheme: dark;
   --bg: #212121;
   --accent-bg: #2b2b2b;
@@ -88,6 +94,28 @@ h2 {
   margin-block: 0;
 }
 
+svg,
+a {
+  outline: none;
+}
+
+svg,
+.pointless.socials > li > a {
+  vertical-align: middle;
+  transition:
+    fill var(--glow-duration),
+    color var(--glow-duration),
+    filter var(--glow-duration);
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    fill: var(--glow);
+    color: var(--glow);
+    filter: drop-shadow(0 0 16px var(--glow));
+  }
+}
+
 .nametag {
   color: var(--text-light);
 }
@@ -104,11 +132,11 @@ h2 {
 
 .pointless > li > a,
 #copyright > a,
-#theme-switch {
+#theme-switch-label {
   color: var(--preformatted);
   transition:
-    text-shadow 0.2s,
-    color 0.2s;
+    text-shadow var(--glow-duration),
+    color var(--glow-duration);
 }
 
 .pointless > li > a {
@@ -124,19 +152,20 @@ h2 {
   &:hover,
   &:active,
   &:focus-visible {
-    text-shadow: 0 0 16px var(--accent-hover);
-    color: var(--social-glow);
+    text-shadow: 0 0 16px var(--glow);
+    color: var(--glow);
   }
 }
 
 .pointless.links > li > a,
 #copyright > a,
-#theme-switch {
+#theme-switch-label {
   &:hover,
   &:active,
   &:focus-visible {
     text-shadow: 0 0 16px var(--code);
     color: var(--code);
+    --glow: var(--code);
   }
 }
 
@@ -179,11 +208,58 @@ h2 {
   text-shadow: 0 0 2px var(--code);
 }
 
+#theme-switch-label {
+  cursor: pointer;
+}
+
+/* hide checkbox */
 #theme-switch {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
   padding: 0;
-  border: none;
-  background-color: transparent;
-  color: var(--preformatted);
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* in light mode... */
+#theme-switch + label #moon-icon {
+  /* show moon */
+  display: initial;
+}
+#theme-switch + label #sun-icon {
+  /* hide sun */
+  display: none;
+}
+
+/* in dark mode... */
+#theme-switch:checked + label #moon-icon {
+  /* hide moon */
+  display: none;
+}
+#theme-switch:checked + label #sun-icon {
+  /* show sun */
+  display: initial;
+}
+
+/* glow effect when Tab-selected */
+#copyright:has(#theme-switch:hover),
+#copyright:has(#theme-switch:active),
+#copyright:has(#theme-switch:focus-visible) {
+  label[for="theme-switch"] {
+    transition:
+      fill var(--glow-duration),
+      color var(--glow-duration),
+      filter var(--glow-duration);
+
+    --glow: var(--code);
+    fill: var(--glow);
+    color: var(--glow);
+    filter: drop-shadow(0 0 16px var(--glow));
+  }
 }
 
 @media (min-width: 480px) {
