@@ -1,3 +1,4 @@
+# misc.
 *.bak
 *.backup
 *~
@@ -5,4 +6,5 @@ backup
 public
 .DS_Store
 
+# dev shell
 .direnv
