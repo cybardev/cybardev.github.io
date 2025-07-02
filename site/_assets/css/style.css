@@ -145,7 +145,7 @@ svg,
 
 .pointless.links > li > a,
 #copyright > a,
-#theme-switch-label {
+label[for="theme-switch"] {
   &:hover,
   &:active,
   &:focus-visible {
@@ -157,7 +157,7 @@ svg,
 
 .pointless > li > a,
 #copyright > a,
-#theme-switch-label {
+label[for="theme-switch"] {
   color: var(--preformatted);
   transition:
     text-shadow var(--glow-duration),
@@ -205,7 +205,7 @@ svg,
   text-shadow: 0 0 2px var(--code);
 }
 
-#theme-switch-label {
+label[for="theme-switch"] {
   cursor: pointer;
 }
 
@@ -226,11 +226,11 @@ svg,
 #copyright {
   /* in light mode... */
   #theme-switch + label {
-    #moon-icon {
+    .bi.bi-moon-stars-fill {
       /* show moon */
       display: initial;
     }
-    #sun-icon {
+    .bi.bi-sun-fill {
       /* hide sun */
       display: none;
     }
@@ -238,11 +238,11 @@ svg,
 
   /* in dark mode... */
   #theme-switch:checked + label {
-    #moon-icon {
+    .bi.bi-moon-stars-fill {
       /* hide moon */
       display: none;
     }
-    #sun-icon {
+    .bi.bi-sun-fill {
       /* show sun */
       display: initial;
     }
