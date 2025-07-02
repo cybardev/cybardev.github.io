@@ -27,8 +27,16 @@ window.onload = () => {
     e.target.blur(); // prevent "sticky" focus on mobile
   });
 
-  // restore theme from local storage if available
-  if (storageAvailable("localStorage")) {
+  // check if user prefers dark mode
+  $("#theme-switch").checked = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
+  // restore theme from local storage
+  if (
+    storageAvailable("localStorage") &&
+    localStorage.getItem("theme") !== null
+  ) {
     $("#theme-switch").checked = localStorage.getItem("theme") === "dark";
   }
 };
