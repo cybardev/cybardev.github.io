@@ -20,14 +20,15 @@ function storageAvailable(type) {
 }
 
 window.onload = () => {
-  if (storageAvailable("localStorage")) {
-    $("#theme-switch").checked = localStorage.getItem("theme") === "dark";
-  }
-
   $("#theme-switch").addEventListener("change", (e) => {
     if (storageAvailable("localStorage")) {
       localStorage.setItem("theme", e.target.checked ? "dark" : "light");
     }
     e.target.blur(); // prevent "sticky" focus on mobile
   });
+
+  // restore theme from local storage if available
+  if (storageAvailable("localStorage")) {
+    $("#theme-switch").checked = localStorage.getItem("theme") === "dark";
+  }
 };
