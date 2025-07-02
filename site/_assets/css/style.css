@@ -1,7 +1,7 @@
 /* https://fonts.google.com/specimen/Ubuntu+Sans */
 @font-face {
   font-family: "Ubuntu Sans";
-  src: url("UbuntuSans.ttf") format("truetype");
+  src: url("../fonts/UbuntuSans.ttf") format("truetype");
   font-weight: 100 800;
   font-style: normal;
   font-display: swap;
