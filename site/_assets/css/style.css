@@ -1,3 +1,5 @@
+/* --- Custom CSS --- */
+
 /* https://fonts.google.com/specimen/Ubuntu+Sans */
 @font-face {
   font-family: "Ubuntu Sans";
@@ -45,12 +47,6 @@ body:has(#theme-switch:checked) {
   --code: #ed365b;
   --preformatted: #ccc;
   --disabled: #111;
-
-  /* Add a bit of transparency so light media isn't so glaring in dark mode */
-  img,
-  video {
-    opacity: 0.96;
-  }
 }
 
 body {
@@ -165,12 +161,6 @@ label[for="theme-switch"] {
 }
 
 .webring {
-  .logo {
-    vertical-align: middle;
-    height: 1.5em;
-    width: auto;
-  }
-
   & > li {
     &:nth-child(1),
     &:nth-last-child(1) {
