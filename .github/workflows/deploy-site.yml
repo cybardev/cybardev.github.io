@@ -32,6 +32,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Minify CSS and JS
+        uses: nizarmah/auto-minify@v3
+        with:
+          directory: "./site"
+          overwrite: true
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
