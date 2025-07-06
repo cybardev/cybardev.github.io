@@ -2,7 +2,7 @@
 
 ![GitHub Actions Status](https://github.com/cybardev/cybardev.github.io/actions/workflows/deploy-site.yml/badge.svg "GitHub Pages deployment status")
 
-![Web Preview](./static/preview.png "OpenGraph preview image")
+![Web Preview](./static/_assets/images/preview.png "OpenGraph preview image")
 
 ## Profile and personal blog site
 
