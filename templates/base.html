@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+    <!-- Set title and description variables -->
+    {% if section is defined and section.title is defined and section.title |
+    default(value="") | trim | length > 0 %} {% set section_title =
+    section.title %} {% else %} {% set section_title = "" %} {% endif %} {% if
+    section is defined and section.description is defined and
+    section.description | default(value="") | trim | length > 0 %} {% set
+    section_description = section.description %} {% else %} {% set
+    section_description = "" %} {% endif %} {% if page.title is defined and
+    page.title | default(value="") | trim | length > 0 %} {% set base_title =
+    page.title %} {% elif section_title | length > 0 %} {% set base_title =
+    section_title %} {% else %} {% set base_title = config.title %} {% endif %}
+    {% if page.description is defined and page.description | default(value="") |
+    trim | length > 0 %} {% set base_description = page.description %} {% elif
+    section_description | length > 0 %} {% set base_description =
+    section_description %} {% else %} {% set base_description =
+    config.description %} {% endif %}
+
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://cybar.dev" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="{{ page.title | default(value=config.title) }}"
-    />
-    <meta
-      property="og:description"
-      content="{{ page.description | default(value=config.description) }}"
-    />
+    <meta property="og:title" content="{{ base_title }}" />
+    <meta property="og:description" content="{{ base_description }}" />
     <meta
       property="og:image"
       content="https://cybar.dev/_assets/images/preview.png"
@@ -25,14 +36,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="cybar.dev" />
     <meta property="twitter:url" content="https://cybar.dev" />
-    <meta
-      name="twitter:title"
-      content="{{ page.title | default(value=config.title) }}"
-    />
-    <meta
-      name="twitter:description"
-      content="{{ page.description | default(value=config.description) }}"
-    />
+    <meta name="twitter:title" content="{{ base_title }}" />
+    <meta name="twitter:description" content="{{ base_description }}" />
     <meta
       name="twitter:image"
       content="https://cybar.dev/_assets/images/preview.png"
@@ -40,12 +45,9 @@
 
     <!-- OpenGraph Meta Tags Generated via https://www.opengraph.xyz -->
 
-    <meta
-      name="description"
-      content="{{ page.description | default(value=config.description) }}"
-    />
+    <meta name="description" content="{{ base_description }}" />
     <!-- prettier-ignore -->
-    <title>{% block title %}{{ page.title | default(value=config.title) }}{% endblock title %}</title>
+    <title>{% block title %}{{ base_title }}{% endblock title %}</title>
     <link rel="icon" href="/_assets/images/favicon.ico" />
     <link rel="stylesheet" href="/_assets/css/simple.css" />
     {% block style %}
