@@ -16,7 +16,10 @@
       property="og:description"
       content="{{ page.description | default(value=config.description) }}"
     />
-    <meta property="og:image" content="https://cybar.dev/preview.png" />
+    <meta
+      property="og:image"
+      content="https://cybar.dev/_assets/images/preview.png"
+    />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -30,7 +33,10 @@
       name="twitter:description"
       content="{{ page.description | default(value=config.description) }}"
     />
-    <meta name="twitter:image" content="https://cybar.dev/preview.png" />
+    <meta
+      name="twitter:image"
+      content="https://cybar.dev/_assets/images/preview.png"
+    />
 
     <!-- OpenGraph Meta Tags Generated via https://www.opengraph.xyz -->
 
@@ -42,9 +48,9 @@
     <title>
       {{ page.title | default(value=config.title) }}
     </title>
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/simple.css" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/_assets/images/favicon.ico" />
+    <link rel="stylesheet" href="/_assets/css/simple.css" />
+    <link rel="stylesheet" href="/_assets/css/style.css" />
   </head>
 
   <body>
@@ -92,6 +98,6 @@
       </p>
       {% endblock footer %}
     </footer>
-    <script src="/script.js"></script>
+    <script src="/_assets/js/script.js"></script>
   </body>
 </html>
