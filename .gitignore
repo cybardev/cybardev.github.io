@@ -4,6 +4,7 @@
 *~
 backup
 public
+processed_images/
 .DS_Store
 
 # dev shell

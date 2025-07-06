@@ -1,0 +1,23 @@
+div.gl.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+div.gl.item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+
+  .media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  div.gl.grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

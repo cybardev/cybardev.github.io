@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+<!-- prettier-ignore -->
+{% block style %} {{ super() }}
+<link rel="stylesheet" href="/_assets/css/gallery.css" />
+{% endblock style %} {% block content %}
+<section class="gl">
+  <h1 class="gl">Gallery</h1>
+  <div class="gl grid">
+    {% for asset in section.assets %} {% set ext = asset | split(pat=".") | last
+    | lower %} {% if ext is matching("jpg|jpeg|png|bmp|gif") %} {% set image =
+    resize_image(path=asset, width=600, height=600, op="fit") %}
+    <div class="gl item">
+      <a href="{{ get_url(path=asset) }}">
+        <img src="{{ image.url }}" alt="Gallery image" class="media" />
+      </a>
+    </div>
+    {% elif ext == "svg" %}
+    <div class="gl item">
+      <a href="{{ get_url(path=asset) }}">
+        <img src="{{ get_url(path=asset) }}" alt="SVG image" class="media" />
+      </a>
+    </div>
+    {% elif ext == "mp4" %}
+    <div class="gl item">
+      <video controls muted class="media">
+        <source src="{{ get_url(path=asset) }}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    {% endif %} {% endfor %}
+  </div>
+</section>
+{% endblock content %}
