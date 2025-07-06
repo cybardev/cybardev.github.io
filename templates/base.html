@@ -46,7 +46,9 @@
     />
     <!-- prettier-ignore -->
     <title>
-      {{ page.title | default(value=config.title) }}
+      {% block title %}
+        {{ page.title | default(value=config.title) }}
+      {% endblock title %}
     </title>
     <link rel="icon" href="/_assets/images/favicon.ico" />
     <link rel="stylesheet" href="/_assets/css/simple.css" />
