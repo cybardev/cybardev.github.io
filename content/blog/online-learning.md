@@ -1,15 +1,7 @@
 ---
 title: "My Experience with Online Learning"
 date: 2021-03-22T13:29:40+06:00
-author: sksaad
-slug: "online-learning"
 description: "What I learned from doing online classes for two semesters at a foreign University"
-keywords: ["university", "onlline-class", "canada", "education", "experience", "tourism"]
-draft: false
-tags: ["Life", "Thoughts"]
-math: false
-toc: true
-comments: false
 ---
 
 ## My Story
@@ -44,4 +36,4 @@ Many universities, including mine, offer many free workshops and counselling ses
 
 Something important some of us forget to do in school is building up a network of peers, seniors and professors, and make memories that enrich your life. While grades are pretty important still (because we study in an education system for the 1800s), these human resources are such that they can bring a lot more value to your life. University is the time to explore your interests, so make some friends, do personal projects, join or form clubs and enjoy your time.
 
-**THIS IS YOUR TIME TO SHINE. DO YOUR BEST. (^_^)**
+**THIS IS YOUR TIME TO SHINE. DO YOUR BEST. (^\_^)**

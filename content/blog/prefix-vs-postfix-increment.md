@@ -1,15 +1,7 @@
 ---
 title: "Prefix (++i) vs Postfix (i++) Operators in Code"
 date: 2021-01-24T21:40:48+06:00
-author: sksaad
-slug: "prefix-vs-postfix"
 description: "Learn the differences between i++ and ++i and when it is appropriate to use each one"
-keywords: ["programming", "code", "C", "Java", "C++"]
-draft: false
-tags: ["Code", "Java", "C", "C++"]
-math: false
-toc: true
-comments: true
 ---
 
 ## The dilemma: `++i` vs `i++`
@@ -120,7 +112,7 @@ for (int i = 0; i < 5; ++i) {
 }
 ```
 
-1. initialize loop variable `i = 0` <br />(this is executed *once and **only** once* before anything else is done with the loop)
+1. initialize loop variable `i = 0` <br />(this is executed _once and **only** once_ before anything else is done with the loop)
 2. check condition `i < 5`
 3. execute loop body
 4. add `1` to `i` in `++i` or `i++`

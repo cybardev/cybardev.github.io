@@ -1,15 +1,7 @@
 ---
 title: "Java Arrays"
 date: 2021-03-08T16:03:05+06:00
-author: sksaad
-slug: "java-arrays"
 description: "Get a basic know-how on one-dimensional arrays in Java"
-keywords: ["java", "arrays", "code", "programming"]
-draft: false
-tags: ["Code", "Java"]
-math: false
-toc: true
-comments: true
 ---
 
 ## What are arrays?
@@ -27,6 +19,7 @@ There are two ways of creating arrays in Java:
 ```java
 String[] fruits = new String[3];
 ```
+
 Here's a visual representation of the first array:
 
 | Box | Index | Item   |
@@ -60,6 +53,7 @@ Let's say you're very hard working and like to take challenges, and want to use 
 Here's how: `arrayName[index] = newValue;`
 
 For example:
+
 ```java
 String[] countries = new String[195];
 
@@ -69,7 +63,7 @@ countries[1] = "Bangladesh";
 countries[194] = "Wonderland";
 ```
 
-You can also use this to *re-assign* values:
+You can also use this to _re-assign_ values:
 
 ```java
 countries[1] = "Neverland";
@@ -79,14 +73,16 @@ This will change the value of the 2nd box (at index 1) from `Bangladesh` to `Nev
 
 ## Calling array elements
 
-Just like how people can be called by their names, these *elements* can be called by their *indices*. Elements is a technical term for the values in the "boxes" and Index is a technical term for the "position" of the boxes, and the first box is at index 0. So, the (n)th box will always be at index (n-1), as long as n is at least 1.
+Just like how people can be called by their names, these _elements_ can be called by their _indices_. Elements is a technical term for the values in the "boxes" and Index is a technical term for the "position" of the boxes, and the first box is at index 0. So, the (n)th box will always be at index (n-1), as long as n is at least 1.
 
 To access the nth array element in Java, simply call it by its index, like `fruits[1]`.
 
 An example of it in action:
+
 ```java
 System.out.println(fruits[1]);
 ```
+
 This would print `Banana` to the console. Banana is the `2nd` element, so its index is `2-1 = 1`.
 
 ## Length of an Array
@@ -121,7 +117,7 @@ Arrays.sort(countries);
 
 ## Looping over arrays
 
-The process of looping through collections like arrays, lists, sets, etc. is also known as *iterating*. When we *iterate* over an array, we're simply checking the value in each box of the array one by one and usually performing the same actions with each value, unless specified otherwise by some logic control (`if-else` and such).
+The process of looping through collections like arrays, lists, sets, etc. is also known as _iterating_. When we _iterate_ over an array, we're simply checking the value in each box of the array one by one and usually performing the same actions with each value, unless specified otherwise by some logic control (`if-else` and such).
 
 There are a few ways to iterate over arrays:
 

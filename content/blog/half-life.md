@@ -1,15 +1,7 @@
 ---
 title: "Half-Life"
 date: 2023-05-23T00:00:00-03:00
-author: sksaad
-slug: "half-life"
 description: "A poetry dedicated to a dead cat - one that never existed."
-keywords: ["poetry", "cats", "science", "physics", "life"]
-draft: false
-tags: ["Life", "Poetry", "Thoughts"]
-math: false
-toc: false
-comments: true
 ---
 
 Schrödinger's Cat  

@@ -1,15 +1,7 @@
 ---
 title: "Welcome to my blog"
 date: 2021-01-19T14:38:01+06:00
-author: sksaad
-slug: "welcome"
 description: "An intro to the website"
-keywords: ["blog"]
-draft: true
-tags: ["Thoughts"]
-math: false
-toc: false
-comments: true
 ---
 
 ## What's this about?
@@ -28,7 +20,7 @@ and all things science and tech.
 ## What do we have to do with all this?
 
 You could visit the site from time to time and read up some of my posts.
-Who knows, you might find somehthing of interest. I will also put
+Who knows, you might find something of interest. I might also put
 affiliate links in some tech posts. If you purchase anything from the site
 following those links (not necessarily the linked product), I will receive a
 small comission with no extra cost to you. It'd be a nice way to show your

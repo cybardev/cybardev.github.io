@@ -1,18 +1,10 @@
 ---
 title: "Java Lists"
 date: 2021-03-22T22:36:56+06:00
-author: sksaad
-slug: "java-lists"
 description: "Get a basic know-how on  lists in Java"
-keywords: ["java", "lists", "code", "programming"]
-draft: false
-tags: ["Code", "Java"]
-math: false
-toc: true
-comments: true
 ---
 
-*PS: This post is structured similarly to my [post about arrays](../java-arrays/index.html). I will also refer to array concepts, so you may want to read that first if you're new to Java collections.*
+_PS: This post is structured similarly to my [post about arrays](../java-arrays/index.html). I will also refer to array concepts, so you may want to read that first if you're new to Java collections._
 
 ## What are lists?
 
@@ -61,6 +53,7 @@ Let's say you like to keep things clean and simple, and want to use the first wa
 Here's how: `listName.add(newValue);`
 
 For example:
+
 ```java
 List<String> countries = new ArrayList<>();
 
@@ -72,7 +65,7 @@ countries.add("Wonderland");
 
 - <u>Modifying values</u>:
 
-To *re-assign* values, you’ll need to use the `set` method:
+To _re-assign_ values, you’ll need to use the `set` method:
 
 ```java
 countries.set(1, "Neverland");
@@ -102,14 +95,16 @@ countries.removeAll("Neverland");
 
 ## Calling list elements
 
-Just like how people can be called by their names, these *elements* can be called by their *indices*. Elements is a technical term for the values in the "boxes" and Index is a technical term for the "position" of the boxes, and the first box is at index 0. So, the n^th^ box will always be at index `(n-1)`, as long as n is at least 1.
+Just like how people can be called by their names, these _elements_ can be called by their _indices_. Elements is a technical term for the values in the "boxes" and Index is a technical term for the "position" of the boxes, and the first box is at index 0. So, the n^th^ box will always be at index `(n-1)`, as long as n is at least 1.
 
 To access the nth list element in Java, simply call it by its index using the `get` method, like `fruits.get(1)`.
 
 An example of it in action:
+
 ```java
 System.out.println(fruits.get(1));
 ```
+
 This would print `Banana` to the console. Banana is the `2nd` element, so its index is `2 - 1 = 1`.
 
 ## Length of a list
@@ -146,7 +141,7 @@ This will also sort numbers in numerical order, and other types in their natural
 
 ## Looping over lists
 
-The process of looping through collections like lists, lists, sets, etc. is also known as *iterating*. When we *iterate* over an list, we're simply checking the value in each box of the list one by one and usually performing the same actions with each value, unless specified otherwise by some logic control (`if-else` and such).
+The process of looping through collections like lists, lists, sets, etc. is also known as _iterating_. When we _iterate_ over an list, we're simply checking the value in each box of the list one by one and usually performing the same actions with each value, unless specified otherwise by some logic control (`if-else` and such).
 
 There are a few ways to iterate over lists:
 
@@ -221,7 +216,7 @@ It's often important to choose the correct loop for the task at hand. Take a dee
 
 If you tried to modify list elements inside loops and had your program crash with a `ConcurrentModificationException`, no need to panic. It’s just Java being cautious so that nothing weird happens in the program. To get around this, we need to use list iterators and the methods that come with them which we can use to manipulate the list safely.
 
-*“With great power comes great responsibility.”<br />- Uncle Ben*
+_“With great power comes great responsibility.”<br />- Uncle Ben_
 
 Here’s a little text filtering program to demonstrate `ListIterator`s in action:
 
