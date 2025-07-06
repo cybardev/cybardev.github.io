@@ -108,7 +108,7 @@ To access the nth list element in Java, simply call it by its index using the `g
 
 An example of it in action:
 ```java
-System.out.println(fruits.get(1);
+System.out.println(fruits.get(1));
 ```
 This would print `Banana` to the console. Banana is the `2nd` element, so its index is `2 - 1 = 1`.
 
