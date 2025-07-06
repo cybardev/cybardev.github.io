@@ -6,6 +6,10 @@
 <section class="gl">
   <h1 class="gl">Gallery</h1>
   <hr class="gl" />
+  {% set media_count = 0 %} {% for asset in section.assets %} {% set ext = asset
+  | split(pat=".") | last | lower %} {% if ext is
+  matching("jpg|jpeg|png|bmp|gif|svg|mp4") %} {% set_global media_count =
+  media_count + 1 %} {% endif %} {% endfor %} {% if media_count > 0 %}
   <div class="gl grid">
     {% for asset in section.assets %} {% set ext = asset | split(pat=".") | last
     | lower %} {% if ext is matching("jpg|jpeg|png|bmp|gif") %} {% set image =
@@ -30,5 +34,8 @@
     </div>
     {% endif %} {% endfor %}
   </div>
+  {% else %}
+  <p>Nothing yet.</p>
+  {% endif %}
 </section>
 {% endblock content %}
