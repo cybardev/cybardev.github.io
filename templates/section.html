@@ -3,10 +3,17 @@
 {% block style %} {{ super() }}
 <link rel="stylesheet" href="/_assets/css/blog.css" />
 {% endblock style %} {% block content %}
-<h1>Blog</h1>
-<ul>
-  {% for page in section.pages | sort(attribute="date") | reverse %}
-  <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
-  {% endfor %}
-</ul>
+<section class="bl">
+  <h1 class="bl">Blog Posts</h1>
+  <ul class="bl pointless">
+    {% for page in section.pages | sort(attribute="date") | reverse %}
+    <li>
+      <a href="{{ page.permalink }}"
+        ><span>[{{ page.date | date(format="%Y %b %d") }}]</span>&nbsp;{{
+        page.title }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 {% endblock content %}

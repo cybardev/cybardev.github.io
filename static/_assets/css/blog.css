@@ -1,0 +1,45 @@
+/*
+    Blog Styles
+
+    bl -> blog list
+    bp -> blog page
+ */
+
+section.bl {
+  max-width: fit-content;
+}
+
+h1 {
+  &.bl,
+  &.bp {
+    font-size: 2em;
+  }
+}
+
+ul.pointless.bl {
+  list-style-type: disc;
+
+  & > li {
+    display: list-item;
+
+    & > a > span {
+      font-family: monospace;
+      font-size: small;
+      opacity: 0.5;
+    }
+  }
+}
+
+section.bp {
+  max-width: 50vw;
+  max-width: 50dvw;
+
+  h2 {
+    font-size: 1.35em;
+  }
+
+  pre:has(code) {
+    font-size: medium;
+    padding: 0.42em;
+  }
+}
