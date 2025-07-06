@@ -6,7 +6,7 @@
 <section class="bl">
   <h1 class="bl">Blog Posts</h1>
   <ul class="bl pointless">
-    {% for page in section.pages | sort(attribute="date") | reverse %}
+    {% for page in section.pages %}
     <li>
       <a href="{{ page.permalink }}"
         ><span>[{{ page.date | date(format="%Y %b %d") }}]</span>&nbsp;{{
