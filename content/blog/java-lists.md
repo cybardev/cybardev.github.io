@@ -1,7 +1,7 @@
 ---
 title: "Java Lists"
 date: 2021-03-22T22:36:56+06:00
-description: "Get a basic know-how on  lists in Java"
+description: "Get a basic know-how on lists in Java"
 ---
 
 _PS: This post is structured similarly to my [post about arrays](../java-arrays/index.html). I will also refer to array concepts, so you may want to read that first if you're new to Java collections._
