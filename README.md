@@ -4,7 +4,7 @@
 
 ![Web Preview](./static/_assets/images/preview.png "OpenGraph preview image")
 
-## Profile and personal blog site
+## Profile, Blog, and Gallery
 
 Built with [SimpleCSS](https://simplecss.org/).
 
