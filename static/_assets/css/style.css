@@ -286,3 +286,16 @@ label[for="theme-switch"] {
     font-size: 1.25em;
   }
 }
+
+/* Error Page */
+
+section.error {
+  & > h1 > span {
+    color: var(--code);
+    text-shadow: 0 0 3px var(--code);
+  }
+  & > h2 {
+    color: var(--glow);
+    font-style: italic;
+  }
+}
