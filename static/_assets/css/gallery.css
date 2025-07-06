@@ -1,3 +1,12 @@
+.gl {
+  &:is(h1) {
+    font-size: 2em;
+  }
+  &:is(hr) {
+    margin-block: 1rem;
+  }
+}
+
 div.gl.grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -7,6 +16,15 @@ div.gl.grid {
 div.gl.item {
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  border: thin solid var(--border);
+  border-radius: 3px;
+  transition: box-shadow var(--glow-duration);
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    box-shadow: 0 0 16px var(--glow);
+  }
 
   .media {
     width: 100%;
