@@ -7,7 +7,7 @@
   <article class="bp">
     <h1 class="bp">{{ page.title }}</h1>
     <p>
-      <small>Published on {{ page.date | date(format="%B %d, %Y") }}</small>
+      <small>{{ page.date | date(format="%d %b %Y") }}</small>
     </p>
     <hr />
     {{ page.content | safe }}
