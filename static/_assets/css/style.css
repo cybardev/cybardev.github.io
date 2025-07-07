@@ -107,9 +107,7 @@ svg,
     color var(--glow-duration),
     filter var(--glow-duration);
 
-  &:hover,
-  &:active,
-  &:focus-visible {
+  &:is(:hover, :active, :focus-visible) {
     fill: var(--glow);
     color: var(--glow);
     filter: drop-shadow(0 0 16px var(--glow));
@@ -128,13 +126,9 @@ svg,
     display: inline;
     margin-right: 1.5em;
 
-    & > a {
-      &:hover,
-      &:active,
-      &:focus-visible {
-        text-shadow: 0 0 16px var(--accent-hover);
-        color: var(--accent-hover);
-      }
+    & > a:is(:hover, :active, :focus-visible) {
+      text-shadow: 0 0 16px var(--accent-hover);
+      color: var(--accent-hover);
     }
   }
 }
@@ -142,9 +136,7 @@ svg,
 .pointless.links > li > a,
 #copyright > a,
 label[for="theme-switch"] {
-  &:hover,
-  &:active,
-  &:focus-visible {
+  &:is(:hover, :active, :focus-visible) {
     text-shadow: 0 0 16px var(--code);
     color: var(--code);
     --glow: var(--code);
