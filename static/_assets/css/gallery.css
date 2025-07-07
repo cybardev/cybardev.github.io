@@ -1,16 +1,7 @@
-.gl {
-  &:is(h1) {
-    font-size: 2em;
-  }
-  &:is(hr) {
-    margin-block: 1rem;
-  }
-}
-
 div.gl.grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
 }
 
 div.gl.item {
@@ -36,6 +27,6 @@ div.gl.item {
 
 @media (min-width: 768px) {
   div.gl.grid {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 }
