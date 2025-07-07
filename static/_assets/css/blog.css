@@ -5,25 +5,6 @@
     bp -> blog page
  */
 
-@media (min-width: 480px) {
-  section {
-    &.bl {
-      max-width: fit-content;
-    }
-    &.bp {
-      max-width: 50vw;
-      max-width: 50dvw;
-    }
-  }
-}
-
-h1 {
-  &.bl,
-  &.bp {
-    font-size: 2em;
-  }
-}
-
 ul.pointless.bl {
   list-style-type: disc;
 
@@ -53,6 +34,18 @@ section {
       white-space: pre;
       font-size: medium;
       padding: 0.42em;
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  section {
+    &.bl {
+      max-width: fit-content;
+    }
+    &.bp {
+      max-width: 50vw;
+      max-width: 50dvw;
     }
   }
 }

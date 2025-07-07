@@ -287,6 +287,24 @@ label[for="theme-switch"] {
   }
 }
 
+/* Blog/Gallery Pages */
+
+.gl,
+.bl,
+.bp {
+  &:is(h1) {
+    font-size: 2em;
+  }
+  &:is(h2) {
+    margin-block: 1em;
+    font-size: medium;
+    color: var(--text-light);
+  }
+  &:is(hr) {
+    margin-block: 1rem;
+  }
+}
+
 /* Error Page */
 
 section.error {
