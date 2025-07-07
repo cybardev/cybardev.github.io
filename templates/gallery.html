@@ -5,6 +5,9 @@
 {% endblock style %} {% block content %}
 <section class="gl">
   <h1 class="gl">Gallery</h1>
+  <h2 class="gl">
+    {{ section.description | default(value=config.description) }}
+  </h2>
   <hr class="gl" />
   {% set media_count = 0 %} {% for asset in section.assets %} {% set ext = asset
   | split(pat=".") | last | lower %} {% if ext is

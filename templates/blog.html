@@ -5,6 +5,10 @@
 {% endblock style %} {% block content %}
 <section class="bl">
   <h1 class="bl">Blog Posts</h1>
+  <h2 class="bl">
+    {{ section.description | default(value=config.description) }}
+  </h2>
+  <hr class="bl" />
   <ul class="bl pointless">
     {% for page in section.pages %}
     <li>
