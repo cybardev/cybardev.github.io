@@ -6,6 +6,6 @@
 
 ## Profile, Blog, and Gallery
 
-Built with [SimpleCSS](https://simplecss.org/).
+Built with [SimpleCSS](https://simplecss.org/) using [Zola](https://www.getzola.org/) static site generator.
 
-License: [GPLv3](./LICENSE.md) (website), **Copyright** (blogs)
+License: [`GPL-3.0-only`](./LICENSE.md) (website), [`CC BY-NC-SA 4.0`](https://creativecommons.org/licenses/by-nc-sa/4.0/) (blogs and media), [`MIT`](https://opensource.org/license/mit) (SimpleCSS and Zola)
