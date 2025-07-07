@@ -191,8 +191,9 @@ label[for="theme-switch"] {
   cursor: pointer;
 }
 
-/* hide checkbox */
-#theme-switch {
+/* hide checkbox and label text */
+#theme-switch,
+label[for="theme-switch"] > span {
   position: absolute;
   width: 1px;
   height: 1px;
