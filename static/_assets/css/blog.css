@@ -5,6 +5,20 @@
     bp -> blog page
  */
 
+a.bl.rss {
+  color: var(--code);
+  transition: filter var(--glow-duration);
+
+  &:is(:hover, :active, :focus-visible) {
+    filter: drop-shadow(0 0 0.76px var(--code));
+  }
+
+  & > svg:is(:hover, :active, :focus-visible) {
+    --glow: var(--code);
+    filter: none;
+  }
+}
+
 ul.pointless.bl {
   list-style-type: disc;
 
