@@ -23,6 +23,18 @@ div.gl.item {
   }
 }
 
+p.gl#bsky {
+  & > a,
+  svg {
+    transition: color var(--glow-duration);
+    color: var(--accent-hover);
+    --glow: var(--accent-hover);
+  }
+  & > a:is(:hover, :active, :focus-visible) {
+    color: var(--accent);
+  }
+}
+
 @media (min-width: 768px) {
   div.gl.grid {
     gap: 1rem;
