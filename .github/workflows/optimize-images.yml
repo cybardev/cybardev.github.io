@@ -44,7 +44,7 @@ jobs:
           input-directory: content/gallery
           output-directory: content/gallery
           jpg-compression-quality: 80
-          png-compression-quality: 0.8
+          png-compression-quality: 0.2
           gif-compression-quality: 2
       - name: Commit and Push
         run: |
