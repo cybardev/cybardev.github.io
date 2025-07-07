@@ -7,9 +7,9 @@ on:
       - ".github/workflows/deploy-site.yml"
       - "config.toml"
       - "templates/**"
+      - "content/**"
       - "static/**"
       - "sass/**"
-      - "content/**/*.md"
 
   push:
     branches: ["main"]
@@ -17,9 +17,9 @@ on:
       - ".github/workflows/deploy-site.yml"
       - "config.toml"
       - "templates/**"
+      - "content/**"
       - "static/**"
       - "sass/**"
-      - "content/**/*.md"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
