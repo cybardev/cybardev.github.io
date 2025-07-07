@@ -11,9 +11,7 @@ div.gl.item {
   border-radius: 3px;
   transition: box-shadow var(--glow-duration);
 
-  &:hover,
-  &:active,
-  &:focus-visible {
+  &:is(:hover, :active, :focus-visible) {
     box-shadow: 0 0 16px var(--glow);
   }
 

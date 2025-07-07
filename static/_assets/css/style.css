@@ -232,9 +232,7 @@ label[for="theme-switch"] > span {
   }
 
   /*glow effect when Tab-selected */
-  &:has(#theme-switch:active),
-  &:has(#theme-switch:hover),
-  &:has(#theme-switch:focus-visible) {
+  &:has(#theme-switch:is(:active, :hover, :focus-visible)) {
     label[for="theme-switch"] {
       transition:
         fill var(--glow-duration),
