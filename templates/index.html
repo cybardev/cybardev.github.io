@@ -77,7 +77,10 @@
       ></a>
     </li>
     <li>
-      <a aria-label="Gallery" href="/gallery" title="Gallery"
+      <a
+        aria-label="Gallery"
+        href='{{ get_url(path="gallery") }}'
+        title="Gallery"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -119,7 +122,7 @@
       <a href="https://github.com/cybardev?tab=repositories">Projects</a>
     </li>
     <li>
-      <a href="./blog">Blog</a>
+      <a href='{{ get_url(path="blog") }}'>Blog</a>
     </li>
   </ul>
 </section>

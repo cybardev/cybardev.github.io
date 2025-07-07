@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 <!-- prettier-ignore -->
 {% block style %} {{ super() }}
-<link rel="stylesheet" href="/_assets/css/blog.css" />
+<link rel="stylesheet" href='{{ get_url(path="_assets/css/blog.css") }}' />
 {% endblock style %} {% block content %}
 <section class="bl">
   <h1 class="bl">Blog Posts</h1>

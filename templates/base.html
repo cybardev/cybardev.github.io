@@ -51,10 +51,13 @@
       title="{{ config.title }} — Atom Feed"
       href='{{ get_url(path="atom.xml") }}'
     />
-    <link rel="icon" href="/_assets/images/favicon.ico" />
-    <link rel="stylesheet" href="/_assets/css/simple.css" />
+    <link rel="icon" href='{{ get_url(path="_assets/images/favicon.ico") }}' />
+    <link
+      rel="stylesheet"
+      href='{{ get_url(path="_assets/css/simple.css") }}'
+    />
     {% block style %}
-    <link rel="stylesheet" href="/_assets/css/style.css" />
+    <link rel="stylesheet" href='{{ get_url(path="_assets/css/style.css") }}' />
     {% endblock style %}
   </head>
 
@@ -104,6 +107,6 @@
       </p>
       {% endblock footer %}
     </footer>
-    <script src="/_assets/js/script.js"></script>
+    <script src='{{ get_url(path="_assets/js/script.js") }}'></script>
   </body>
 </html>
