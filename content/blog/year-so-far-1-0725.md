@@ -1,8 +1,7 @@
 ---
 title: Year So Far — Part 1
-date: 2025-07-14T12:00:00-03:00
+date: 2025-07-14T11:20:00-03:00
 description: What I’ve been doing for the first half of 2025
-draft: true
 ---
 
 ## What’s this about?
@@ -29,19 +28,12 @@ Try Bubble Blaster here: https://cybardev.itch.io/bubble-blaster
 
 ### ShiftKey Cloud Foundations
 
-- Cloud Concepts
-- Cloud Technologies and Services
-- Networking, Security, and Compliance
-
-Mainly AWS, but counterparts in Azure and GCP were discussed briefly as well.
+Once a week through February, I attended the Cloud Foundations course by ShiftKey at Dalhousie. It was taught by Vansh Sood, who previously taught a course on GenAI, that I enjoyed. This course was a nice overview of how cloud fits into the software ecosystem, and the various providers and services available. It was also meant to help prepare for the AWS Cloud Practitioner foundational certification exam. As such, the course was mainly focused on AWS, but counterparts in Azure and GCP were discussed briefly as well.
 
 ### ShiftKey Practical Cybersecurity
 
-- Information Security and Threat Analysis
-- Encryption and Data Protection principles
-- Cybersecurity Frameworks and Applications Security
-- Ethical Hacking and Legal Frameworks
+Once a week through March, I attended the Practical Cybersecurity course by ShiftKey at Dalhousie. It was taught by Aman Bhalla, a fellow student, but one with quite a bit of industry experience through co-ops and internships. I like that they have students teach these courses. Makes them approachable and they also know what we need because they're currently going through the same things but are a few steps ahead. We went through topics like Information Security, Threat Analysis, Encryption, Data Protection principles, Cybersecurity Frameworks, Applications Security, Ethical Hacking, and Legal Frameworks for Cybersecurity.
 
-Expected it to be redundant due to another course I was doing at the time (started that one earlier), but this ended up accelerating my learning in that course.
+I expected this course to be redundant due to another course I was doing at the time (started that one earlier), but this ended up accelerating my learning in that course.
 
 More on the other course in the next part of this series…
