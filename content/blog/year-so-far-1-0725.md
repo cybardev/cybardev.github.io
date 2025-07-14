@@ -1,7 +1,7 @@
 ---
 title: Year So Far — Part 1
 date: 2025-07-14T11:20:00-03:00
-description: What I’ve been doing for the first half of 2025
+description: What I’ve been doing for the first half of 2025 — Part 1
 ---
 
 ## What’s this about?
