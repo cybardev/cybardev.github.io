@@ -25,7 +25,7 @@ Last week of January I participated in the Global Game Jam for the 3rd time, but
 
 I always wanted to make a game for some old retro console, and seeing this as my chance I did just that. I chose Gameboy as my target platform and GB Studio as my engine of choice. It’s a great engine that’s easy to get started with, and one of the best way to make games for the original Gameboy and Gameboy Color. Even considering that I made the graphics from scratch while working solo, the whole game was done way ahead of time, and I had plenty of room for going around and seeing what wonderful games everyone else was making. Also met some great people from Ubisoft Halifax who gave me valuable feedback on how I can make my game even better. That’s what I’m looking to work on, now that the pressure is off.
 
-Try Bubble Blaster here: <link>
+Try Bubble Blaster here: https://cybardev.itch.io/bubble-blaster
 
 ### ShiftKey Cloud Foundations
 
