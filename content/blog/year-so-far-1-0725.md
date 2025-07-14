@@ -30,6 +30,8 @@ Try Bubble Blaster here: https://cybardev.itch.io/bubble-blaster
 
 Once a week through February, I attended the Cloud Foundations course by ShiftKey at Dalhousie. It was taught by Vansh Sood, who previously taught a course on GenAI, that I enjoyed. This course was a nice overview of how cloud fits into the software ecosystem, and the various providers and services available. It was also meant to help prepare for the AWS Cloud Practitioner foundational certification exam. As such, the course was mainly focused on AWS, but counterparts in Azure and GCP were discussed briefly as well.
 
+I haven't taken the AWS exam yet. That's because I'm thinking of going straight to a more advanced certificate like Solutions Architect. Regardless, I'm sure the knowledge I've gained from this course will be helpful in my projects and beyond.
+
 ### ShiftKey Practical Cybersecurity
 
 Once a week through March, I attended the Practical Cybersecurity course by ShiftKey at Dalhousie. It was taught by Aman Bhalla, a fellow student, but one with quite a bit of industry experience through co-ops and internships. I like that they have students teach these courses. Makes them approachable and they also know what we need because they're currently going through the same things but are a few steps ahead. We went through topics like Information Security, Threat Analysis, Encryption, Data Protection principles, Cybersecurity Frameworks, Applications Security, Ethical Hacking, and Legal Frameworks for Cybersecurity.
