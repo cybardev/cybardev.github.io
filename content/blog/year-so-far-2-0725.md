@@ -1,8 +1,7 @@
 ---
 title: Year So Far — Part 2
-date: 2025-07-19T11:20:00-03:00
+date: 2025-07-19T13:48:00-03:00
 description: What I’ve been doing for the first half of 2025 — Part 2
-draft: true
 ---
 
 ## What’s this about?
@@ -29,6 +28,8 @@ In May, SMU held the convocation ceremony for Jan 2025 graduates. I have always 
 
 It was definitely an interesting experience going up on stage and receiving the roll of paper that validated the four and some years of learning I just completed. Got some nice pictures taken, spent time with friends. I wish my parents could attend though; this was for them, after all.
 
+![convocation photo](/_assets/images/blog/convocation.jpg)
+
 _**PS**: I don’t dislike university, in fact I believe all stages of education should have the level of freedom and agency that university gives us (and that universities should have **more** freedom, especially in letting us ditch unrelated electives). However I am an avid hater of mid-term and final exams. I am largely in favour of intermittent testing and practical assessments._
 
 Just thought I should clarify. Moving on…
@@ -44,5 +45,3 @@ It was fun, cuz the morning of exam day I got a call which woke me up, from the 
 After the test, the examiner handed me a paper saying I passed. I was pleasantly surprised cuz of how fast the evaluation was. I shouldn’t be, because it’s just MCQ with known answers, but it’s not as common as it should be. A few days later I got the official certificate online, which you can see here: [ISC2 CC — Credly Badge](https://www.credly.com/badges/dd205943-5edf-4284-ab13-3dedf144668f)
 
 I don’t know what industry value this certificate holds, but I learned a lot — about IT, Networking, Cybersecurity, and more — in the process of getting it, so I consider this a great success.
-
-###
