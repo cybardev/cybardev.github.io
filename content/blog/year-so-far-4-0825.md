@@ -1,8 +1,7 @@
 ---
 title: Year So Far — Part 4
-date: 2025-08-11T11:30:00-03:00
+date: 2025-08-10T17:00:00-03:00
 description: What I’ve been doing for the first half of 2025 — Bonus Issue
-draft: true
 ---
 
 ## What’s this about?
@@ -17,7 +16,7 @@ _[Bonus Part]_
 
 ## Honourable Mentions
 
-Here are some things I did this year, but either don’t have much to talk about, or have moved on from. Regardless, the experiences I got from working on them have become a part of me, and I learned a lot, so I wanted to at least mention them.
+Here are some things I did this year, but either don’t have a lot to talk about, or have moved on from. Regardless, the experiences I got from working on them have become a part of me, and I learned a lot, so I wanted to at least mention them.
 
 ### HabitMap
 
@@ -33,26 +32,39 @@ I’m quite interested in DevOps, SRE, Platform Engineering, etc. and one major 
 
 ### Packaging Meta’s Pyrefly in a Homebrew Tap
 
-Similar to the nixpkgs, I wanted to learn how to package software for [Homebrew](https://brew.sh) — a package manager (previously for macOS, but it’s available on Linux too now). Since I already had experience packaging Pyrefly, I thought this would be a nice complement. Followed the official documentation and ended up making this “Tap”, which is basically just a personal package repository for Homebrew: https://github.com/cybardev/homebrew-tap
+Similar to the nixpkgs, I wanted to learn how to package software for [Homebrew](https://brew.sh) — a package manager (previously for macOS, but it’s available on Linux too now). Since I already had experience packaging Pyrefly, I thought this would be a nice complement. Followed the official documentation and ended up making this “Tap”, which is basically just a personal package repository for Homebrew: <https://github.com/cybardev/homebrew-tap>
 
 ### Deploy Personal Instance of Graphite
 
-[Graphite](https://github.com/GraphiteEditor/Graphite) is a fantastic Free and Open-source graphic editor that handles _both_ raster and vector graphics. I now prefer it over GIMP and Inkscape. It’s still in its early days, but already usable for all my needs. It is a webapp, so it doesn’t need to be installed locally, but it’s static, so all the processing is done client-side (even restoring previous sessions work using browser cache) — no account needed. Had to deploy it somewhere, so I chose Render. Tried to use OpenTofu and almost got it working, but then was hit with “you need a paid Render subscription” for Terraform deployments, so I just used Render Blueprint — their own infrastructure-as-code (IaC) solution, which is available on free tier too. It’s up now at https://gfx.cybar.dev (cold start, so probably have to wait a bit).
+[Graphite](https://github.com/GraphiteEditor/Graphite) is a fantastic Free and Open-source graphic editor that handles _both_ raster and vector graphics. I now prefer it over GIMP and Inkscape. It’s still in its early days, but already usable for all my needs. It is a webapp, so it doesn’t need to be installed locally, but it’s static, so all the processing is done client-side (even restoring previous sessions work using browser cache) — no account needed. Had to deploy it somewhere, so I chose Render. Tried to use OpenTofu and almost got it working, but then was hit with “you need a paid Render subscription” for Terraform deployments, so I just used Render Blueprint — their own infrastructure-as-code (IaC) solution, which is available on free tier too. It’s up now at [gfx.cybar.dev](https://gfx.cybar.dev) (cold start, so probably have to wait a bit).
 
-### HaliHax/Collect. `#side-projects` Meetup
+### HaliHax/Collect. Side Projects Meetup
 
-Every Monday evening I meet up with folks from a local developer group called [HaliHax](https://www.halihax.com/) for a few hours of coding. Think of it like [“parallel play”](https://en.m.wikipedia.org/wiki/Parallel_play) but for adults coding. This kind of environment helps me focus and provides a sense of accountability; really nice to get work done, be it serious stuff, or just some new exploration. Sandy Walsh is the host, but takes a break from it every summer. I still wanted to continue, so every Monday I ping the channel to gather anyone who’s interested. We meet at the same bar and get cracking. Recently, Sandy’s side-projects has rebranded to be a part of the [Collect. community](https://www.collecthalifax.org/), which is nice. Now it’s called Collect. Mondays.
+Every Monday evening I meet up with folks from a local developer group called [HaliHax](https://www.halihax.com/) for a few hours of coding. Think of it like [“parallel play”](https://en.m.wikipedia.org/wiki/Parallel_play) but for adults coding. This kind of environment helps me focus and provides a sense of accountability; really nice to get work done, be it serious stuff, or just some new exploration. Sandy Walsh is the host, but usually takes a break from it every summer. I still wanted to continue, so every Monday I ping the channel to gather anyone who’s interested. We meet at the same bar and get cracking. Recently, the side-projects event series has rebranded to be a part of the [Collect. community](https://www.collecthalifax.org/), which is nice. Now it’s called Collect. Mondays.
+
+**Bonus**: My friend Naziya drew a gorgeous banner for Collect. Monday events:
+
+![Collect. Banner](/_assets/images/blog/collect-banner.png)
 
 ### Miscellaneous
 
-Changed the following tools and technologies:
-- GUI editor: VS Code —> Zed
+Something major I did near the start of the year is started using Nix for package management, configuration management, locally running services, and development environments. It has been a life changing experience, but I want to dive deeper into it, so I’ll leave it for another blog post.
+
+Another thing I want to do is to switch to a locally hosted VCS server. Initially I was thinking [Forgejo](https://forgejo.org/) but someone introduced me to [soft-serve](https://github.com/charmbracelet/soft-serve) and I might give that a try instead. I already started using Forgejo a little, but haven't moved anything over. Eventually I want everything primarily local, with repositories mirrored on GitHub.
+
+Also changed the following tools and technologies:
+- GUI editor: VS Code (Codium) —> Zed
 - TUI editor: Neovim —> Helix (evil-helix)
 - Git client: gitui —> lazygit
 - File Manager: yazi —> lf
 - Shell: zsh —> fish
 
-Something major I did near the start of the year is started using Nix for package management, configuration management, locally running services, and development environments. It has been a life changing experience, but I want to dive deeper into it, so I’ll leave it for another blog post.
+Reasons:
+- Zed _feels_ snappier, and more within my control. Also isn't Electron bloat. Still keeping VS Code (Codium) around for backup though, and some more "involved" projects, especially if I work with people who use VS Code.
+- Helix comes with sane defaults and doesn't need a minimum of 300+ lines for a usable setup.
+- Lazygit has interactive rebase, and there's more information in one UI instead of being split over multiple tabs (just my preference; some may prefer the sparse layout of gitui).
+- Yazi was becoming a pain. Too active development, too many breaking changes too often, and tries to do more than I need it for. It feels like it's trying to provide sane defaults like Helix, but it's not nice if the "defaults" change every other week. Lf, though more barebones, is much more stable, and mostly does what I want. I can tolerate it for now, at least until Yazi stops moving so fast.
+- I used to use fish before zsh, and now I'm back again. It's just more ergonomic for interactive use, and there's a lot more builtin features that I used plugins for in zsh. Zsh is still my system shell; fish is only used in the kitty terminal and the integrated terminal in GUI editors.
 
 ## And More to Come…
 
@@ -60,7 +72,7 @@ That’s all for what I did so far. As for what’s next…
 
 I’m currently learning Rust, to try to understand what has made it “the most loved language” for about a decade ([StackOverflow Developer Survey](https://survey.stackoverflow.co/2025/technology#admired-and-desired-language-desire-admire)). Might do a project, or translate one of my older ones. If I like it, I’d like to try making some FOSS contributions with it.
 
-I’ve also been learning Go (the board game now, I’m already a bit familiar with the language). The interest arose after having seen it in a few wuxia manhuas (Chinese comics of the martial fantasy genre). It’s a really deep and fascinating game, whose simple rules hide a much more complex story. While it’s been more frustrating than fun (due to skill issue) so far, I’m looking forward to diving deeper into this super-interesting ancient strategy game that’s survived for millennia.
+I’ve also been learning Go (the board game now; I’m already a bit familiar with the language). The interest arose after having seen it in a few wuxia manhuas (Chinese comics of the martial fantasy genre). It’s a really deep and fascinating game, whose simple rules hide a much more complex story. While it’s been more frustrating than fun (due to skill issue) so far, I’m looking forward to diving deeper into this super-interesting ancient strategy game that’s survived for millennia.
 
 **Bonus**: A friend of mine suggested the anime (Japanese animation) Hikaru no Go, which is all about the board game and apparently helpful for learning some of the foundations. Will hopefully watch it throughout this September.
 
@@ -68,4 +80,4 @@ Sometime soon I’ll get back to my Game Jam game and make a release for Bubble 
 
 With this series, I’m trying to get back to blogging, so will try to post every now and then. Writing down ideas helps consolidate learning, so looking forward to it. Hope you all enjoy reading these as much as I do writing. If you have any questions, ideas, suggestions, or just want to chat, feel free to reach out on my LinkedIn ([linkedin.com/in/cybardev](https://www.linkedin.com/in/cybardev)) or send me an email at [sheikh@cybar.dev](mailto:sheikh@cybar.dev)
 
-And, having graduated, I am now on the lookout for a new role. If you or anyone you know is looking for an ever-growing and curious soul who loves learning, exploring, and solving problems, let’s connect — I’d love to hear from you.
+**And, having graduated, I am now on the lookout for a new role. If you or anyone you know is looking for an ever-growing and curious soul who loves learning, exploring, and solving problems, let’s connect — I’d love to hear from you.**
