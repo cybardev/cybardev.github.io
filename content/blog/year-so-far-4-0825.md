@@ -74,7 +74,7 @@ I’m currently learning Rust, to try to understand what has made it “the most
 
 I’ve also been learning Go (the board game now; I’m already a bit familiar with the language). The interest arose after having seen it in a few wuxia manhuas (Chinese comics of the martial fantasy genre). It’s a really deep and fascinating game, whose simple rules hide a much more complex story. While it’s been more frustrating than fun (due to skill issue) so far, I’m looking forward to diving deeper into this super-interesting ancient strategy game that’s survived for millennia.
 
-**Bonus**: A friend of mine suggested the anime (Japanese animation) Hikaru no Go, which is all about the board game and apparently helpful for learning some of the foundations. Will hopefully watch it throughout this September.
+**Bonus**: A friend of mine (Naziya, the one with the beautiful art) suggested the anime (Japanese animation) Hikaru no Go, which is all about the board game and apparently helpful for learning some of the foundations. Will hopefully watch it throughout this September.
 
 Sometime soon I’ll get back to my Game Jam game and make a release for Bubble Blaster DX. Just need to polish the existing mechanics and see how I can add to the gameplay experience without diverging from the original vision.
 
