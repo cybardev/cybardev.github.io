@@ -23,15 +23,16 @@ div.gl.item {
   }
 }
 
-p.gl#bsky {
-  & > a,
-  svg {
+p.gl#gallery-ext {
+  & > a {
     transition: color var(--glow-duration);
     color: var(--accent-hover);
-    --glow: var(--accent-hover);
-  }
-  & > a:is(:hover, :active, :focus-visible) {
-    color: var(--accent);
+    --glow: var(--accent);
+
+    &:is(:hover, :active, :focus-visible) {
+      color: var(--accent);
+      --glow: var(--accent-hover);
+    }
   }
 }
 
