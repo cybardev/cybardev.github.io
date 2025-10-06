@@ -9,7 +9,10 @@
     {{ section.description | default(value=config.description) }}
   </h2>
   <hr class="bl" />
-  <a href='{{ get_url(path="rss.xml") }}' title="RSS Feed" class="bl rss"
+  <a
+    href='{{ get_url(path="rss.xml") }}'
+    title="RSS Feed"
+    class="bl rss breathing"
     ><svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -24,7 +27,7 @@
     >&nbsp;Subscribe</a
   >
   <ul class="bl pointless">
-    {% for page in section.pages %}
+    {% for page in paginator.pages %}
     <li>
       <a href="{{ page.permalink }}"
         ><span>[{{ page.date | date(format="%Y %b %d") }}]</span>&nbsp;{{
@@ -33,5 +36,16 @@
     </li>
     {% endfor %}
   </ul>
+  <nav class="pagination">
+    {% if paginator.previous %}
+    <a class="previous" href="{{ paginator.first }}">&lt;&lt; First</a>&nbsp;
+    <a class="previous" href="{{ paginator.previous }}">&lt; Prev</a
+    >&nbsp;&vert;&nbsp;{% endif %}{% if paginator.number_pagers > 1 %}<span
+      >{{ paginator.current_index }} of {{ paginator.number_pagers }}</span
+    >{% endif %}{% if paginator.next %}&nbsp;&vert;&nbsp;
+    <a class="next" href="{{ paginator.next }}">Next &gt;</a>&nbsp;
+    <a class="next" href="{{ paginator.last }}">Last &gt;&gt;</a>
+    {% endif %}
+  </nav>
 </section>
 {% endblock content %}

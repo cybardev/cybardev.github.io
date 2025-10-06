@@ -5,6 +5,21 @@
     bp -> blog page
  */
 
+nav.pagination {
+  & > span {
+    color: var(--code);
+  }
+
+  & > a {
+    color: var(--accent-hover);
+    transition: color var(--glow-duration);
+
+    &:is(:hover, :active, :focus-visible) {
+      color: var(--accent);
+    }
+  }
+}
+
 a.bl.rss {
   color: var(--code);
   transition: filter var(--glow-duration);
