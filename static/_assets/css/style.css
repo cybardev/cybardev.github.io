@@ -90,6 +90,14 @@ h2 {
   margin-block: 0;
 }
 
+blockquote {
+  color: var(--text-light);
+  font-style: italic;
+  border-left: solid;
+  padding-left: 1em;
+  margin-left: 1em;
+}
+
 svg {
   overflow: visible; /* prevent clipping around edges */
 }
