@@ -20,6 +20,13 @@ nav.pagination {
   }
 }
 
+@media (max-width: 480px) {
+  img#watermelon:has(+ main > section.bp) {
+    opacity: 50%;
+    top: 4rem;
+  }
+}
+
 a.bl.rss {
   color: var(--code);
   transition: filter var(--glow-duration);

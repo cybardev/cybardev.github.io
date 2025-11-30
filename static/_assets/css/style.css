@@ -122,6 +122,14 @@ svg,
   }
 }
 
+img#watermelon {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  width: 60px;
+  height: 51px;
+}
+
 .nametag {
   color: var(--text-light);
 }
