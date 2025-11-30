@@ -23,7 +23,9 @@ There’s yet another layer to this. My DNS is set up to publish this GitHub Pag
 
 Something to note is that the trailing slash is necessary, i.e. `resume.cybar.dev/devops/` works but `resume.cybar.dev/devops` does not. This is because without the slash, Cloudflare would have to interpret it as a file and attempt to redirect the URI to another file (the PDF), but then that file would also cause a redirect, leading to infinite recursion. This is because I am on the Cloudflare Free plan which only supports wildcard matching; Business and Enterprise plans have access to regex matching, which would allow capturing URI with paths not ending in `.pdf`.
 
-> You might’ve noticed that the `resume` repo is older than the template repo. That’s cuz I didn’t think of making the Typst resume module a template. At the time I was making it for myself and didn’t think of starting with a template first, then implementing it for my own resume. Oopsie~ :3
+> **UPDATE**: The trailing slash is no longer necessary. I restructured the generated site so `resume.cybar.dev/*/` paths are directories with the generated PDF, and an `index.html` that redirects to the PDF. It uses the `<meta http-equiv="refresh">` tag to achieve this. You can see how it works in [the GitHub Actions workflow file](https://github.com/cybardev/resume/blob/main/.github/workflows/publish.yml).
+
+> **NOTE**: You might’ve noticed that the `resume` repo is older than the template repo. That’s cuz I didn’t think of making the Typst resume module a template. At the time I was making it for myself and didn’t think of starting with a template first, then implementing it for my own resume. Oopsie~ :3
 
 ## Why
 
