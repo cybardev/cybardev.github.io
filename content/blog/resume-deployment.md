@@ -2,7 +2,6 @@
 title: How I “Deploy” My Resume
 date: 2025-11-23T23:20:32-04:00
 description: Behind the scenes of how my resume website works
-draft: false
 ---
 
 I briefly went over how I generate my resume in my last blog post [Year So Far — Bonus](https://cybar.dev/blog/year-so-far-4-0825/#resumake). Here I want to expand on it and describe how I publish my resume on my website for easier sharing.
