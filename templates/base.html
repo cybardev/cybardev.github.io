@@ -62,7 +62,13 @@
   </head>
 
   <body>
-    <img id="watermelon" src='{{ get_url(path="_assets/images/watermelon.svg") }}' alt="pixel art of a slice of watermelon with red juice flowing out in a puddle, with a shadow behind the slice" />
+    <a href="https://en.wikipedia.org/wiki/Gaza_genocide">
+      <img
+        id="watermelon"
+        src='{{ get_url(path="_assets/images/watermelon.svg") }}'
+        alt="pixel art of a slice of watermelon with red juice flowing out in a puddle, with a shadow behind the slice"
+      />
+    </a>
     <main>{% block content %}{% endblock content %}</main>
     <footer>
       {% block footer %}

@@ -21,7 +21,7 @@ nav.pagination {
 }
 
 @media (max-width: 480px) {
-  img#watermelon:has(+ main > section.bp) {
+  body:has(.bp) img#watermelon {
     opacity: 50%;
     top: 4rem;
   }
