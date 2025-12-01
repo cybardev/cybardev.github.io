@@ -11,8 +11,10 @@
 
 Built with [SimpleCSS](https://simplecss.org/) using [Zola](https://www.getzola.org/) static site generator.
 
+Uses [Sveltia CMS](https://github.com/sveltia/sveltia-cms) for responsive Git-based admin dashboard.
+
 ## License
 
-- [`GPL-3.0-only`](./LICENSE.md) (website)
+- [`GPL-3.0-only`](./LICENSE.md) (website code)
 - [`CC BY-NC-SA 4.0`](https://creativecommons.org/licenses/by-nc-sa/4.0/) (blogs and media)
-- [`MIT`](https://opensource.org/license/mit) (SimpleCSS and Zola)
+- [`MIT`](https://opensource.org/license/mit) (SimpleCSS, Zola, Sveltia CMS)

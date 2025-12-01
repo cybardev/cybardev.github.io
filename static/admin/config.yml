@@ -28,7 +28,11 @@ collections:
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
-    sortable_fields: ["date", "title"]
+    sortable_fields:
+      fields: ["date", "title"]
+      default:
+        field: date
+        direction: descending
     view_filters:
       - label: Year
         field: date
