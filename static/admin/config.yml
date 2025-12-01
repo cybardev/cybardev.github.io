@@ -1,0 +1,44 @@
+site_url: "https://cybar.dev"
+logo:
+  src: "https://cybar.dev/_assets/images/favicon.ico"
+  show_in_header: true
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+backend:
+  name: github
+  branch: main
+  repo: "cybardev/cybardev.github.io"
+  base_url: "https://decap.cybar.dev"
+  use_graphql: true
+  commit_messages:
+    create: "{{collection}}: add {{slug}}"
+    update: "{{collection}}: edit {{slug}}"
+    delete: "{{collection}}: remove {{slug}}"
+    uploadMedia: "media: add {{path}}"
+    deleteMedia: "media: remove {{path}}"
+media_folder: "static/_assets/images/"
+public_folder: "/_assets/images"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: Year
+        field: date
+        pattern: \d{4}
+    view_groups:
+      - label: Drafts
+        field: draft
+    fields:
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
