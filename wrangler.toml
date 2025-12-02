@@ -1,0 +1,8 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "decap-proxy"
+main = "auth/index.ts"
+compatibility_date = "2024-04-19"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+route = { pattern = "decap.cybar.dev", zone_name = "cybar.dev", custom_domain = true }
+send_metrics = false
