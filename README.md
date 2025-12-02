@@ -4,7 +4,7 @@
 
 ![Web Preview](./static/_assets/images/preview.png "OpenGraph preview image")
 
-## Profile, Blog, and Gallery
+## Profile and Blog
 
 > [!NOTE]
 > Blogs do not have an integrated comments section. However, conversations are welcome on [the repository Discussions tab](https://github.com/cybardev/cybardev.github.io/discussions).
@@ -12,6 +12,8 @@
 Built with [SimpleCSS](https://simplecss.org/) using [Zola](https://www.getzola.org/) static site generator.
 
 Uses [Sveltia CMS](https://github.com/sveltia/sveltia-cms) for responsive Git-based admin dashboard.
+
+Includes a [robots.txt](./templates/robots.txt) and an [ai.txt](./static/ai.txt) to deter AI crawlers while allowing known search engine indexing.
 
 ## License
 
