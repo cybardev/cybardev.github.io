@@ -1,0 +1,60 @@
+name: Update Sveltia CMS
+
+on:
+  workflow_dispatch:  # Allow manual trigger
+  schedule:
+    - cron: "0 4 * * 6"  # Saturdays at 00:00 AST (01:00 ADT)
+
+jobs:
+  update-sveltia:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Get latest Sveltia CMS version
+        id: latest
+        run: |
+          LATEST=$(curl -s https://api.github.com/repos/sveltia/sveltia-cms/releases/latest | jq -r ".tag_name")
+          echo "version=$LATEST" >> $GITHUB_OUTPUT
+          echo "Latest version: $LATEST"
+      - name: Get current version
+        id: current
+        run: |
+          CURRENT=$(grep -oP "@sveltia/cms@\K[0-9.]+" static/admin/index.html)
+          echo "version=$CURRENT" >> $GITHUB_OUTPUT
+          echo "Current version: $CURRENT"
+      - name: Check if update needed
+        id: check
+        run: |
+          if [ "${{ steps.latest.outputs.version }}" != "${{ steps.current.outputs.version }}" ]; then
+            echo "needs_update=true" >> $GITHUB_OUTPUT
+            echo "Update needed: ${{ steps.current.outputs.version }} -> ${{ steps.latest.outputs.version }}"
+          else
+            echo "needs_update=false" >> $GITHUB_OUTPUT
+            echo "Already up to date"
+          fi
+      - name: Update version in file
+        if: ${{ steps.check.outputs.needs_update == 'true' }}
+        run: |
+          sed -i "s/@sveltia\/cms@[0-9.]\+/@sveltia\/cms@${{ steps.latest.outputs.version }}/g" static/admin/index.html
+      - name: Create Pull Request
+        if: ${{ steps.check.outputs.needs_update == 'true' }}
+        uses: peter-evans/create-pull-request@v7
+        with:
+          reviewers: cybardev
+          sign-commits: true
+          delete-branch: true
+          branch: chore/update-sveltia-cms-${{ steps.latest.outputs.version }}
+          commit-message: "chore: update sveltia-cms ${{ steps.current.outputs.version }} -> ${{ steps.latest.outputs.version }}"
+          title: "sveltia-cms: ${{ steps.current.outputs.version }} -> ${{ steps.latest.outputs.version }}"
+          body: |
+            # Sveltia CMS: ${{ steps.current.outputs.version }} -> ${{ steps.latest.outputs.version }}
+
+            ## Release Notes
+            https://github.com/sveltia/sveltia-cms/releases/tag/v${{ steps.latest.outputs.version }}
+
+            ## Changelog
+            https://github.com/sveltia/sveltia-cms/compare/v${{ steps.current.outputs.version }}...v${{ steps.latest.outputs.version }}
