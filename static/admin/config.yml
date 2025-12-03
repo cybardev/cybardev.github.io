@@ -18,8 +18,8 @@ backend:
     delete: "{{collection}}: remove {{slug}}"
     uploadMedia: "media: add {{path}}"
     deleteMedia: "media: remove {{path}}"
-media_folder: "static/_assets/images/"
-public_folder: "/_assets/images"
+media_folder: "static/_assets/images/blog"
+public_folder: "/_assets/images/blog"
 collections:
   - name: "blog"
     label: "Blog"
