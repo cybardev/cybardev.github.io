@@ -1,5 +1,4 @@
 ---
-draft: true
 date: 2025-12-02T20:42:00
 title: Hand-coding an SVG Pixel Art
 description: How I practically learned constructing SVGs by (re)drawing a watermelon
