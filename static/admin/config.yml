@@ -23,6 +23,7 @@ public_folder: "/_assets/images/blog"
 collections:
   - name: "blog"
     label: "Blog"
+    label_singular: blog
     folder: "content/blog"
     create: true
     slug: "{{slug}}"
