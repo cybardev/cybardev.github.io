@@ -34,19 +34,21 @@
 }
 
 /* Dark theme */
-body:has(#theme-switch:checked) {
-  color-scheme: dark;
-  --bg: #212121;
-  --accent-bg: #2b2b2b;
-  --text: #dcdcdc;
-  --text-light: #ababab;
-  --border: #5d5d5d;
-  --accent: #5277c3;
-  --accent-hover: #7ebae4;
-  --accent-text: var(--bg);
-  --code: #ed365b;
-  --preformatted: #ccc;
-  --disabled: #111;
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: dark;
+    --bg: #212121;
+    --accent-bg: #2b2b2b;
+    --text: #dcdcdc;
+    --text-light: #ababab;
+    --border: #5d5d5d;
+    --accent: #5277c3;
+    --accent-hover: #7ebae4;
+    --accent-text: var(--bg);
+    --code: #ed365b;
+    --preformatted: #ccc;
+    --disabled: #111;
+  }
 }
 
 body {
@@ -150,8 +152,7 @@ img#watermelon {
 }
 
 .pointless.links > li > a,
-#copyright > a,
-label[for="theme-switch"] {
+#copyright > a {
   &:is(:hover, :active, :focus-visible) {
     text-shadow: 0 0 16px var(--code);
     color: var(--code);
@@ -160,22 +161,11 @@ label[for="theme-switch"] {
 }
 
 .pointless > li > a,
-#copyright > a,
-label[for="theme-switch"] {
+#copyright > a {
   color: var(--preformatted);
   transition:
     text-shadow var(--glow-duration),
     color var(--glow-duration);
-}
-
-.webring {
-  & > li {
-    &:nth-child(1),
-    &:nth-last-child(1) {
-      display: block;
-      margin-block: 0.5em;
-    }
-  }
 }
 
 /* Red glow breathing animation */
@@ -203,64 +193,9 @@ label[for="theme-switch"] {
   text-shadow: 0 0 2px var(--code);
 }
 
-label[for="theme-switch"] {
-  cursor: pointer;
-}
-
-/* hide checkbox and label text */
-#theme-switch,
-label[for="theme-switch"] > span {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-/* theme switch */
-#copyright {
-  /* in light mode... */
-  #theme-switch + label {
-    .bi.bi-moon-stars-fill {
-      /* show moon */
-      display: initial;
-    }
-    .bi.bi-sun-fill {
-      /* hide sun */
-      display: none;
-    }
-  }
-
-  /* in dark mode... */
-  #theme-switch:checked + label {
-    .bi.bi-moon-stars-fill {
-      /* hide moon */
-      display: none;
-    }
-    .bi.bi-sun-fill {
-      /* show sun */
-      display: initial;
-    }
-  }
-
-  /*glow effect when Tab-selected */
-  &:has(#theme-switch:is(:active, :hover, :focus-visible)) {
-    label[for="theme-switch"] {
-      transition:
-        fill var(--glow-duration),
-        color var(--glow-duration),
-        filter var(--glow-duration);
-
-      --glow: var(--code);
-      fill: var(--glow);
-      color: var(--glow);
-      filter: drop-shadow(0 0 16px var(--glow));
-    }
-  }
+#nix-logo {
+  height: 1.2rem;
+  vertical-align: middle;
 }
 
 @media (min-width: 480px) {
@@ -269,13 +204,6 @@ label[for="theme-switch"] > span {
 
     & > section {
       max-width: 45ch;
-    }
-  }
-
-  .webring > li {
-    &:nth-child(1),
-    &:nth-last-child(1) {
-      display: inline;
     }
   }
 }
@@ -291,24 +219,6 @@ label[for="theme-switch"] > span {
 
   .pointless.socials > li > a {
     font-size: 1.25em;
-  }
-}
-
-/* Blog/Gallery Pages */
-
-.gl,
-.bl,
-.bp {
-  &:is(h1) {
-    font-size: 2em;
-  }
-  &:is(h2) {
-    margin-block: 1em;
-    font-size: medium;
-    color: var(--text-light);
-  }
-  &:is(hr) {
-    margin-block: 1rem;
   }
 }
 
