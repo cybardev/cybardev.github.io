@@ -124,6 +124,10 @@ svg,
   }
 }
 
+a, a:visited {
+  color: var(--accent-hover);
+}
+
 img#watermelon {
   position: fixed;
   top: 5px;
@@ -189,8 +193,21 @@ img#watermelon {
   color: var(--code);
 }
 
+#home {
+  color: var(--glow);
+}
+
+#thoughts {
+  color: var(--accent-hover);
+}
+
 #lambda {
   text-shadow: 0 0 2px var(--code);
+
+  & > a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 #nix-logo {
