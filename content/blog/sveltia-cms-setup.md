@@ -1,5 +1,4 @@
 ---
-draft: true
 date: 2025-12-04T15:35:00
 title: My New CMS Setup
 description: How a new CMS led me to enjoy writing on my blog
