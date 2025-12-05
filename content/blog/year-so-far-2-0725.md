@@ -28,7 +28,7 @@ In May, SMU held the convocation ceremony for Jan 2025 graduates. I have always 
 
 It was definitely an interesting experience going up on stage and receiving the roll of paper that validated the four and some years of learning I just completed. Got some nice pictures taken, spent time with friends. I wish my parents could attend though; this was for them, after all.
 
-![convocation photo](/_assets/images/blog/convocation.jpg)
+![convocation photo](/assets/images/blog/convocation.jpg)
 
 _**PS**: I don’t dislike university, in fact I believe all stages of education should have the level of freedom and agency that university gives us (and that universities should have **more** freedom, especially in letting us ditch unrelated electives). However I am an avid hater of mid-term and final exams. I am largely in favour of intermittent testing and practical assessments._
 

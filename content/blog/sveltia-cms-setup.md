@@ -17,4 +17,4 @@ The issue was Cloudflare's Rocket Loader, which I had to disable for the CMS scr
 
 Now, more than ever before, I feel inspired to write on my blog. Thanks Sveltia, for bringing back the joy in writing.
 
-<img src="/_assets/images/blog/sveltia-cms-mobile.jpeg" title="Sveltia CMS on mobile" alt="screenshot of Sveltia CMS dashboard showing my blog posts" class="mobile-ss" />
+<img src="/assets/images/blog/sveltia-cms-mobile.jpeg" title="Sveltia CMS on mobile" alt="screenshot of Sveltia CMS dashboard showing my blog posts" class="mobile-ss" />

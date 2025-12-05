@@ -19,4 +19,4 @@ A mistake I made at the start, which made the entire journey harder than it need
 
 Here's the final SVG. I'm pretty proud of it. 😁
 
-<img src="/_assets/images/watermelon.svg" title="Bleeding Watermelon" alt="pixel art of a slice of watermelon with red juice flowing out in a puddle, with a shadow behind the slice">
+<img src="/assets/images/watermelon.svg" title="Bleeding Watermelon" alt="pixel art of a slice of watermelon with red juice flowing out in a puddle, with a shadow behind the slice">

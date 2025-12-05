@@ -44,7 +44,7 @@ Every Monday evening I meet up with folks from a local developer group called [H
 
 **Bonus**: My friend Naziya drew a gorgeous banner for Collect. Monday events:
 
-![Collect. Banner](/_assets/images/blog/collect-banner.png)
+![Collect. Banner](/assets/images/blog/collect-banner.png)
 
 ### Miscellaneous
 

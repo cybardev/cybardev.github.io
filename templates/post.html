@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 <!-- prettier-ignore -->
 {% block style %} {{ super() }}
-<link rel="stylesheet" href='{{ get_url(path="_assets/css/blog.css") }}' />
+<link rel="stylesheet" href='{{ get_url(path="assets/css/blog.css") }}' />
 {% endblock style %} {% block content %}
 <section class="bp">
   <article class="bp">
     <h1 class="bp">{{ page.title }}</h1>
     <p>
-      <small>{{ page.date | date(format="%d %b %Y") }}</small>
+      <small
+        ><code>cybardev</code> |
+        <span id="date">{{ page.date | date(format="%d %b %Y") }}</span></small
+      >
     </p>
     <a href="/blog">&#x25C0;&nbsp;blogs</a>
     &nbsp;&vert;&nbsp;

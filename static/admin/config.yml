@@ -1,6 +1,6 @@
 site_url: "https://cybar.dev"
 logo:
-  src: "https://cybar.dev/_assets/images/favicon.ico"
+  src: "https://cybar.dev/assets/images/favicon.ico"
   show_in_header: true
 slug:
   encoding: "ascii"
@@ -18,8 +18,8 @@ backend:
     delete: "{{collection}}: remove {{slug}}"
     uploadMedia: "media: add {{path}}"
     deleteMedia: "media: remove {{path}}"
-media_folder: "static/_assets/images/blog"
-public_folder: "/_assets/images/blog"
+media_folder: "static/assets/images/blog"
+public_folder: "/assets/images/blog"
 collections:
   - name: "blog"
     label: "Blog"

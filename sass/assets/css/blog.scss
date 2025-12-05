@@ -1,0 +1,99 @@
+/* --- Blog CSS --- */
+
+nav.pagination > span {
+  color: var(--code);
+}
+nav.pagination > a {
+  color: var(--accent-hover);
+  transition: color var(--glow-duration);
+}
+nav.pagination > a:is(:hover, :active, :focus-visible) {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  body:has(.bp) img#watermelon {
+    opacity: 50%;
+    top: 4rem;
+  }
+}
+
+a.bl.rss {
+  color: var(--code);
+  transition: filter var(--glow-duration);
+}
+a.bl.rss:is(:hover, :active, :focus-visible) {
+  filter: drop-shadow(0 0 0.76px var(--code));
+}
+a.bl.rss > svg:is(:hover, :active, :focus-visible) {
+  --glow: var(--code);
+  filter: none;
+}
+
+ul.pointless.bl {
+  list-style-type: disc;
+}
+ul.pointless.bl > li {
+  display: list-item;
+}
+ul.pointless.bl > li > a {
+  text-decoration: none;
+}
+ul.pointless.bl > li > a > span {
+  font-family: monospace;
+  font-size: small;
+  opacity: 0.5;
+}
+
+section.bl {
+  padding-inline: 1em;
+}
+section.bp h2 {
+  font-size: 1.35em;
+}
+section.bp pre:has(code) {
+  overflow-x: auto;
+  white-space: pre;
+  font-size: medium;
+  padding: 0.42em;
+}
+
+@media (min-width: 480px) {
+  section.bl {
+    max-width: fit-content;
+  }
+  section.bp {
+    max-width: 50vw;
+    max-width: 50dvw;
+  }
+  section.bp img.mobile-ss {
+    width: 50%;
+    display: block;
+    margin-inline: auto;
+  }
+}
+
+.bl h1,
+.bp h1 {
+  font-size: 2em;
+}
+.bl h2,
+.bp h2 {
+  margin-block: 1em;
+  font-size: medium;
+  color: var(--text-light);
+}
+.bl hr,
+.bp hr {
+  margin-block: 1rem;
+}
+
+#date {
+  color: var(--glow);
+}
+
+section.bp img,
+section.bl img {
+  width: 100%;
+  object-fit: contain !important;
+}

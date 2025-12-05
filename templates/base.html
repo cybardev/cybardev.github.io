@@ -21,7 +21,7 @@
     <meta property="og:description" content="{{ base_description }}" />
     <meta
       property="og:image"
-      content="https://cybar.dev/_assets/images/preview.png"
+      content="https://cybar.dev/assets/images/preview.png"
     />
 
     <!-- Twitter Meta Tags -->
@@ -32,7 +32,7 @@
     <meta name="twitter:description" content="{{ base_description }}" />
     <meta
       name="twitter:image"
-      content="https://cybar.dev/_assets/images/preview.png"
+      content="https://cybar.dev/assets/images/preview.png"
     />
 
     <!-- OpenGraph Meta Tags Generated via https://www.opengraph.xyz -->
@@ -52,13 +52,10 @@
       title="{{ config.title }} — Atom Feed"
       href='{{ get_url(path="atom.xml") }}'
     />
-    <link rel="icon" href='{{ get_url(path="_assets/images/favicon.ico") }}' />
-    <link
-      rel="stylesheet"
-      href='{{ get_url(path="_assets/css/simple.css") }}'
-    />
+    <link rel="icon" href='{{ get_url(path="assets/images/favicon.ico") }}' />
+    <link rel="stylesheet" href='{{ get_url(path="assets/css/simple.css") }}' />
     {% block style %}
-    <link rel="stylesheet" href='{{ get_url(path="_assets/css/style.css") }}' />
+    <link rel="stylesheet" href='{{ get_url(path="assets/css/style.css") }}' />
     {% endblock style %}
   </head>
 
@@ -66,7 +63,7 @@
     <a href="https://en.wikipedia.org/wiki/Gaza_genocide">
       <img
         id="watermelon"
-        src='{{ get_url(path="_assets/images/watermelon.svg") }}'
+        src='{{ get_url(path="assets/images/watermelon.svg") }}'
         alt="pixel art of a slice of watermelon with red juice flowing out in a puddle, with a shadow behind the slice"
       />
     </a>

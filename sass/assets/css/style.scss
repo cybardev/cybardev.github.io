@@ -1,54 +1,12 @@
 /* --- Custom CSS --- */
 
-/* https://fonts.google.com/specimen/Ubuntu+Sans */
+/* Ubuntu Sans font */
 @font-face {
   font-family: "Ubuntu Sans";
-  src: url("../fonts/UbuntuSans.ttf") format("truetype");
+  src: url("/assets/fonts/UbuntuSans.ttf") format("truetype");
   font-weight: 100 800;
   font-style: normal;
   font-display: swap;
-}
-
-:root {
-  font-family: "Ubuntu Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-
-  /* Default (light) theme */
-  --bg: #fff;
-  --accent-bg: #f5f7ff;
-  --text: #212121;
-  --text-light: #585858;
-  --border: gainsboro;
-  --accent: #7ebae4;
-  --accent-hover: #5277c3;
-  --accent-text: var(--bg);
-  --code: crimson;
-  --preformatted: #444;
-  --marked: #ffdd33;
-  --disabled: #efefef;
-  --glow: #20b286;
-  --glow-duration: 0.2s;
-}
-
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-  body {
-    color-scheme: dark;
-    --bg: #212121;
-    --accent-bg: #2b2b2b;
-    --text: #dcdcdc;
-    --text-light: #ababab;
-    --border: #5d5d5d;
-    --accent: #5277c3;
-    --accent-hover: #7ebae4;
-    --accent-text: var(--bg);
-    --code: #ed365b;
-    --preformatted: #ccc;
-    --disabled: #111;
-  }
 }
 
 body {
@@ -58,12 +16,6 @@ body {
   display: flex;
   flex-direction: column;
   transition: background-color 0.8s;
-
-  & > footer {
-    height: auto;
-    padding-block: 0;
-    margin-block: 0;
-  }
 }
 
 main {
@@ -73,7 +25,7 @@ main {
   justify-content: center;
   padding: 1rem;
 
-  & > section {
+  > section {
     width: 100%;
     text-align: left;
     border-bottom: none;
@@ -124,7 +76,8 @@ svg,
   }
 }
 
-a, a:visited {
+a,
+a:visited {
   color: var(--accent-hover);
 }
 
@@ -148,11 +101,11 @@ img#watermelon {
   list-style-type: none;
   padding: 0;
 
-  & > li {
+  > li {
     display: inline;
     margin-right: 1.5em;
 
-    & > a:is(:hover, :active, :focus-visible) {
+    > a:is(:hover, :active, :focus-visible) {
       text-shadow: 0 0 16px var(--accent-hover);
       color: var(--accent-hover);
     }
@@ -208,7 +161,7 @@ img#watermelon {
 #lambda {
   text-shadow: 0 0 2px var(--code);
 
-  & > a {
+  > a {
     text-decoration: none;
     color: inherit;
   }
@@ -223,7 +176,7 @@ img#watermelon {
   main {
     justify-content: center;
 
-    & > section {
+    > section {
       max-width: 45ch;
     }
   }
@@ -246,11 +199,11 @@ img#watermelon {
 /* Error Page */
 
 section.error {
-  & > h1 > span {
+  > h1 > span {
     color: var(--code);
     text-shadow: 0 0 3px var(--code);
   }
-  & > h2 {
+  > h2 {
     color: var(--glow);
     font-style: italic;
   }
