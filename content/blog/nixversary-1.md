@@ -1,6 +1,6 @@
 ---
-draft: true
-date: 2025-12-11T12:50:00
+draft: false
+date: 2025-12-23T16:44:00
 title: Celebrating My First Nixversary
 description: What a year of Nix, Nixpkgs, Flakes, and Home-Manager has been for me
 ---
@@ -23,3 +23,7 @@ Other than that, here's a quick rundown of the highlight of my Nix journey:
 - Made PR (awaiting review) to add and maintain Huggingface’s Git-Xet package.
 - Crafted a multi-machine, multi-platform config with shared modules.
 - Maintaining a personal Nix package and module set for stuff I find interesting but don’t quite want to commit to maintaining in upstream Nixpkgs.
+
+That's the gist of it for now. I've been absolutely loving the Nix experience to the point where I don't see myself mov away from it anytime soon. If Asahi Linux supported display out over type-C, I'd love to run full-blown NixOS on my Mac. Till then, Nix-Darwin, Home Manager, and DevShells have me covered.
+
+In later posts I will cover the "tricky" bits of Nix and its ecosystem, such as Flakes, Home Manager, the Module System, DevShells, and more. Stay tuned\~
