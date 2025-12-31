@@ -44,12 +44,28 @@ h2 {
   margin-block: 0;
 }
 
-blockquote {
-  color: var(--text-light);
-  font-style: italic;
+quote-block {
+  display: block;
   border-left: solid;
-  padding-left: 1em;
-  margin-left: 1em;
+  padding-inline: 1em;
+  margin-inline: 1em;
+  margin-block: 1em;
+  color: var(--text-light);
+
+  blockquote {
+    margin-inline: 0;
+    padding-inline: 0;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  blockquote, p {
+    margin-block: 0.5em;
+  }
+
+  strong, cite {
+    font-style: normal;
+  }
 }
 
 svg {

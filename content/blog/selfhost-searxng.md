@@ -4,9 +4,10 @@ date: 2025-12-31T12:48:00
 title: Self-hosting a Privacy-focused Search Engine
 description: How I set up my own SearXNG instance and the user experience of self-hosted search engines
 ---
-> _You might not have anything to hide, my friend._
-> _But you have everything to protect._
-> — **Kevin D. Mitnick**, The Art of Invisibility
+{% quote(author="Kevin D. Mitnick", source="The Art of Invisibility") %}
+You might not have anything to hide, my friend.
+But you have everything to protect.
+{% end %}
 
 It has been over 6 years since I stopped using Google as my default search engine. For a long while I was on Ecosia, and then switched to Brave Search when they launched it. After learning of the active CEO's questionable conduct, I dropped Brave (both browser and search) and started using Firefox with Startpage. Of course, I wasn't satisfied. Especially after getting a viewport full of ad results one day, I decided I had enough and that it was finally time to self-host a search engine.
 
