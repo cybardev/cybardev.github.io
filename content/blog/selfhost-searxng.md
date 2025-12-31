@@ -1,6 +1,6 @@
 ---
-draft: true
-date: 2025-12-31T12:46:00
+draft: false
+date: 2025-12-31T12:48:00
 title: Self-hosting a Privacy-focused Search Engine
 description: How I set up my own SearXNG instance and the user experience of self-hosted search engines
 ---
