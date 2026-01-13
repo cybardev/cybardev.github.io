@@ -1,4 +1,5 @@
 ---
+draft: false
 title: "Java Lists"
 date: 2021-03-22T22:36:56+06:00
 description: "Get a basic know-how on lists in Java"

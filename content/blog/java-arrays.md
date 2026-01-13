@@ -1,4 +1,5 @@
 ---
+draft: false
 title: "Java Arrays"
 date: 2021-03-08T16:03:05+06:00
 description: "Get a basic know-how on one-dimensional arrays in Java"

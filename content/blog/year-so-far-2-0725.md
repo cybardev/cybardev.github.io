@@ -1,4 +1,5 @@
 ---
+draft: false
 title: Year So Far — Part 2
 date: 2025-07-19T13:48:00-03:00
 description: What I’ve been doing for the first half of 2025 — Part 2

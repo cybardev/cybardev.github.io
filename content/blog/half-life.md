@@ -1,4 +1,5 @@
 ---
+draft: false
 title: "Half-Life"
 date: 2023-05-23T00:00:00-03:00
 description: "A poetry dedicated to a dead cat - one that never existed."

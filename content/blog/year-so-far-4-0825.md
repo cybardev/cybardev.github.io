@@ -1,4 +1,5 @@
 ---
+draft: false
 title: Year So Far — Bonus
 date: 2025-08-10T17:00:00-03:00
 description: What I’ve been doing for the first half of 2025 — Bonus Issue

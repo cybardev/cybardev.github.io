@@ -1,4 +1,5 @@
 ---
+draft: false
 title: How I “Deploy” My Resume
 date: 2025-11-23T23:20:32-04:00
 description: Behind the scenes of how my resume website works
