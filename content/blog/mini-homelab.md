@@ -34,6 +34,16 @@ I will go over my thought process for everything below to follow along, but if y
 
 ### Hardware
 
-To start off,
+Didn't have much to choose from. I just had my main laptop and this, and didn't want to buy anything new (for now). I do have another old laptop with much better spec, but last I tried it didn't boot. Might try again later. For now I want to focus on low power consumption and few high-priority services, though I'm increasingly feeling the need for more available RAM.
+
+### Operating System
+
+Given the humble hardware, I needed to choose something extremely lightweight. I wanted to choose one of the container-based distros like OpenSUSE MicroOS, or Fedora CoreOS, but the requirements still seemed a bit above what I could offer. So I settled on Alpine Linux, which has been pretty solid. Some things are quirky, like \`doas\` instead of \`sudo\`, and the lack of \`systemd\` conveniences; but nothing showstopping.
+
+Ideally I would like to use NixOS. That way I could deploy the services using NixOS modules, cutting out the middleman (containers). I will probably try that when I get the other laptop to work.
+
+### Search Engine
+
+If you've read my last post ([cybar.dev/blog/selfhost-searxng](https://cybar.dev/blog/selfhost-searxng/)), you're already familiar with what I'm doing for this. The only difference is that previously I was hosting it on my main laptop using a Home Manager Nix module, while now it's using a Docker Compose file.
 
 ![Screenshot of output from nerdctl stats, showing resource usage stats from currently running containers on my homelab setup](/assets/images/blog/mini-homelab.png "Container Resource Usage")
