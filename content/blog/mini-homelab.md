@@ -42,8 +42,20 @@ Given the humble hardware, I needed to choose something extremely lightweight. I
 
 Ideally I would like to use NixOS. That way I could deploy the services using NixOS modules, cutting out the middleman (containers). I will probably try that when I get the other laptop to work.
 
+### Network Proxy
+
+It wouldn't be too useful if I was out and about, and couldn't use my services. I needed a way to forward the active ports while not having a static IP. There's various ways of doing that: Cloudflare Tunnels, Tailscale, WireGuard, Dynamic DNS + Reverse Proxy; to name a few.
+
+Cloudflare Tunnels is what I started with. My domain is on Cloudflare, and the web UI is very simple to use. I was all set up in a few clicks (after starting the server container in host network mode, ofc). The issue, tho, is that Cloudflare makes the services _public_. That is, anyone who knows the URL can use the service. This would not be an issue for most things due to auth, and I would actually like some services to be public use (like SearXNG). But on a 1 core CPU with <1GB RAM... it gets a bit iffy if many people try to use it simultaneously. So until I upgrade my hardware, I needed to keep my services to myself...
+
+Enter Tailscale. Tailscale is a VPN that uses WireGuard under the hood. It basically takes the setup step out of WireGuard, providing a premade subset and/or superset of the features that works for many cases. If one needs finer control, WireGuard may be a better solution, but for my purposes this is fine (at least for now). Tailscale proxies my server's local network over the internet, through their servers, to whatever other devices are connected to the same "Tailnet", which is just their marketing term for a VPN. I use Tailscale clients on my main laptop and my phone, and only those devices (client and server both must be aithn'd to my Tailscale account) can access the URLs of my services (while connected to the VPN) that are hosted on the server. The Tailscale server software is also running as a compose container, with host-mode networking.
+
+I could directly use WireGuard, but that would be more effort than I'm willing to invest at the moment. Same issue with DDNS and reverse proxy. I might revisit this in the future, even if at least for the sake of learning how those go.
+
+The endgame idea I have is to rent a VPS and host Headscale there, thus having (mostly) full control of the network traffic. Headscale is... well, Tailscale's client software (even the servers are actually clients, since they connect to the Tailscale backend) is open-source; but Tailscale's backend, the parts that actually route the network traffic, is proprietary (this is my understanding; feel free to correct me), so some person/folks in the community made Headscale, which can act as that routing backend. It needs a static IP though, so a VPS would be needed, if static IP can't be acquired from the ISP. I'll see what I do when I get to it.
+
 ### Search Engine
 
-If you've read my last post ([cybar.dev/blog/selfhost-searxng](https://cybar.dev/blog/selfhost-searxng/)), you're already familiar with what I'm doing for this. The only difference is that previously I was hosting it on my main laptop using a Home Manager Nix module, while now it's using a Docker Compose file.
+If you've read my last post ([cybar.dev/blog/selfhost-searxng](https://cybar.dev/blog/selfhost-searxng/)), you're already familiar with what I'm doing for this. The only difference is that previously I was hosting it on my main laptop using a Home Manager Nix module, while now it's using a Docker Compose file running on the potato "server". Also wasn't using a cache previously but not there's Valkey.
 
 ![Screenshot of output from nerdctl stats, showing resource usage stats from currently running containers on my homelab setup](/assets/images/blog/mini-homelab.png "Container Resource Usage")
