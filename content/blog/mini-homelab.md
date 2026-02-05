@@ -72,7 +72,9 @@ Nextcloud. Easy, right? Last time when I did it on the same hardware, back in 20
 
 ### Passphrase Manager
 
-> For why I call it "passphrase" and not "password", see the wonderful [xkcd#936](https://m.xkcd.com/936/).
+> For why I call it "passphrase" and not "password", see the wonderful `xkcd#936` (linked below).
+
+[![xkcd#936](<https://imgs.xkcd.com/comics/password_strength.png> "Password Strength — xkcd#936")](https://xkcd.com/936/)
 
 Vaultwarden backend + Bitwarden client
 
