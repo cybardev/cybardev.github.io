@@ -4,6 +4,7 @@ date: 2026-01-19T16:50:00
 title: Mini Homelab Self-hosting Setup
 description: How I set up a homelab server on an old laptop to self-host major services
 ---
+
 Over the last few weeks I set up a homelab with most of the cloud services I often use, on an old netbook that's weaker than a modern Raspberry Pi board. This post is to document how I did it, why I did it, and what's in store for the setup going forward. Feel free to follow along to set up your very own homelab server.
 
 ## Why
@@ -25,6 +26,7 @@ Here's the services I host/ed on my homelab. I say "host/ed" because some of the
 - Cobalt
 - Ente
 - Tailscale
+- 4get
 
 **PS**: Some of these depend on services like a database or cache. I mostly stuck to PostgreSQL and Valkey (a Redis fork).
 
@@ -42,6 +44,10 @@ Given the humble hardware, I needed to choose something extremely lightweight. I
 
 Ideally I would like to use NixOS. That way I could deploy the services using NixOS modules, cutting out the middleman (containers). I will probably try that when I get the other laptop to work.
 
+Alternatively, I might install Fedora Server (yes, the regular one, not CoreOS), and put Kubernetes (k3s) on top. It's likely overkill for my purposes, but I want to use this as an opportunity to learn hands-on how to provision infrastructure using Terraform, set up a production environment using Ansible, orchestrate containerized services with redundancy through replication and load-balancing using Kubernetes, all on an OS that's similar to the industry standard Red Hat Enterprise Linux (RHEL).
+
+CoreOS would make it more convenient, but then I don't learn as much. For me, that's the fun part.
+
 ### Network Proxy
 
 It wouldn't be too useful if I was out and about, and couldn't use my services. I needed a way to forward the active ports while not having a static IP. There's various ways of doing that: Cloudflare Tunnels, Tailscale, WireGuard, Dynamic DNS + Reverse Proxy; to name a few.
@@ -56,6 +62,34 @@ The endgame idea I have is to rent a VPS and host Headscale there, thus having (
 
 ### Search Engine
 
-If you've read my last post ([cybar.dev/blog/selfhost-searxng](https://cybar.dev/blog/selfhost-searxng/)), you're already familiar with what I'm doing for this. The only difference is that previously I was hosting it on my main laptop using a Home Manager Nix module, while now it's using a Docker Compose file running on the potato "server". Also wasn't using a cache previously but not there's Valkey.
+If you've read my last post ([cybar.dev/blog/selfhost-searxng](https://cybar.dev/blog/selfhost-searxng/)), you're already familiar with what I'm doing for this. The only difference is that previously I was hosting it on my main laptop using a Home Manager Nix module, while now it's using a Docker Compose file running on the potato "server". Also wasn't using a cache previously but now there's Valkey.
+
+I did give `4get` a try, but it seems like it's not ready for prime time yet. There's a lot of things that can't be configured declaratively and needs to be set up using cookies  on the client side through the web UI. And for some reason the Startpage backend didn't support info widgets like Wikipedia preview. It's also been similar to SearXNG in terms of memory footprint, so I'd be getting a worse experience for not much resource efficiency.
+
+### Files, Photos, Contacts, Calendar
+
+Nextcloud. Easy, right? Last time when I did it on the same hardware, back in 2020 or 2021, it was fine because I dedicated the whole machine to this one service. Now that I'm trying to diversify my setup, using Nextcloud is difficult on such low RAM. It alone takes between 200-600 MB of RAM (probably more), and has caused the server to freeze at least once. Funny thing is, it happened as I was editing the compose file to limit memory usage. Prophetic. Anyway, added the limits but then it got extremely slow (possibly because it started using swap. I could tell it to not use swap, but... maybe that would lead to other problems? I just did not want to keep optimizing this one thing, so I started looking for alternatives.
+
+### Passphrase Manager
+
+> For why I call it "passphrase" and not "password", see the wonderful [xkcd#936](https://m.xkcd.com/936/).
+
+Vaultwarden backend + Bitwarden client
+
+### Git Forge
+
+Forgejo
+
+### Media Downloader
+
+Cobalt
+
+### Discord Bot
+
+Cy | bot
+
+## Future
+
+Better hardware, OS, redundancy, security, etc.
 
 ![Screenshot of output from nerdctl stats, showing resource usage stats from currently running containers on my homelab setup](/assets/images/blog/mini-homelab.png "Container Resource Usage")
