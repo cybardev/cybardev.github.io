@@ -68,7 +68,21 @@ I did give `4get` a try, but it seems like it's not ready for prime time yet. Th
 
 ### Files, Photos, Contacts, Calendar
 
-Nextcloud. Easy, right? Last time when I did it on the same hardware, back in 2020 or 2021, it was fine because I dedicated the whole machine to this one service. Now that I'm trying to diversify my setup, using Nextcloud is difficult on such low RAM. It alone takes between 200-600 MB of RAM (probably more), and has caused the server to freeze at least once. Funny thing is, it happened as I was editing the compose file to limit memory usage. Prophetic. Anyway, added the limits but then it got extremely slow (possibly because it started using swap. I could tell it to not use swap, but... maybe that would lead to other problems? I just did not want to keep optimizing this one thing, so I started looking for alternatives.
+[Nextcloud](https://nextcloud.com/). Easy, right? Last time when I did it on the same hardware, back in 2020 or 2021, it was fine because I dedicated the whole machine to this one service. Now that I'm trying to diversify my setup, using Nextcloud is difficult on such low RAM. It alone takes between 200-600 MB of RAM (probably more), and has caused the server to freeze at least once. Funny thing is, it happened as I was editing the compose file to limit memory usage. Prophetic. Anyway, added the limits but then it got extremely slow (possibly because it started using swap. I could tell it to not use swap, but... maybe that would lead to other problems? I just did not want to keep optimizing this one thing, so I started looking for alternatives.
+
+For Calendar and Contacts, I did not have to look far. [Radicle](https://radicale.org/v3.html) is a lightweight CalDAV and CardDAV server which was trivial to set up. File sync, though, was a different beast...
+
+I tried to set up [OpenCloud](https://opencloud.eu/en) but the setup was a showstopper. I wanted something that would work with _mostly_ minimal effort. OpenCloud _looked_ like that's what it would be, but it was anything but. The [opencloud-compose](https://github.com/opencloud-eu/opencloud-compose) repository had way too many modules, and used subpar ways to activate the modules. After a few gruelling days of trying to set it up according to docs and debugging the endless stream of errors, I decided to move on.
+
+I dismissed [OwnCloud](https://owncloud.com/product) as being no lighter than Nextcloud, and [OwnCloud Infinite Scale (OCIS)](https://owncloud.com/infinite-scale/) as being no less complex than OpenCloud (due to OpenCloud being based on OCIS).
+
+Was reluctant to try [Seafile](https://www.seafile.com/en/home/) due to the hardware requirements being listed as considerably above what I had. I should probably give it a try sometime. It looks promising, and listed requirements often overestimate in favour of ensuring what the developers consider good UX.
+
+Ended up with [Cloudreve](https://cloudreve.org/) for now, using WebDAV-compatible apps for file management and sync. It's fairly lightweight, and was absolutely trivial to set up. Caveat: the native iOS mobile app used for photos sync is not FOSS. I'll need to figure out how to sync photos to WebDAV. Or, use a "better" photo backup solution, which is what I _tried_ to opt for.
+
+[Immich](https://immich.app/) seemed to be the most popular option for photo sync. But I recall that on their issue tracker, when encryption at rest was requested to prevent rogue server admins from accessing user photos, or the server being a point of data leak to malicious actors, the official stance was that they will not support encryption for the foreseeable future and since it's meant to be self-hosted, you would have to trust the server (since it is presumably under your control). To me, this is unacceptable, so I dismissed Immich.
+
+Ente
 
 ### Passphrase Manager
 
