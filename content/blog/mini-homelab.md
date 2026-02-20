@@ -5,7 +5,7 @@ title: Mini Homelab Self-hosting Setup
 description: How I set up a homelab server on an old laptop to self-host major services
 ---
 
-Over the last few weeks I set up a homelab with most of the cloud services I often use, on an old netbook that's weaker than a modern Raspberry Pi board. This post is to document how I did it, why I did it, and what's in store for the setup going forward. Feel free to follow along to set up your very own homelab server.
+Over December 2025 I set up a homelab with most of the cloud services I often use, on an old netbook that's weaker than a modern Raspberry Pi board. This post is to document how I did it, why I did it, and what's in store for the setup going forward. Feel free to follow along to set up your very own homelab server.
 
 ## Why
 
@@ -32,7 +32,7 @@ Here's the services I host/ed on my homelab. I say "host/ed" because some of the
 
 ## How
 
-I will go over my thought process for everything below to follow along, but if you want to dive right into the Compose files, here they are: [github.com/cybardev/homelab](https://github.com/cybardev/homelab)
+I will go over my thought process for how I selected which services to use, but if you want to dive right into the Compose files and guidance on how to set them up for yourself, here's the repository: [github.com/cybardev/homelab](https://github.com/cybardev/homelab)
 
 ### Hardware
 
@@ -82,7 +82,7 @@ Ended up with [Cloudreve](https://cloudreve.org/) for now, using WebDAV-compatib
 
 [Immich](https://immich.app/) seemed to be the most popular option for photo sync. But I recall that on their issue tracker, when encryption at rest was requested to prevent rogue server admins from accessing user photos, or the server being a point of data leak to malicious actors, the official stance was that they will not support encryption for the foreseeable future and since it's meant to be self-hosted, you would have to trust the server (since it is presumably under your control). To me, this is unacceptable, so I dismissed Immich.
 
-Ente
+Ente felt like a better solution for my needs. I came across it from a post by [Steven Deobald](https://deobald.ca/), an acquaintance from [HaliHax](https://www.halihax.com/), a local dev group. It's Free and Open-Source Software, is fully self-hostable, and has End-to-End Encryption (E2EE). Fantastic. Except... it uses MinIO, and trying to use a different S3-compatible storage backend has been... challenging, to say the least.
 
 ### Passphrase Manager
 
