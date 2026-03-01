@@ -104,6 +104,10 @@ Cobalt
 
 Cy | bot
 
+### Monitoring
+
+Glances
+
 ## Future
 
 Better hardware, OS, redundancy, security, etc.
