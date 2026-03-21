@@ -1,6 +1,6 @@
 ---
-draft: true
-date: 2026-01-19T16:50:00
+draft: false
+date: 2026-03-21T16:00:00
 title: Mini Homelab Self-hosting Setup
 description: How I set up a homelab server on an old laptop to self-host major services
 ---
@@ -17,20 +17,21 @@ Privacy is an obvious point, and a common reason why people do this. For me it w
 
 Here's the services I host/ed on my homelab. I say "host/ed" because some of them may not be there anymore because I either wanted to dedicate resources to something else, or switched to one or more alternatives (in any case, they're all listed, so you may find services with overlapping purpose).
 
-- SearXNG
-- Forgejo
-- Nextcloud
-- Vaultwarden
-- Cloudflare Tunnels
-- Cy | bot
-- Cloudreve
-- Radicale
-- Cobalt
-- Ente
-- Tailscale
-- 4get
+- [SearXNG](https://github.com/searxng/searxng)
+- [Forgejo](https://forgejo.org/)
+- [Nextcloud](https://nextcloud.com/)
+- [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
+- [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/)
+- [Cy | bot](https://github.com/cybardev/cybarbot)
+- [Cloudreve](https://cloudreve.org/)
+- [Radicale](https://radicale.org/v3.html)
+- [Cobalt](https://github.com/imputnet/cobalt)
+- [Ente](https://ente.io/)
+- [Tailscale](https://tailscale.com/)
+- [4get](https://4get.ca/)
+- [Glances](https://github.com/nicolargo/glances)
 
-**PS**: Some of these depend on services like a database or cache. I mostly stuck to PostgreSQL and Valkey (a Redis fork).
+**PS**: Some of these depend on services like a database or cache. I mostly stuck to [PostgreSQL](https://www.postgresql.org/) and [Valkey](https://valkey.io/) (a Redis fork).
 
 ## How
 
@@ -42,33 +43,33 @@ Didn't have much to choose from. I just had my main laptop and this, and didn't 
 
 ### Operating System
 
-Given the humble hardware, I needed to choose something extremely lightweight. I wanted to choose one of the container-based distros like OpenSUSE MicroOS, or Fedora CoreOS, but the requirements still seemed a bit above what I could offer. So I settled on Alpine Linux, which has been pretty solid. Some things are quirky, like \`doas\` instead of \`sudo\`, and the lack of \`systemd\` conveniences; but nothing showstopping.
+Given the humble hardware, I needed to choose something extremely lightweight. I wanted to choose one of the container-based distros like [OpenSUSE MicroOS](https://microos.opensuse.org/), or [Fedora CoreOS](https://fedoraproject.org/coreos/), but the requirements still seemed a bit above what I could offer. So I settled on [Alpine Linux](https://www.alpinelinux.org/), which has been pretty solid. Some things are quirky, like `doas` instead of `sudo`, and the lack of `systemd` conveniences; but nothing showstopping.
 
-Ideally I would like to use NixOS. That way I could deploy the services using NixOS modules, cutting out the middleman (containers). I will probably try that when I get the other laptop to work.
+Ideally I would like to use [NixOS](https://nixos.org/). That way I could deploy the services using NixOS modules, cutting out the middleman (containers). I will probably try that when I get the other laptop to work.
 
-Alternatively, I might install Fedora Server (yes, the regular one, not CoreOS), and put Kubernetes (k3s) on top. It's likely overkill for my purposes, but I want to use this as an opportunity to learn hands-on how to provision infrastructure using Terraform, set up a production environment using Ansible, orchestrate containerized services with redundancy through replication and load-balancing using Kubernetes, all on an OS that's similar to the industry standard Red Hat Enterprise Linux (RHEL).
+Alternatively, I might install [Fedora Server](https://fedoraproject.org/server/) (yes, the regular one, not CoreOS) or [Rocky Linux](https://rockylinux.org/) or [AlmaLinux](https://almalinux.org/), and put [Kubernetes (kind)](https://kind.sigs.k8s.io/) on top. It's likely overkill for my purposes, but I want to use this as an opportunity to learn hands-on how to provision infrastructure using [Terraform](https://developer.hashicorp.com/terraform/tutorials/kubernetes/kubernetes-provider), set up a production environment using [Ansible](https://github.com/ansible/ansible), orchestrate containerized services with redundancy through replication and load-balancing using Kubernetes, all on an OS that's similar to the industry standard [Red Hat Enterprise Linux (RHEL)](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux).
 
 CoreOS would make it more convenient, but then I don't learn as much. For me, that's the fun part.
 
 ### Network Proxy
 
-It wouldn't be too useful if I was out and about, and couldn't use my services. I needed a way to forward the active ports while not having a static IP. There's various ways of doing that: Cloudflare Tunnels, Tailscale, WireGuard, Dynamic DNS + Reverse Proxy; to name a few.
+It wouldn't be too useful if I was out and about, and couldn't use my services. I needed a way to forward the active ports while not having a static IP. There's various ways of doing that: Cloudflare Tunnel, Tailscale, WireGuard, Dynamic DNS + Reverse Proxy (like [nginx](https://nginx.org/en/)); to name a few.
 
-Cloudflare Tunnels is what I started with. My domain is on Cloudflare, and the web UI is very simple to use. I was all set up in a few clicks (after starting the server container in host network mode, ofc). The issue, tho, is that Cloudflare makes the services _public_. That is, anyone who knows the URL can use the service. This would not be an issue for most things due to auth, and I would actually like some services to be public use (like SearXNG). But on a 1 core CPU with <1GB RAM... it gets a bit iffy if many people try to use it simultaneously. So until I upgrade my hardware, I needed to keep my services to myself...
+[Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/) is what I started with. My domain is on Cloudflare, and the web UI is very simple to use. I was all set up in a few clicks (after starting the server container in host network mode, ofc). The issue, tho, is that Cloudflare makes the services _public_. That is, anyone who knows the URL can use the service. This would not be an issue for most things due to auth, and I would actually like some services to be public use (like SearXNG). But on a 1 core CPU with <1GB RAM... it gets a bit iffy if many people try to use it simultaneously. So until I upgrade my hardware, I needed to keep my services to myself...
 
-Enter Tailscale. Tailscale is a VPN that uses WireGuard under the hood. It basically takes the setup step out of WireGuard, providing a premade subset and/or superset of the features that works for many cases. If one needs finer control, WireGuard may be a better solution, but for my purposes this is fine (at least for now). Tailscale proxies my server's local network over the internet, through their servers, to whatever other devices are connected to the same "Tailnet", which is just their marketing term for a VPN. I use Tailscale clients on my main laptop and my phone, and only those devices (client and server both must be aithn'd to my Tailscale account) can access the URLs of my services (while connected to the VPN) that are hosted on the server. The Tailscale server software is also running as a compose container, with host-mode networking.
+Enter [Tailscale](https://tailscale.com/). Tailscale is a VPN that uses WireGuard under the hood. It basically takes the setup step out of [WireGuard](https://www.wireguard.com/), providing a premade subset and/or superset of the features that works for many cases. If one needs finer control, WireGuard may be a better solution, but for my purposes this is fine (at least for now). Tailscale proxies my server's local network over the internet, through their servers, to whatever other devices are connected to the same "Tailnet", which is just their marketing term for a VPN. I use Tailscale clients on my main laptop and my phone, and only those devices (client and server both must be aithn'd to my Tailscale account) can access the URLs of my services (while connected to the VPN) that are hosted on the server. The Tailscale server software is also running as a compose container, with host-mode networking.
 
 I could directly use WireGuard, but that would be more effort than I'm willing to invest at the moment. Same issue with DDNS and reverse proxy. I might revisit this in the future, even if at least for the sake of learning how those go.
 
-The endgame idea I have is to rent a VPS and host Headscale there, thus having (mostly) full control of the network traffic. Headscale is... well, Tailscale's client software (even the servers are actually clients, since they connect to the Tailscale backend) is open-source; but Tailscale's backend, the parts that actually route the network traffic, is proprietary (this is my understanding; feel free to correct me), so some person/folks in the community made Headscale, which can act as that routing backend. It needs a static IP though, so a VPS would be needed, if static IP can't be acquired from the ISP. I'll see what I do when I get to it.
+The endgame idea I have is to rent a VPS and host [Headscale](https://github.com/juanfont/headscale) there, thus having (mostly) full control of the network traffic. Headscale is... well, Tailscale's client software (even the servers are actually clients, since they connect to the Tailscale backend) is open-source; but Tailscale's backend, the parts that actually route the network traffic, is proprietary (this is my understanding; feel free to correct me), so some person/folks in the community made Headscale, which can act as that routing backend. It needs a static IP though, so a VPS would be needed, if static IP can't be acquired from the ISP. I'll see what I do when I get to it.
 
 ### Search Engine
 
 If you've read my last post ([cybar.dev/blog/selfhost-searxng](https://cybar.dev/blog/selfhost-searxng/)), you're already familiar with what I'm doing for this. The only difference is that previously I was hosting it on my main laptop using a Home Manager Nix module, while now it's using a Docker Compose file running on the potato "server". Also wasn't using a cache previously but now there's Valkey.
 
-I did give `4get` a try, but it seems like it's not ready for prime time yet. There's a lot of things that can't be configured declaratively and needs to be set up using cookies  on the client side through the web UI. And for some reason the Startpage backend didn't support info widgets like Wikipedia preview. It's also been similar to SearXNG in terms of memory footprint, so I'd be getting a worse experience for not much resource efficiency.
+I did give [4get](https://4get.ca/) a try, but it seems like it's not ready for prime time yet. There's a lot of things that can't be configured declaratively and needs to be set up using cookies  on the client side through the web UI. And for some reason the Startpage backend didn't support info widgets like Wikipedia preview. It's also been similar to SearXNG in terms of memory footprint, so I'd be getting a worse experience for not much resource efficiency.
 
-Very recently I came across OmniSearch. While I haven't tried it yet, it appears promising and I will try setting it up sometime soon and update in a separate post.
+Very recently I came across [OmniSearch](https://git.bwaaa.monster/omnisearch/about/) (they need better SEO...). While I haven't tried it yet, it appears promising and I will try setting it up sometime soon and update in a separate post.
 
 ### Files, Photos, Contacts, Calendar
 
@@ -86,7 +87,7 @@ Ended up with [Cloudreve](https://cloudreve.org/) for now, using WebDAV-compatib
 
 [Immich](https://immich.app/) seemed to be the most popular option for photo sync. But I recall that on their issue tracker, when encryption at rest was requested to prevent rogue server admins from accessing user photos, or the server being a point of data leak to malicious actors, the official stance was that they will not support encryption for the foreseeable future and since it's meant to be self-hosted, you would have to trust the server (since it is presumably under your control). To me, this is unacceptable, so I dismissed Immich.
 
-Ente felt like a better solution for my needs. I came across it from a post by [Steven Deobald](https://deobald.ca/), an acquaintance from [HaliHax](https://www.halihax.com/), a local dev group. It's Free and Open-Source Software, is fully self-hostable, and has End-to-End Encryption (E2EE). Fantastic. Except... it uses MinIO (which is now deprecated), and trying to use a different S3-compatible storage backend has been... challenging, to say the least. Last I tried Garage but I just couldn't get everything to work well together. I got uploads to work on the web for a bit, but not on mobile; then it stopped working on web too. For now I am focusing on other things but I intend to get back to it. Hopefully by then there will be official Ente docs and a Docker Compose file for setting up Ente with Garage or some other MinIO alternative.
+[Ente](https://ente.io/) felt like a better solution for my needs. I came across it from a post by [Steven Deobald](https://deobald.ca/), an acquaintance from [HaliHax](https://www.halihax.com/), a local dev group. It's Free and Open-Source Software, is fully self-hostable, and has End-to-End Encryption (E2EE). Fantastic. Except... it uses MinIO (which is now deprecated), and trying to use a different S3-compatible storage backend has been... challenging, to say the least. Last I tried [Garage](https://garagehq.deuxfleurs.fr/) but I just couldn't get everything to work well together. I got uploads to work on the web for a bit, but not on mobile; then it stopped working on web too. For now I am focusing on other things but I intend to get back to it. Hopefully by then there will be official Ente docs and a Docker Compose file for setting up Ente with Garage or some other MinIO alternative.
 
 ### Passphrase Manager
 
@@ -94,27 +95,27 @@ Ente felt like a better solution for my needs. I came across it from a post by [
 
 [![xkcd#936](<https://imgs.xkcd.com/comics/password_strength.png> "Password Strength — xkcd#936")](https://xkcd.com/936/)
 
-Bitwarden seems to be the most popular in this area so I went with that, except on the backend I use Vaultwarden because it has some extra features, and more importantly, consumes significantly less resources (from what I've read online) due to being (re)written in Rust.
+[Bitwarden](https://bitwarden.com/) seems to be the most popular in this area so I went with that, except on the backend I use [Vaultwarden](https://github.com/dani-garcia/vaultwarden) because it has some extra features, and more importantly, consumes significantly less resources (from what I've read online) due to being (re)written in Rust.
 
 The experience has been great so far. The autofill works well, sync works well, the setup was simple and smooth. Not much to say.
 
 Passphrases, passkeys, and MFA are some of the most important things to secure, so having them self-hosted with tunnelled internet access has been a great relief. I was using Apple Passwords before and now I'm quite happy with Bitwarden/Vaultwarden, and I highly recommend it to anyone looking to increase protections for their most important secrets.
 
-### Git Forge
+### Git Remote
 
-Forgejo is the standard Git frontend most people use. There is also `cgit` but it's a bit too barebones for me; I prefer a more GitHub-like experience. Hosting it has given me no issues, but the reason I decided to put it on hold for now is the effort required to move everything from GitHub to Forgejo, the visibility that GitHub provides (which I intend to remedy by setting up mirrors, but again, more effort), and most importantly, the resource limits of my humble hardware. I feel like once I upgrade my hosting computer, I can feel more confident putting more demanding services on it. For now the config is there but commented out (thus deactivated) for my homelab. I did give it a try though, and it worked fine. I'm looking forward to when I can commit to hosting it again.
+[Forgejo](https://forgejo.org/) is the standard Git remote frontend most people use. There is also [`cgit`](https://git.zx2c4.com/cgit/about/) but it's a bit too barebones for me; I prefer a more GitHub-like experience. Hosting it has given me no issues, but the reason I decided to put it on hold for now is the effort required to move everything from GitHub to Forgejo, the visibility that GitHub provides (which I intend to remedy by setting up mirrors, but again, more effort), and most importantly, the resource limits of my humble hardware. I feel like once I upgrade my hosting computer, I can feel more confident putting more demanding services on it. For now the config is there but commented out (thus deactivated) for my homelab. I did give it a try though, and it worked fine. I'm looking forward to when I can commit to hosting it again.
 
 ### Media Downloader
 
-Cobalt is a self-hostable media downloader for sites like Twitter, Reddit, YouTube, etc. Easy to self-host, given the provided Compose file and detailed instructions. Oddly only the backend is self-hostable (for now). The frontend you would use the "official" one and input your backend's URL in the settings page. I find this setup to be a bit awkward and would've preferred hosting my own frontend, but it is what it is; life doesn't always go our way and that's okay.
+[Cobalt](https://github.com/imputnet/cobalt) is a self-hostable media downloader for sites like Twitter, Reddit, YouTube, etc. Easy to self-host, given the provided Compose file and detailed instructions. Oddly only the backend is self-hostable (for now). The frontend you would use the "official" one and input your backend's URL in the settings page. I find this setup to be a bit awkward and would've preferred hosting my own frontend, but it is what it is; life doesn't always go our way and that's okay.
 
 ### Discord Bot
 
-Cy | bot is a Discord bot I made for some simple tasks like sending a message from the bot, searching YouTube videos, creating formatted timestamps, etc. using Pycord when I wanted to learn how to make Discord bots. It was a fun and easy process, especially given how good the Pycord documentation is, as well as their helpful community Discord. It's very easy to self-host too, which is to just run an executable as a service. I containerized it and added it as a Compose file to my homelab, and it has been working great.
+[Cy | bot](https://github.com/cybardev/cybarbot) is a Discord bot I made for some simple tasks like sending a message from the bot, searching YouTube videos, creating formatted timestamps, etc. using [Pycord](https://pycord.dev/) when I wanted to learn how to make Discord bots. It was a fun and easy process, especially given how good the Pycord documentation is, as well as their helpful community Discord. It's very easy to self-host too, which is to just run an executable as a service. I containerized it and added it as a Compose file to my homelab, and it has been working great.
 
 ### Monitoring
 
-At first I thought of using the usual Prometheus, Grafana, etc. stack to learn their usage in a hands-on environment, but after reading online about the hardware requirements, I decided against it. After looking at bit more I came across Glances. Imagine htop but with a web UI — that's Glances.
+At first I thought of using the usual [Prometheus](https://prometheus.io/), [Grafana](https://grafana.com/), etc. stack to learn their usage in a hands-on environment, but after reading online about the hardware requirements, I decided against it. After looking at bit more I came across [Glances](https://github.com/nicolargo/glances). Imagine htop but with a web UI — that's Glances.
 
 There's a lot of data streams enabled by default which I disabled. I mostly just care about resource usage and alerts if it crosses a threshold, and seeing which programs are causing the high consumption. It's been a solid experience, being able to monitor my homelab from anywhere without blowing up the hardware.
 
@@ -122,8 +123,12 @@ There's a lot of data streams enabled by default which I disabled. I mostly just
 
 Some of the things on my to-do list for the homelab setup are:
 
-- Better hardware: I want to host more services, more reliably, which would need a more powerful server. Maybe if I get a new main laptop, I'll use my current M1 MacBook Air as a server. That would also allow me to host LLMs, which may be convenient.
-- OS: if I use the MacBook I'll just use macOS with Docker/Podman/nerdctl on top, but if I get a PC server, I might try something like Fedora CoreOS, or even Proxmox VE.
-- Redundancy: on better hardware I could also have replicas, especially if I have a multi-server setup or a VPS along with my current server. Even if the services are not redundant, I would at least like the data to be backed up in multiple places. I want to look into Kubernetes too, when I get to the point o increasing the reliability of my server.
-- Security: I should be using full-disk encryption but I currently am not, which means if someone breaks into my room and yanks the homelab (which is just a little 11" laptop) and scrams with it in tow, they can access all the data directly off the SSD since it's not encrypted at rest. While my threat model is not so high that I am at a high risk of this happening, the chance is always there and it's best to prepare for such scenarios. I intend to do that, also on better hardware.
-- And more: I am constantly learning, so there may be more things I want to consider changing as my knowledge grows. Stay tuned\~
+**Better hardware**: I want to host more services, more reliably, which would need a more powerful server. Maybe if I get a new main laptop, I'll use my current M1 MacBook Air as a server. That would also allow me to host LLMs (using something like [LM Studio](https://lmstudio.ai/), unless [Ollama](https://ollama.com/) gets [MLX support](https://github.com/ollama/ollama/issues/1730) by then), which may be convenient.
+
+**OS**: if I use the MacBook I'll just use macOS with Docker/[Podman](https://podman.io/)/[containerd](https://containerd.io/) on top, but if I get a PC server, I might try something like NixOS, AlmaLinux,  Fedora CoreOS, or even [Proxmox VE](https://proxmox.com/en/products/proxmox-virtual-environment/overview).
+
+**Redundancy**: on better hardware I could also have replicas, especially if I have a multi-server setup or a VPS along with my current server. Even if the services are not redundant, I would at least like the data to be backed up in multiple places. I want to look into Kubernetes too, when I get to the point o increasing the reliability of my server.
+
+**Security**: I should be using full-disk encryption but I currently am not, which means if someone breaks into my room and yanks the homelab (which is just a little 11" laptop) and scrams with it in tow, they can access all the data directly off the SSD since it's not encrypted at rest. While my threat model is not so high that I am at a high risk of this happening, the chance is always there and it's best to prepare for such scenarios. I intend to do that, also on better hardware.
+
+**And more**: I am constantly learning, so there may be more things I want to consider changing as my knowledge grows. Stay tuned\~
