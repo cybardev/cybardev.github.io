@@ -5,7 +5,9 @@ title: Mini Homelab Self-hosting Setup
 description: How I set up a homelab server on an old laptop to self-host major services
 ---
 
-Over December 2025 I set up a homelab with most of the cloud services I often use, on an old netbook that's weaker than a modern Raspberry Pi board. This post is to document how I did it, why I did it, and what's in store for the setup going forward. Feel free to follow along to set up your very own homelab server.
+Over December 2025 I set up a homelab with most of the cloud services I often use, on an old netbook that's weaker than a modern Raspberry Pi board. Since then it has evolved a bit too. This post is to document how I did it, why I did it, and what's in store for the setup going forward. Feel free to follow along to set up your very own homelab server.
+
+![Screenshot of output from nerdctl stats, showing resource usage stats from currently running containers on my homelab setup](/assets/images/blog/mini-homelab.png "Container Resource Usage")
 
 ## Why
 
@@ -66,6 +68,8 @@ If you've read my last post ([cybar.dev/blog/selfhost-searxng](https://cybar.dev
 
 I did give `4get` a try, but it seems like it's not ready for prime time yet. There's a lot of things that can't be configured declaratively and needs to be set up using cookies  on the client side through the web UI. And for some reason the Startpage backend didn't support info widgets like Wikipedia preview. It's also been similar to SearXNG in terms of memory footprint, so I'd be getting a worse experience for not much resource efficiency.
 
+Very recently I came across OmniSearch. While I haven't tried it yet, it appears promising and I will try setting it up sometime soon and update in a separate post.
+
 ### Files, Photos, Contacts, Calendar
 
 [Nextcloud](https://nextcloud.com/). Easy, right? Last time when I did it on the same hardware, back in 2020 or 2021, it was fine because I dedicated the whole machine to this one service. Now that I'm trying to diversify my setup, using Nextcloud is difficult on such low RAM. It alone takes between 200-600 MB of RAM (probably more), and has caused the server to freeze at least once. Funny thing is, it happened as I was editing the compose file to limit memory usage. Prophetic. Anyway, added the limits but then it got extremely slow (possibly because it started using swap. I could tell it to not use swap, but... maybe that would lead to other problems? I just did not want to keep optimizing this one thing, so I started looking for alternatives.
@@ -98,7 +102,7 @@ Passphrases, passkeys, and MFA are some of the most important things to secure, 
 
 ### Git Forge
 
-Forgejo is the standard for Git Forge most people use. There is also \`cgit\` but it's a bit too barebones for me; I prefer a more GitHub-like experience. Hosting it has given me no issues, but the reason I decided to put it on hold for now is the effort required to move everything from GitHub to Forgejo, the visibility that GitHub provides (which I intend to remedy by setting up mirrors, but again, more effort), and most importantly, the resource limits of my humble hardware. I feel like once I upgrade my hosting computer, I can feel more confident putting more demanding services on it. For now the config is there but commented out (thus deactivated) for my homelab. I did give it a try though, and it worked fine. I'm looking forward to when I can commit to hosting it again.
+Forgejo is the standard Git frontend most people use. There is also `cgit` but it's a bit too barebones for me; I prefer a more GitHub-like experience. Hosting it has given me no issues, but the reason I decided to put it on hold for now is the effort required to move everything from GitHub to Forgejo, the visibility that GitHub provides (which I intend to remedy by setting up mirrors, but again, more effort), and most importantly, the resource limits of my humble hardware. I feel like once I upgrade my hosting computer, I can feel more confident putting more demanding services on it. For now the config is there but commented out (thus deactivated) for my homelab. I did give it a try though, and it worked fine. I'm looking forward to when I can commit to hosting it again.
 
 ### Media Downloader
 
@@ -116,6 +120,10 @@ There's a lot of data streams enabled by default which I disabled. I mostly just
 
 ## Future
 
-Better hardware, OS, redundancy, security, etc.
+Some of the things on my to-do list for the homelab setup are:
 
-![Screenshot of output from nerdctl stats, showing resource usage stats from currently running containers on my homelab setup](/assets/images/blog/mini-homelab.png "Container Resource Usage")
+- Better hardware: I want to host more services, more reliably, which would need a more powerful server. Maybe if I get a new main laptop, I'll use my current M1 MacBook Air as a server. That would also allow me to host LLMs, which may be convenient.
+- OS: if I use the MacBook I'll just use macOS with Docker/Podman/nerdctl on top, but if I get a PC server, I might try something like Fedora CoreOS, or even Proxmox VE.
+- Redundancy: on better hardware I could also have replicas, especially if I have a multi-server setup or a VPS along with my current server. Even if the services are not redundant, I would at least like the data to be backed up in multiple places. I want to look into Kubernetes too, when I get to the point o increasing the reliability of my server.
+- Security: I should be using full-disk encryption but I currently am not, which means if someone breaks into my room and yanks the homelab (which is just a little 11" laptop) and scrams with it in tow, they can access all the data directly off the SSD since it's not encrypted at rest. While my threat model is not so high that I am at a high risk of this happening, the chance is always there and it's best to prepare for such scenarios. I intend to do that, also on better hardware.
+- And more: I am constantly learning, so there may be more things I want to consider changing as my knowledge grows. Stay tuned\~
