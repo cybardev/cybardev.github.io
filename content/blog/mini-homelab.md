@@ -39,7 +39,9 @@ I will go over my thought process for how I selected which services to use, but 
 
 ### Hardware
 
-Didn't have much to choose from. I just had my main laptop and this, and didn't want to buy anything new (for now). I do have another old laptop with much better spec, but last I tried it didn't boot. Might try again later. For now I want to focus on low power consumption and few high-priority services, though I'm increasingly feeling the need for more available RAM.
+[Acer Aspire One Happy 2](https://en.wikipedia.org/wiki/Acer_Aspire_One) (2011) netbook laptop, with a single-core 1.66 GHz Intel Atom N450 and 1 GB of DDR2 RAM. Originally it had a 160 GB Seagate hard drive, but I later upgraded to a 1 TB HDD, and most recently, a 250 GB SSD, which it is currently using.
+
+Didn't have much to choose from. I just had my main laptop and this, and didn't want to buy anything new (for now). I do have another old laptop with much better spec, but last I tried it didn't boot. Might try again later. For now I want to focus on low power consumption and few high-priority services, though I'm increasingly feeling the need for more available RAM...
 
 ### Operating System
 
