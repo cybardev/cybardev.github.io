@@ -82,7 +82,7 @@ Ended up with [Cloudreve](https://cloudreve.org/) for now, using WebDAV-compatib
 
 [Immich](https://immich.app/) seemed to be the most popular option for photo sync. But I recall that on their issue tracker, when encryption at rest was requested to prevent rogue server admins from accessing user photos, or the server being a point of data leak to malicious actors, the official stance was that they will not support encryption for the foreseeable future and since it's meant to be self-hosted, you would have to trust the server (since it is presumably under your control). To me, this is unacceptable, so I dismissed Immich.
 
-Ente felt like a better solution for my needs. I came across it from a post by [Steven Deobald](https://deobald.ca/), an acquaintance from [HaliHax](https://www.halihax.com/), a local dev group. It's Free and Open-Source Software, is fully self-hostable, and has End-to-End Encryption (E2EE). Fantastic. Except... it uses MinIO, and trying to use a different S3-compatible storage backend has been... challenging, to say the least.
+Ente felt like a better solution for my needs. I came across it from a post by [Steven Deobald](https://deobald.ca/), an acquaintance from [HaliHax](https://www.halihax.com/), a local dev group. It's Free and Open-Source Software, is fully self-hostable, and has End-to-End Encryption (E2EE). Fantastic. Except... it uses MinIO (which is now deprecated), and trying to use a different S3-compatible storage backend has been... challenging, to say the least. Last I tried Garage but I just couldn't get everything to work well together. I got uploads to work on the web for a bit, but not on mobile; then it stopped working on web too. For now I am focusing on other things but I intend to get back to it. Hopefully by then there will be official Ente docs and a Docker Compose file for setting up Ente with Garage or some other MinIO alternative.
 
 ### Passphrase Manager
 
@@ -90,23 +90,29 @@ Ente felt like a better solution for my needs. I came across it from a post by [
 
 [![xkcd#936](<https://imgs.xkcd.com/comics/password_strength.png> "Password Strength — xkcd#936")](https://xkcd.com/936/)
 
-Vaultwarden backend + Bitwarden client
+Bitwarden seems to be the most popular in this area so I went with that, except on the backend I use Vaultwarden because it has some extra features, and more importantly, consumes significantly less resources (from what I've read online) due to being (re)written in Rust.
+
+The experience has been great so far. The autofill works well, sync works well, the setup was simple and smooth. Not much to say.
+
+Passphrases, passkeys, and MFA are some of the most important things to secure, so having them self-hosted with tunnelled internet access has been a great relief. I was using Apple Passwords before and now I'm quite happy with Bitwarden/Vaultwarden, and I highly recommend it to anyone looking to increase protections for their most important secrets.
 
 ### Git Forge
 
-Forgejo
+Forgejo is the standard for Git Forge most people use. There is also \`cgit\` but it's a bit too barebones for me; I prefer a more GitHub-like experience. Hosting it has given me no issues, but the reason I decided to put it on hold for now is the effort required to move everything from GitHub to Forgejo, the visibility that GitHub provides (which I intend to remedy by setting up mirrors, but again, more effort), and most importantly, the resource limits of my humble hardware. I feel like once I upgrade my hosting computer, I can feel more confident putting more demanding services on it. For now the config is there but commented out (thus deactivated) for my homelab. I did give it a try though, and it worked fine. I'm looking forward to when I can commit to hosting it again.
 
 ### Media Downloader
 
-Cobalt
+Cobalt is a self-hostable media downloader for sites like Twitter, Reddit, YouTube, etc. Easy to self-host, given the provided Compose file and detailed instructions. Oddly only the backend is self-hostable (for now). The frontend you would use the "official" one and input your backend's URL in the settings page. I find this setup to be a bit awkward and would've preferred hosting my own frontend, but it is what it is; life doesn't always go our way and that's okay.
 
 ### Discord Bot
 
-Cy | bot
+Cy | bot is a Discord bot I made for some simple tasks like sending a message from the bot, searching YouTube videos, creating formatted timestamps, etc. using Pycord when I wanted to learn how to make Discord bots. It was a fun and easy process, especially given how good the Pycord documentation is, as well as their helpful community Discord. It's very easy to self-host too, which is to just run an executable as a service. I containerized it and added it as a Compose file to my homelab, and it has been working great.
 
 ### Monitoring
 
-Glances
+At first I thought of using the usual Prometheus, Grafana, etc. stack to learn their usage in a hands-on environment, but after reading online about the hardware requirements, I decided against it. After looking at bit more I came across Glances. Imagine htop but with a web UI — that's Glances.
+
+There's a lot of data streams enabled by default which I disabled. I mostly just care about resource usage and alerts if it crosses a threshold, and seeing which programs are causing the high consumption. It's been a solid experience, being able to monitor my homelab from anywhere without blowing up the hardware.
 
 ## Future
 
