@@ -5,7 +5,7 @@ title: Mini Homelab Self-hosting Setup
 description: How I set up a homelab server on an old laptop to self-host major services
 ---
 
-Over December 2025 I set up a homelab with most of the cloud services I often use, on an old netbook that's weaker than a modern Raspberry Pi board. Since then it has evolved a bit too. This post is to document how I did it, why I did it, and what's in store for the setup going forward. Feel free to follow along to set up your very own homelab server.
+Over December 2025 I set up a homelab with most of the cloud services I often use, on an old netbook that's weaker than a modern Raspberry Pi board. Since then it has evolved a bit too. This post is to document how I did it, why I did it, and what's in store for the setup going forward. Here, I'll share my experiences and decisions. If you're interested in setting up your own homelab, I hope this will serve as a useful guide and inspiration. Follow along with the code: [github.com/cybardev/homelab](https://github.com/cybardev/homelab)
 
 ![Screenshot of output from nerdctl stats, showing resource usage stats from currently running containers on my homelab setup](/assets/images/blog/mini-homelab.png "Container Resource Usage")
 
