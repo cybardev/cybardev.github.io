@@ -94,6 +94,7 @@ description: How I came to love computers, technology and science in general
     - Sveltia CMS (unofficial Decap successor) brought me back to blogging (mostly on mobile)
     - homelab again, this time many services
     - 1st job after grad
+    - work laptop: M5 MacBook Ai, released 2 weeks before
     - Wordpress
     - Drupal
     - PHP
