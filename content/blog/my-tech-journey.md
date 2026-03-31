@@ -66,6 +66,8 @@ description: How I came to love computers, technology and science in general
     - DevOps
     - Docker
     - LISP
+    - JAMstack
+    - Git-backed CMS (Decap)
     - co-op 1
     - time series
     - GPS/AIS/sensors
@@ -89,6 +91,8 @@ description: How I came to love computers, technology and science in general
     - Ollama
     - LM Studio
     - embedded (ESP32)
+    - Sveltia CMS (unofficial Decap successor) brought me back to blogging (mostly on mobile)
+    - homelab again, this time many services
     - 1st job after grad
     - Wordpress
     - Drupal
