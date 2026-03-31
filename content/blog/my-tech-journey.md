@@ -1,10 +1,95 @@
 ---
 draft: true
-title: "My life with technology"
-date: 2021-01-29T19:18:50+06:00
-description: "How I came to love computers, technology and science in general"
+date: 2021-01-29T09:18:00
+title: My life with technology
+description: How I came to love computers, technology and science in general
 ---
 
-## First meeting
+- originally drafted at Jan 29, 2021, 9:18 AM. glad i waited tho. much happened since of great significance
+- timelines may be wonky. i have peanut memory. things vaguely happened in this order around similar times
 
-When I was 8 years old...
+## Tech Journey
+
+- 8:
+    - 1st home pc (Win 95, 98, XP)
+    - encarta kids
+    - puzzle games
+    - science
+- 12:
+    - mini games
+    - khan academy
+    - js
+- 14:
+    - batch script
+    - LOGO
+    - java
+- 15:
+    - 1st laptop (Win 7, 10)
+    - GameMaker
+    - AI: lonely kid thought would be nice to make a friend. to do that, wanted to learn more about humans
+- 16:
+    - python
+    - HTML/CSS/JS
+- 17:
+    - 1st phone
+    - FB PC builder groups BD
+    - PC part suggestions
+    - Ren'Py
+- 18:
+    - Linux
+    - VMs
+    - shell script
+    - neovim
+- 19:
+    - SoloLearn
+    - speedrunning languages
+    - linux help group BD
+    - personal website
+    - GitHub Actions
+    - Netlify
+    - Jekyll
+- 20:
+    - own domain(s)
+    - Cloudflare
+    - university
+    - java
+    - Clojure
+    - homelab (Nextcloud)
+    - Psychology (re: AI @ 15)
+- 21:
+    - Canada
+    - Ren'Py
+    - MacBook
+    - 1st iPhone (Kijiji)
+- 22:
+    - over next few yrs, flipped through iPhones and some laptops (Win 11, but flashed various Linux). kept iPhone 13 mini, Surface Laptop (1st gen) with non-functioning SSD. most deals from FB Marketplace, some early deals on Kijiji. also Marketplace deals: Xbox One S, Xbox Series X, Switch Lite, Switch, Switch OLED, various retro consoles (GBA SP, DS Lite, DSi, O3DS, N3DS). also got various retro emulators (Miyoo, Anbernic, Retroid) and flipped on Marketplace. kept RG34XX
+    - DevOps
+    - Docker
+    - LISP
+    - co-op 1
+    - time series
+    - GPS/AIS/sensors
+    - Raspberry Pi
+- 23:
+    - co-op 2
+    - Kafka
+    - TDD
+    - Unity
+    - Computer Vision
+    - ML
+    - Go
+- 24:
+    - HaliHax
+    - Nix
+    - Terraform (OpenTofu)
+    - GB Studio
+    - ISC2 CC
+    - graduate
+- 25:
+    - Ollama
+    - LM Studio
+    - embedded (ESP32)
+    - 1st job after grad
+    - Wordpress
+    - Drupal
+    - PHP
