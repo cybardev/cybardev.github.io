@@ -3,7 +3,7 @@ name: Update Sveltia CMS
 on:
   workflow_dispatch:  # Allow manual trigger
   schedule:
-    - cron: "0 4 * * 6"  # Saturdays at 00:00 AST (01:00 ADT)
+    - cron: "0 4 2 * *"  # 2nd each month at 00:00 AST (01:00 ADT)
 
 jobs:
   update-sveltia:
