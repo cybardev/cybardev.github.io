@@ -41,6 +41,7 @@ jobs:
         run: |
           sed -i "s/@sveltia\/cms@[0-9.]\+/@sveltia\/cms@${{ steps.latest.outputs.version }}/g" static/admin/index.html
       - name: Create Pull Request
+        id: pr
         if: ${{ steps.check.outputs.needs_update == 'true' }}
         uses: peter-evans/create-pull-request@v7
         with:
@@ -58,3 +59,9 @@ jobs:
 
             ## Changelog
             https://github.com/sveltia/sveltia-cms/compare/v${{ steps.current.outputs.version }}...v${{ steps.latest.outputs.version }}
+      - name: Enable auto-merge for PR
+        if: ${{ steps.check.outputs.needs_update == 'true' && steps.pr.outputs.pull-request-number }}
+        run: |
+          gh pr merge --auto --squash ${{ steps.pr.outputs.pull-request-number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
