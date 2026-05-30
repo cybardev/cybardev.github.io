@@ -5,45 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; style-src 'self' 'unsafe-inline'; media-src https://media.cybar.dev; img-src 'self' https://media.cybar.dev https://i.ytimg.com; frame-src https://www.youtube-nocookie.com;"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com; media-src https://media.cybar.dev; img-src 'self' https://media.cybar.dev https://i.ytimg.com; frame-src https://www.youtube-nocookie.com;"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="robots" content="noai, noimageai" />
 
     <!-- Set title and description variables -->
-    {% if page.title %} {% set base_title = page.title %} {% elif section.title
-    %} {% set base_title = section.title %} {% else %} {% set base_title =
-    config.title %} {% endif %} {% if page.description %} {% set
-    base_description = page.description %} {% elif section.description %} {% set
-    base_description = section.description %} {% else %} {% set base_description
-    = config.description %} {% endif %}
+    <!-- prettier-ignore -->
+    {% if page %}
+      {% set base_title = page.title | default(value=config.title) %}
+      {% set base_description = page.description | default(value=config.description) %}
+      {% set base_url = page.permalink %}
+    {% elif section %}
+      {% set base_title = section.title | default(value=config.title) %}
+      {% set base_description = section.description | default(value=config.description) %}
+      {% set base_url = section.permalink %}
+    {% else %}
+      {% set base_title = config.title %}
+      {% set base_description = config.description %}
+      {% set base_url = config.base_url %}
+    {% endif %}
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://cybar.dev" />
+    <!-- Social Card Tags -->
+    <meta property="og:url" content="{{ config.base_url }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ base_title }}" />
+    <meta property="og:site_name" content="{{ config.title }}" />
     <meta property="og:description" content="{{ base_description }}" />
     <meta
       property="og:image"
-      content="https://cybar.dev/assets/images/preview.png"
+      content='{{ get_url(path="assets/images/preview.png") }}'
     />
-
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="cybar.dev" />
-    <meta property="twitter:url" content="https://cybar.dev" />
-    <meta name="twitter:title" content="{{ base_title }}" />
-    <meta name="twitter:description" content="{{ base_description }}" />
-    <meta
-      name="twitter:image"
-      content="https://cybar.dev/assets/images/preview.png"
-    />
-
-    <!-- OpenGraph Meta Tags Generated via https://www.opengraph.xyz -->
+    <meta name="twitter:image:alt" content="site preview banner" />
 
     <meta name="description" content="{{ base_description }}" />
     <!-- prettier-ignore -->
     <title>{% block title %}{{ base_title }}{% endblock title %}</title>
+    <link rel="canonical" href="{{ base_url }}" />
     <link
       rel="alternate"
       type="application/rss+xml"

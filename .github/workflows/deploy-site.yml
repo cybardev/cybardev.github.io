@@ -38,3 +38,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_TOKEN }}
           workingDirectory: site
+        env:
+          WRANGLER_SEND_METRICS: false
