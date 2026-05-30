@@ -1,7 +1,7 @@
 ---
 draft: false
-title: Year So Far — Bonus
 date: 2025-08-10T17:00:00-03:00
+title: Year So Far — Bonus
 description: What I’ve been doing for the first half of 2025 — Bonus Issue
 ---
 
@@ -45,7 +45,7 @@ Every Monday evening I meet up with folks from a local developer group called [H
 
 **Bonus**: My friend Naziya drew a gorgeous banner for Collect. Monday events:
 
-![Collect. Banner](/assets/images/blog/collect-banner.png)
+![Collect. Banner](https://media.cybar.dev/site/collect-banner.png)
 
 ### Miscellaneous
 
@@ -54,6 +54,7 @@ Something major I did near the start of the year is started using Nix for packag
 Another thing I want to do is to switch to a locally hosted VCS server. Initially I was thinking [Forgejo](https://forgejo.org/) but someone introduced me to [soft-serve](https://github.com/charmbracelet/soft-serve) and I might give that a try instead. I already started using Forgejo a little, but haven't moved anything over. Eventually I want everything primarily local, with repositories mirrored on GitHub.
 
 Also changed the following tools and technologies:
+
 - GUI editor: VS Code (Codium) —> Zed
 - TUI editor: Neovim —> Helix (evil-helix)
 - Git client: gitui —> lazygit
@@ -61,6 +62,7 @@ Also changed the following tools and technologies:
 - Shell: zsh —> fish
 
 Reasons:
+
 - Zed _feels_ snappier, and more within my control. Also isn't Electron bloat. Still keeping VS Code (Codium) around for backup though, and some more "involved" projects, especially if I work with people who use VS Code.
 - Helix comes with sane defaults and doesn't need a minimum of 300+ lines for a usable setup.
 - Lazygit has interactive rebase, and there's more information in one UI instead of being split over multiple tabs (just my preference; some may prefer the sparse layout of gitui).
