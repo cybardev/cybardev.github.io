@@ -4,6 +4,7 @@ date: 2025-12-04T15:35:00
 title: My New CMS Setup
 description: How a new CMS led me to enjoy writing on my blog
 ---
+
 When I was still using [Hugo](https://gohugo.io) for my website, I had set up Netlify CMS (and then moved to [Decap](https://decapcms.org) when they changed the name), thinking it would help me write blogs more smoothly. And sure, the process was less cumbersome than opening up my local repository, firing up a code editor, writing some markdown, and going through the Git flow. But something just didn't stick, and I ended up doing that cumbersome process anyway instead of using the CMS. Soon after, I stopped posting altogether. Not surprising.
 
 This year, when I moved my site to [Zola](https://www.getzola.org) with a custom template, I thought I wouldn't add a CMS, given my lackluster experience with them in the past. Recently though, I found myself writing (and wanting to write) more and more blog posts. Thanks to that, my flow of writing things in Apple Notes, copy-pasting to code editor, then pushing to Git was getting rather tedious and boring. I was on the lookout for a headless Git-based CMS that would reduce the friction — especially on mobile.
@@ -18,4 +19,4 @@ The issue was Cloudflare's Rocket Loader, which I had to disable for the CMS scr
 
 Now, more than ever before, I feel inspired to write on my blog. Thanks Sveltia, for bringing back the joy in writing.
 
-<img src="/assets/images/blog/sveltia-cms-mobile.jpeg" title="Sveltia CMS on mobile" alt="screenshot of Sveltia CMS dashboard showing my blog posts" class="mobile-ss" />
+<img src="https://media.cybar.dev/site/sveltia-cms-mobile.webp" title="Sveltia CMS on mobile" alt="screenshot of Sveltia CMS dashboard showing my blog posts" class="mobile-ss" />
