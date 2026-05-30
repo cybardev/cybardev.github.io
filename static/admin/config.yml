@@ -10,7 +10,7 @@ backend:
   name: github
   branch: main
   repo: "cybardev/cybardev.github.io"
-  base_url: "https://decap.cybar.dev"
+  base_url: "https://oauth.cybar.dev"
   use_graphql: true
   commit_messages:
     create: "{{collection}}: add {{slug}}"
@@ -20,6 +20,21 @@ backend:
     deleteMedia: "media: remove {{path}}"
 media_folder: "static/assets/images/blog"
 public_folder: "/assets/images/blog"
+media_libraries:
+  all:
+    transformations:
+      raster_image:
+        format: webp
+        quality: 96
+      svg:
+        optimize: true
+  cloudflare_r2:
+    bucket: media
+    public_url: https://media.cybar.dev
+    jurisdiction: eu
+    prefix: site/
+    access_key_id: df7907f13e996cd4a5c9d4249be16e49
+    account_id: 54ef1e8edd0606ff0103cbc93adce1c0
 collections:
   - name: "blog"
     label: "Blog"
