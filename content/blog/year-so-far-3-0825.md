@@ -1,7 +1,7 @@
 ---
 draft: false
-title: Year So Far — Part 3
 date: 2025-08-03T19:48:00-03:00
+title: Year So Far — Part 3
 description: What I’ve been doing for the first half of 2025 — Part 3
 ---
 
@@ -21,7 +21,7 @@ End of May I came across [Meta’s new Python type checker and LSP — Pyrefly](
 
 I also got the chance to speak with the Pyrefly team on Discord, and they were very helpful and cooperative during the packaging process. The tool has been working out great for me so far, but it's still alpha software, so there's a lot more to come; most notably, the LSP server is lacking a few features, and they rely on rust nightly, which is a big no-no for packaging for both nixpkgs and homebrew. We had to use a hacky workaround, setting the environment variable `RUSTC_BOOTSTRAP` to `1` to get it to work on stable rust. They're working on it though, so hopefully it'll be ready soon. One of the team members also sent me some cool Pyrefly merch, (stickers and screen wipe pictured below, and a t-shirt of my size they asked by email), so that was really cool. Perks of contributing to open source.
 
-![pyrefly merch](/assets/images/blog/pyrefly-merch.jpg)
+![pyrefly merch](https://media.cybar.dev/site/pyrefly-merch.jpg)
 
 ### ShiftKey Algorithms and Leetcode
 
