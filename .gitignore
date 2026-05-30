@@ -4,6 +4,7 @@
 *.bak
 *.backup
 *~
+.wrangler/
 backup
 public
 processed_images/
