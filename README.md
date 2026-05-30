@@ -2,7 +2,7 @@
 
 ![GitHub Actions Status](https://github.com/cybardev/cybardev.github.io/actions/workflows/deploy-site.yml/badge.svg "GitHub Pages deployment status")
 
-![Web Preview](./static/assets/images/preview.png "OpenGraph preview image")
+![Web Preview](./site/static/assets/images/preview.png "OpenGraph preview image")
 
 ## Profile and Blog
 
@@ -13,7 +13,7 @@ Built with [SimpleCSS](https://simplecss.org/) using [Zola](https://www.getzola.
 
 Uses [Sveltia CMS](https://github.com/sveltia/sveltia-cms) for responsive Git-based admin dashboard.
 
-Includes a [robots.txt](./templates/robots.txt) and an [ai.txt](./static/ai.txt) to deter AI crawlers while allowing known search engine indexing.
+Includes a [robots.txt](./site/templates/robots.txt) and an [ai.txt](./site/static/ai.txt) to deter AI crawlers while allowing known search engine indexing.
 
 ## License
 

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "send_metrics": false,
+  "workers_dev": false,
+  "name": "cybarsite",
+  "compatibility_date": "2026-05-30",
+  "route": {
+    "pattern": "cybar.dev",
+    "zone_name": "cybar.dev",
+    "custom_domain": true,
+  },
+  "assets": {
+    "directory": "./public",
+  },
+}

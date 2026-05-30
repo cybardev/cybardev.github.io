@@ -1,63 +1,40 @@
 name: Publish Website
 
 on:
-  pull_request:
-    branches: ["main"]
-    paths:
-      - ".github/workflows/deploy-site.yml"
-      - "config.toml"
-      - "templates/**"
-      - "content/**"
-      - "static/**"
-      - "sass/**"
-
   push:
     branches: ["main"]
     paths:
       - ".github/workflows/deploy-site.yml"
-      - "config.toml"
-      - "templates/**"
-      - "content/**"
-      - "static/**"
-      - "sass/**"
+      - "site/zola.toml"
+      - "site/templates/**"
+      - "site/content/**"
+      - "site/static/**"
+      - "site/sass/**"
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages-deploy"
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
       - name: Install Zola
         uses: taiki-e/install-action@v2
         with:
-          tool: zola@0.21
+          tool: zola@0.22
+
       - name: Build Zola Site
+        working-directory: site
         run: zola build
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v4
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v4
         with:
-          path: ./public
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      contents: read
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          apiToken: ${{ secrets.CF_TOKEN }}
+          workingDirectory: site

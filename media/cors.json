@@ -1,0 +1,9 @@
+[
+  {
+    "AllowedHeaders": ["*"],
+    "AllowedMethods": ["GET", "PUT", "HEAD"],
+    "AllowedOrigins": ["https://cybar.dev", "https://www.cybar.dev"],
+    "ExposeHeaders": ["ETag"],
+    "MaxAgeSeconds": 3000
+  }
+]
