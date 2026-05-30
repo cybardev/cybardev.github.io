@@ -17,7 +17,7 @@ backend:
     delete: "{{collection}}: remove {{slug}}"
     uploadMedia: "media: add {{path}}"
     deleteMedia: "media: remove {{path}}"
-media_folder: "static/assets/images/blog"
+media_folder: "site/static/assets/images/blog"
 public_folder: "/assets/images/blog"
 media_libraries:
   all:
@@ -39,7 +39,7 @@ collections:
   - name: "blog"
     label: "Blog"
     label_singular: blog
-    folder: "content/blog"
+    folder: "site/content/blog"
     create: true
     slug: "{{slug}}"
     extension: "md"
