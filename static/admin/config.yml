@@ -29,9 +29,9 @@ media_libraries:
         optimize: true
   cloudflare_r2:
     bucket: media
-    public_url: https://media.cybar.dev
+    public_url: "https://media.cybar.dev"
     jurisdiction: eu
-    prefix: site/
+    prefix: "site/"
     access_key_id: df7907f13e996cd4a5c9d4249be16e49
     account_id: 54ef1e8edd0606ff0103cbc93adce1c0
 collections:
