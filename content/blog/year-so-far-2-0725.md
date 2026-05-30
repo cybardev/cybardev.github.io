@@ -1,7 +1,7 @@
 ---
 draft: false
-title: Year So Far — Part 2
 date: 2025-07-19T13:48:00-03:00
+title: Year So Far — Part 2
 description: What I’ve been doing for the first half of 2025 — Part 2
 ---
 
@@ -29,9 +29,9 @@ In May, SMU held the convocation ceremony for Jan 2025 graduates. I have always 
 
 It was definitely an interesting experience going up on stage and receiving the roll of paper that validated the four and some years of learning I just completed. Got some nice pictures taken, spent time with friends. I wish my parents could attend though; this was for them, after all.
 
-![convocation photo](/assets/images/blog/convocation.jpg)
+![convocation photo](https://media.cybar.dev/site/convocation.jpg)
 
-_**PS**: I don’t dislike university, in fact I believe all stages of education should have the level of freedom and agency that university gives us (and that universities should have **more** freedom, especially in letting us ditch unrelated electives). However I am an avid hater of mid-term and final exams. I am largely in favour of intermittent testing and practical assessments._
+**_PS_**_: I don’t dislike university, in fact I believe all stages of education should have the level of freedom and agency that university gives us (and that universities should have **more** freedom, especially in letting us ditch unrelated electives). However I am an avid hater of mid-term and final exams. I am largely in favour of intermittent testing and practical assessments._
 
 Just thought I should clarify. Moving on…
 
