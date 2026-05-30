@@ -21,6 +21,7 @@ media_folder: "static/assets/images/blog"
 public_folder: "/assets/images/blog"
 media_libraries:
   all:
+    slugify_filename: true
     transformations:
       raster_image:
         format: webp
