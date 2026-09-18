@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+<!-- prettier-ignore -->
+{% block style %} {{ super() }}
+<link rel="stylesheet" href='{{ get_url(path="assets/css/blog.css") }}' />
+{% endblock style %} {% block content %}
+<section class="bl bm">
+  <h1 class="bl">Fleeting Memories</h1>
+  <h2 class="bl">
+    {{ section.description | default(value=config.description) }}
+  </h2>
+  <hr class="bl" />
+  <a href="/">&#x25C0;&nbsp;home</a>
+  &nbsp;&vert;&nbsp;
+  <a href='{{ get_url(path="rss.xml") }}' title="RSS Feed" class="bl rss">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      fill="currentColor"
+      class="bi bi-rss-fill"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2m0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2m.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+      /></svg
+    >&nbsp;Subscribe</a
+  >
+  {% for page in paginator.pages %}
+  <article>
+    <code>[{{ page.date | date(format="%Y %b %d") }}]</code>
+    {{ page.content | safe }}
+  </article>
+  {% else %}
+  <article class="center">no thoughts; head empty :3</article>
+  {% endfor %}
+  <nav class="pagination">
+    {% if paginator.previous %}
+    <a class="previous" href="{{ paginator.first }}">&lt;&lt; First</a>&nbsp;
+    <a class="previous" href="{{ paginator.previous }}">&lt; Prev</a
+    >&nbsp;&vert;&nbsp;{% endif %}{% if paginator.number_pagers > 1 %}<span
+      >{{ paginator.current_index }} of {{ paginator.number_pagers }}</span
+    >{% endif %}{% if paginator.next %}&nbsp;&vert;&nbsp;
+    <a class="next" href="{{ paginator.next }}">Next &gt;</a>&nbsp;
+    <a class="next" href="{{ paginator.last }}">Last &gt;&gt;</a>
+    {% endif %}
+  </nav>
+</section>
+{% endblock content %}
