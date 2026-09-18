@@ -62,3 +62,23 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "musings"
+    label: "Musings"
+    label_singular: muse
+    folder: "site/content/musings"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    sortable_fields:
+      fields: ["date"]
+      default:
+        field: date
+        direction: descending
+    view_filters:
+      - label: Year
+        field: date
+        pattern: \d{4}
+    fields:
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }

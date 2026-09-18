@@ -59,15 +59,8 @@ section.bp pre:has(code) {
 }
 
 @media (min-width: 480px) {
-  section.bl {
-    max-width: fit-content;
-  }
-  section.bp {
-    max-width: 50vw;
-    max-width: 50dvw;
-  }
   section.bp img.mobile-ss {
-    width: 50%;
+    width: 56%;
     display: block;
     margin-inline: auto;
   }
@@ -96,4 +89,25 @@ section.bp img,
 section.bl img {
   width: 100%;
   object-fit: contain !important;
+}
+
+section.bm > article {
+  border-width: var(--border-width);
+  border-color: var(--border);
+  border-style: solid;
+  margin-block: 1rem;
+  padding: 1rem;
+
+  &:first-of-type {
+    border-color: var(--code);
+    animation-name: breathing-border;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  > p:last-of-type {
+    margin-bottom: 0;
+  }
 }

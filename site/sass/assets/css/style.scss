@@ -109,6 +109,10 @@ img#watermelon {
   height: 51px;
 }
 
+.center {
+  text-align: center;
+}
+
 .nametag {
   color: var(--text-light);
 }
@@ -162,6 +166,23 @@ img#watermelon {
   animation-timing-function: ease-in-out;
 }
 
+/* Red glow breathing animation - for borders */
+@keyframes breathing-border {
+  from {
+    box-shadow: 0 0 0 var(--code);
+  }
+  to {
+    box-shadow: 0 0 0.5rem var(--code);
+  }
+}
+.breathing-border {
+  animation-name: breathing-border;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 #bar {
   color: var(--code);
 }
@@ -194,7 +215,7 @@ img#watermelon {
     justify-content: center;
 
     > section {
-      max-width: 45ch;
+      max-width: 56ch;
     }
   }
 }
