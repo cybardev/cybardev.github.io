@@ -27,7 +27,7 @@
   >
   {% for page in paginator.pages %}
   <article>
-    <code>[{{ page.date | date(format="%Y %b %d") }}]</code>
+    <code>[{{ page.date | date(format="%Y %b %d, %I:%M %p") }}]</code>
     {{ page.content | safe }}
   </article>
   {% else %}
