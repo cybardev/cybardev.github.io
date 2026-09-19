@@ -74,6 +74,13 @@
     {% block style %}
     <link rel="stylesheet" href='{{ get_url(path="assets/css/style.css") }}' />
     {% endblock style %}
+
+    {% block rss %}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+    {% endblock %}
+    {% block atom %}
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+    {% endblock %}
   </head>
 
   <body>

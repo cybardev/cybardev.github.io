@@ -5,4 +5,5 @@ sort_by = "date"
 title = "Blog"
 description = "Thoughts, Opinions, Experiences"
 paginate_by = 128
+generate_feeds = true
 +++

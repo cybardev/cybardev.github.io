@@ -91,6 +91,23 @@ section.bl img {
   object-fit: contain !important;
 }
 
+/* Green glow breathing animation - for borders */
+@keyframes breathing-border {
+  from {
+    box-shadow: 0 0 0 var(--glow);
+  }
+  to {
+    box-shadow: 0 0 0.5rem var(--glow);
+  }
+}
+.breathing-border {
+  animation-name: breathing-border;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 section.bm > article {
   border-width: var(--border-width);
   border-color: var(--border);
@@ -99,7 +116,7 @@ section.bm > article {
   padding: 1rem;
 
   &:first-of-type {
-    border-color: var(--code);
+    border-color: var(--glow);
     animation-name: breathing-border;
     animation-duration: 4s;
     animation-direction: alternate;
