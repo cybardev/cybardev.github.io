@@ -67,6 +67,7 @@ collections:
     label_singular: muse
     folder: "site/content/musings"
     create: true
+    identifier_field: date
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
