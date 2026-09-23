@@ -59,11 +59,13 @@ quote-block {
     font-weight: 500;
   }
 
-  blockquote, p {
+  blockquote,
+  p {
     margin-block: 0.5em;
   }
 
-  strong, cite {
+  strong,
+  cite {
     font-style: normal;
   }
 }
@@ -123,7 +125,10 @@ img#watermelon {
 
   > li {
     display: inline;
-    margin-right: 1.5em;
+
+    &:not(:last-of-type) {
+      margin-right: clamp(1.25em, 1.25em + 1vw, 1.5em);
+    }
 
     > a:is(:hover, :active, :focus-visible) {
       text-shadow: 0 0 16px var(--accent-hover);
