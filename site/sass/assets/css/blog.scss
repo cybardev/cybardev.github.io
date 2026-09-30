@@ -108,7 +108,11 @@ section.bl img {
   animation-timing-function: ease-in-out;
 }
 
-section.bm > article {
+section.bm > a:has(> article) {
+  text-decoration: none;
+}
+
+section.bm > a > article {
   border-width: var(--border-width);
   border-color: var(--border);
   border-style: solid;
