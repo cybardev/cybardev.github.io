@@ -124,7 +124,7 @@ section.bm > a > article {
   }
 }
 
-section.bm > a:first-of-type > article {
+section.bm > a:has(> article):first-of-type > article {
   border-color: var(--glow);
   animation-name: breathing-border;
   animation-duration: 4s;
