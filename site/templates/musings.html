@@ -26,10 +26,12 @@
     >&nbsp;Subscribe</a
   >
   {% for page in paginator.pages %}
+  <a href="{{ page.permalink }}">
   <article>
     <code>[{{ page.date | date(format="%Y %b %d, %I:%M %p") }}]</code>
     {{ page.content | safe }}
   </article>
+  </a>
   {% else %}
   <article class="center">no thoughts; head empty :3</article>
   {% endfor %}
