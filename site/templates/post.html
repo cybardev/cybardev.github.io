@@ -12,7 +12,9 @@
         <span id="date">{{ page.date | date(format="%d %b %Y, %I:%M %p") }}</span></small
       >
     </p>
+    {% block back_btn %}
     <a href="/blog">&#x25C0;&nbsp;blogs</a>
+    {% endblock back_btn %}
     &nbsp;&vert;&nbsp;
     <a href="/">home</a>
     <hr />
