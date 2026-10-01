@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="https://cdn.jsdelivr.net/gh/catcto/sitemap-stylesheet@master/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {%- for sitemap_entry in entries %}
+    {%- if sitemap_entry.permalink is containing(pat="/musings/")
+        and not sitemap_entry.permalink is ending_with(pat="/musings/") %}
+    {%- continue %}
+    {%- endif %}
+    <url>
+        <loc>{{ sitemap_entry.permalink | escape_xml | safe }}</loc>
+        {%- if sitemap_entry.updated %}
+        <lastmod>{{ sitemap_entry.updated }}</lastmod>
+        {%- endif %}
+    </url>
+    {%- endfor %}
+</urlset>

@@ -1,4 +1,5 @@
 +++
+page_template = "musing.html"
 template = "musings.html"
 sort_by = "date"
 title = "Musings"

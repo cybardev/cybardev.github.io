@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-<!-- prettier-ignore -->
 {% block style %} {{ super() }}
 <link rel="stylesheet" href='{{ get_url(path="assets/css/blog.css") }}' />
 {% endblock style %} {% block content %}
@@ -26,12 +25,12 @@
     >&nbsp;Subscribe</a
   >
   {% for page in paginator.pages %}
-  <a href="{{ page.permalink }}">
   <article>
+    <a href="{{ page.permalink }}">
     <code>[{{ page.date | date(format="%Y %b %d, %I:%M %p") }}]</code>
+    </a>
     {{ page.content | safe }}
   </article>
-  </a>
   {% else %}
   <article class="center">no thoughts; head empty :3</article>
   {% endfor %}

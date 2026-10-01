@@ -108,23 +108,23 @@ section.bl img {
   animation-timing-function: ease-in-out;
 }
 
-section.bm > a:has(> article) {
-  text-decoration: none;
-}
-
-section.bm > a > article {
+section.bm > article {
   border-width: var(--border-width);
   border-color: var(--border);
   border-style: solid;
   margin-block: 1rem;
   padding: 1rem;
 
+  > a {
+    text-decoration: none;
+  }
+  
   > p:last-of-type {
     margin-bottom: 0;
   }
 }
 
-section.bm > a:has(> article):first-of-type > article {
+section.bm > article:first-of-type {
   border-color: var(--glow);
   animation-name: breathing-border;
   animation-duration: 4s;
