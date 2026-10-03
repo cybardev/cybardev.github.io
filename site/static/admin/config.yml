@@ -8,7 +8,7 @@ slug:
   sanitize_replacement: "-"
 field_defaults:
   richtext:
-    modes: ["raw", "rich_text"]
+    modes: ["rich_text", "raw"]
 backend:
   name: github
   branch: main
