@@ -17,7 +17,7 @@
     &nbsp;&vert;&nbsp;
     <a href="/">home</a>
     <hr />
-    {{ page.content | safe }}
+    {{ page.content | newlines_to_br | safe }}
   </article>
 </section>
 {% endblock content %}
