@@ -32,6 +32,7 @@ media_libraries:
       svg:
         optimize: true
   cloudflare_r2:
+    default: true
     bucket: media
     public_url: "https://media.cybar.dev"
     jurisdiction: eu
